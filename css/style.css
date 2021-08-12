@@ -30,6 +30,7 @@ Paragraph default: 1.6
 /* --------------------COLORS-------------------------- */
 
 body {
+  --main-shade:#fcfbf9;
 	--main-color: #dfd3c3;
 	--second-color: #67403d;
 	--third-color: #381c18;
@@ -57,16 +58,7 @@ body {
 	font-family: var(--font-family);
 	line-height: 1;
 	font-weight: 400;
-	color: var(--gray-color)
+	color: var(--gray-color);
+  background-color: var(--main-shade);
 }
 
-/**************************/
-/* GENRAL REUSABLE COMPONENTS */
-/**************************/
-
-.container {
-	/* 1140px */
-	max-width: 120rem;
-	padding: 0 3.2rem;
-	margin: 0 auto;
-}

@@ -1,0 +1,10 @@
+body {
+
+  --font-family: font-family: 'Poppins', sans-serif;
+  
+	font-family: var(--font-family);
+	line-height: 1;
+	font-weight: 400;
+	color: var(--gray-color);
+	background-color: var(--main-shade);
+}

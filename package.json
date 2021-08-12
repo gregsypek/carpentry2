@@ -1,0 +1,20 @@
+{
+	"name": "carpentry",
+	"version": "2.0.0",
+	"description": "Website for client",
+	"main": "index.js",
+	"scripts": {
+		"compile:sass": "node-sass sass/main.scss css/style.css -w"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gregsypek/carpentry2.git"
+	},
+	"author": "gregsypek",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gregsypek/carpentry2/issues"
+	},
+	"homepage": "https://github.com/gregsypek/carpentry2#readme",
+	"devDependencies": {}
+}

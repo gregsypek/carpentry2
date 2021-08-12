@@ -6,7 +6,7 @@
 	padding: 0 5rem;
 
 	img {
-		width: 9rem;
+		width: 10rem;
 		height: auto;
 	}
 	.main {
@@ -16,15 +16,22 @@
 			display: flex;
 			list-style: none;
 			align-items: center;
-			gap: 4rem;
+			gap: 5rem;
 		}
-		&__link {
+		&__link:link,
+		&__link:visited {
 			display: inline-block;
 			text-decoration: none;
 			color: inherit;
 			font-weight: 400;
 			font-size: 1.8rem;
-			transition: color 0.3s;
+			transition: border-bottom 0.3s;
+			padding-bottom: 1rem;
+			border-bottom: 3px solid transparent;
+		}
+		&__link:hover,
+		&__link:active {
+			border-bottom: 3px solid $second-color;
 		}
 	}
 }

@@ -1,0 +1,41 @@
+.section-hero {
+	padding: 8rem 0 10rem 0;
+	.hero {
+		max-width: 120rem;
+		display: grid;
+		gap: 5rem;
+		margin: 0 auto;
+		grid-template-columns: 1fr 1fr;
+		// align-items: center;
+
+		&__text-box {
+			margin-bottom: 5rem;
+			h1 {
+				font-size: 4.8rem;
+				font-weight: 600;
+				line-height: 114%;
+				letter-spacing: 0.05em;
+				margin-bottom: 10rem;
+			}
+			span {
+				color: $second-color;
+			}
+			.btn:link,
+			.btn:visited {
+				@include btn;
+				background-color: #b53526;
+			}
+			.btn:hover,
+			.btn:active {
+				background-color: darken(#b53526, 20%);
+			}
+		}
+		&__img-box {
+			// picture {
+			// }
+		}
+		&__img {
+			width: 100%;
+		}
+	}
+}

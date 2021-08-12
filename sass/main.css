@@ -33,7 +33,7 @@ body {
 }
 
 .header img {
-  width: 9rem;
+  width: 10rem;
   height: auto;
 }
 
@@ -41,15 +41,75 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 4rem;
+  gap: 5rem;
 }
 
-.header .main__link {
+.header .main__link:link, .header .main__link:visited {
   display: inline-block;
   text-decoration: none;
   color: inherit;
   font-weight: 400;
   font-size: 1.8rem;
-  transition: color 0.3s;
+  transition: border-bottom 0.3s;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid transparent;
+}
+
+.header .main__link:hover, .header .main__link:active {
+  border-bottom: 3px solid #67403d;
+}
+
+.section-hero {
+  padding: 8rem 0 10rem 0;
+}
+
+.section-hero .hero {
+  max-width: 120rem;
+  display: grid;
+  gap: 5rem;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-hero .hero__text-box {
+  margin-bottom: 5rem;
+}
+
+.section-hero .hero__text-box h1 {
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 114%;
+  letter-spacing: 0.05em;
+  margin-bottom: 10rem;
+}
+
+.section-hero .hero__text-box span {
+  color: #67403d;
+}
+
+.section-hero .hero__text-box .btn:link,
+.section-hero .hero__text-box .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+  transition: background-color 0.3s;
+  letter-spacing: 0.08em;
+  border-radius: 5px;
+  background-color: #b53526;
+}
+
+.section-hero .hero__text-box .btn:hover,
+.section-hero .hero__text-box .btn:active {
+  background-color: #611c14;
+}
+
+.section-hero .hero__img {
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */

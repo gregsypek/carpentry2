@@ -1,0 +1,30 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 10rem;
+	padding: 0 5rem;
+
+	img {
+		width: 9rem;
+		height: auto;
+	}
+	.main {
+		// &__nav {
+		// }
+		&__list {
+			display: flex;
+			list-style: none;
+			align-items: center;
+			gap: 4rem;
+		}
+		&__link {
+			display: inline-block;
+			text-decoration: none;
+			color: inherit;
+			font-weight: 400;
+			font-size: 1.8rem;
+			transition: color 0.3s;
+		}
+	}
+}

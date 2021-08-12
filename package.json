@@ -16,5 +16,7 @@
 		"url": "https://github.com/gregsypek/carpentry2/issues"
 	},
 	"homepage": "https://github.com/gregsypek/carpentry2#readme",
-	"devDependencies": {}
+	"devDependencies": {
+		"node": "^16.6.1"
+	}
 }

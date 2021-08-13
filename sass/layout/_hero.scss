@@ -1,6 +1,7 @@
 .section-hero {
 	padding: 8rem 0 10rem 0;
 	.hero {
+		padding: 0 5vw;
 		max-width: 120rem;
 		display: grid;
 		gap: 5rem;
@@ -18,12 +19,13 @@
 				margin-bottom: 10rem;
 			}
 			span {
-				color: $second-color;
+				color: $gray-shade;
 			}
 			.btn:link,
 			.btn:visited {
 				@include btn;
-				background-color: #b53526;
+				// background-color: #b53526;
+				background-color: $second-color;
 			}
 			.btn:hover,
 			.btn:active {

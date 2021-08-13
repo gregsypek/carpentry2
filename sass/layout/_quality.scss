@@ -12,13 +12,59 @@
 		}
 	}
 	&__bottom {
+		margin: 10rem 0;
 	}
+	&__cards {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		gap: 5rem;
+	}
+	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 19rem;
+		height: 16rem;
+		background-color: $main-shade;
+		font-size: 1.6rem;
+		font-weight: 400;
+		padding: 1rem;
+		margin: 0 auto;
+		border-radius: 5%;
+		p {
+			text-align: center;
+		}
+	}
+	.btn:link,
+	.btn:visited {
+		@include btn;
+		// background-color: #b53526;
+		background-color: $gray-shade;
+	}
+
 	&__btn {
+		// display: flex;
+		text-align: right;
+		padding-bottom: 13rem;
+		border-radius: 5%;
+	}
+	.btn:hover,
+	.btn:active {
+		background-color: darken(#575555, 20%);
 	}
 }
 
 .card-icon {
-	height: 2.4rem;
-	width: 2.4rem;
-	// color: black;
+	position: absolute;
+
+	width: 8rem;
+
+	top: -25%;
+	left: 50%;
+	transform: translate(-50%, +25%);
+
+	fill: $gray-shade;
 }

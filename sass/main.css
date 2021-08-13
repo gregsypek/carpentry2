@@ -122,10 +122,10 @@ ion-icon {
   font-family: inherit;
   font-weight: 500;
   cursor: pointer;
+  width: auto;
   padding: 1rem 2.5rem;
   transition: background-color 0.3s;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   background-color: #67403d;
 }
 
@@ -156,8 +156,71 @@ ion-icon {
   color: #fcfbf9;
 }
 
+.quality__bottom {
+  margin: 10rem 0;
+}
+
+.quality__cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.quality__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 19rem;
+  height: 16rem;
+  background-color: #fcfbf9;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 5%;
+}
+
+.quality__card p {
+  text-align: center;
+}
+
+.quality .btn:link,
+.quality .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  width: auto;
+  padding: 1rem 2.5rem;
+  transition: background-color 0.3s;
+  letter-spacing: 0.08em;
+  background-color: #575555;
+}
+
+.quality__btn {
+  text-align: right;
+  padding-bottom: 13rem;
+  border-radius: 5%;
+}
+
+.quality .btn:hover,
+.quality .btn:active {
+  background-color: #232323;
+}
+
 .card-icon {
-  height: 2.4rem;
-  width: 2.4rem;
+  position: absolute;
+  width: 8rem;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+  fill: #575555;
 }
 /*# sourceMappingURL=main.css.map */

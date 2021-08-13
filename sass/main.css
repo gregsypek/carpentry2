@@ -223,4 +223,28 @@ ion-icon {
   transform: translate(-50%, 25%);
   fill: #575555;
 }
+
+.about h2 {
+  padding-bottom: 5rem;
+  display: inline-block;
+  border-bottom: 3px solid #67403d;
+  margin-bottom: 10rem;
+}
+
+.about span {
+  color: #67403d;
+}
+
+.about__box {
+  display: flex;
+  gap: 10rem;
+}
+
+.about__description p:not(:last-of-type) {
+  margin-bottom: 5rem;
+}
+
+.about__photo {
+  height: 50rem;
+}
 /*# sourceMappingURL=main.css.map */

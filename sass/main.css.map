@@ -11,6 +11,7 @@
         "layout/_header.scss",
         "layout/_hero.scss",
         "layout/_quality.scss",
+        "layout/_about.scss",
         "pages/_home.scss"
     ],
     "names": [],

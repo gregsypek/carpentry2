@@ -1,9 +1,9 @@
 .about {
 	h2 {
-		padding-bottom: 5rem;
+		padding-bottom: 3rem;
 		display: inline-block;
 		border-bottom: 3px solid $second-color;
-		margin-bottom: 10rem;
+		margin-bottom: 5rem;
 	}
 
 	span {
@@ -13,6 +13,7 @@
 	&__box {
 		display: flex;
 		gap: 10rem;
+		// margin-bottom: 5rem;
 	}
 	&__description {
 		p:not(:last-of-type) {
@@ -21,7 +22,7 @@
 	}
 	&__photo {
 		// width: 40vw;
-		height: 50rem;
+		max-height: 45rem;
 		// object-fit: cover;
 	}
 }

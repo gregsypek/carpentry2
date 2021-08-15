@@ -1,0 +1,66 @@
+.footer {
+	display: grid;
+	grid-template-areas:
+		"logo address info"
+		"icons address info"
+		"copy  address info";
+	justify-content: space-around;
+
+	&__logo {
+		grid-area: logo;
+	}
+	&__icons {
+		grid-area: logo;
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+		margin: 1rem 0 5rem 0;
+	}
+	&__copyright {
+		grid-area: copy;
+	}
+	&__address {
+		grid-area: address;
+		font-size: 1.6rem;
+		color: $gray-shade;
+		font-style: normal;
+		line-height: 150%;
+	}
+	&__heading {
+		font-size: 2rem;
+
+		margin-bottom: 5rem;
+	}
+	&__nav {
+		grid-area: info;
+		font-size: 2rem;
+		line-height: 150%;
+	}
+
+	&__links {
+		color: $gray-shade;
+		font-size: 1.6rem;
+		line-height: 150%;
+		list-style: none;
+	}
+	&__link {
+		transition: color 0.3 ease;
+	}
+	&__link:link,
+	&__link:visited {
+		text-decoration: none;
+		color: inherit;
+	}
+	&__link:hover,
+	&__link:active {
+		color: $gray-color;
+	}
+	&--icon {
+		transition: color 0.3 ease;
+		fill: $gray-shade;
+		width: 2rem;
+		&:hover {
+			fill: $gray-color;
+		}
+	}
+}

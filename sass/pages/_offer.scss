@@ -1,0 +1,79 @@
+.offer {
+	&__top {
+		display: flex;
+		align-items: center;
+		h3 {
+			padding-left: 10rem;
+			border-left: 3px solid $second-color;
+		}
+		span {
+			display: block;
+			color: $second-color;
+		}
+	}
+	&__bottom {
+		margin: 10rem 0;
+	}
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4.5rem;
+	}
+	&__card {
+		height: 20vw;
+		max-width: 25vw;
+		position: relative;
+
+		&:not(:last-of-type) {
+			margin-bottom: 4.5rem;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+
+			object-fit: cover;
+		}
+		&:nth-of-type(2) {
+			flex: 2;
+		}
+
+		a {
+			// height: 100%;
+			padding-top: 75%;
+			overflow: hidden;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba($third-color, 0.7);
+				transition: all 0.3s ease;
+			}
+		}
+		p {
+			position: absolute;
+			font-size: 2.1rem;
+			line-height: 138%;
+			color: $main-color;
+			text-align: center;
+			text-transform: lowercase;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transition: all 0.9s ease;
+		}
+	}
+}
+.offer__card:hover a::before {
+	background-color: transparent;
+}
+.offer__card:hover p {
+	position: absolute;
+	color: $gray-color;
+	top: 115%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

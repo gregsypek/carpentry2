@@ -24,12 +24,16 @@ ion-icon {
 .container {
   /* 1140px */
   max-width: 120rem;
-  padding: 5rem;
+  padding: 5rem 5rem 0 5rem;
   margin: 0 auto;
 }
 
 .padding--section {
-  padding: 15rem 5vw 5rem 5vw;
+  padding: 10rem 5vw 5rem 5vw;
+}
+
+.padding--footer {
+  padding: 0 5vw 5rem 5vw;
 }
 
 .heading-secondary {
@@ -84,7 +88,7 @@ ion-icon {
 }
 
 .section-hero {
-  padding: 8rem 0 10rem 0;
+  padding: 10rem 0 10rem 0;
 }
 
 .section-hero .hero {
@@ -317,5 +321,91 @@ ion-icon {
 
 .footer--icon:hover {
   fill: #251f1f;
+}
+
+.offer__top {
+  display: flex;
+  align-items: center;
+}
+
+.offer__top h3 {
+  padding-left: 10rem;
+  border-left: 3px solid #67403d;
+}
+
+.offer__top span {
+  display: block;
+  color: #67403d;
+}
+
+.offer__bottom {
+  margin: 10rem 0;
+}
+
+.offer__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.5rem;
+}
+
+.offer__card {
+  height: 20vw;
+  max-width: 25vw;
+  position: relative;
+}
+
+.offer__card:not(:last-of-type) {
+  margin-bottom: 4.5rem;
+}
+
+.offer__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer__card:nth-of-type(2) {
+  flex: 2;
+}
+
+.offer__card a {
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.offer__card a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(56, 28, 24, 0.7);
+  transition: all 0.3s ease;
+}
+
+.offer__card p {
+  position: absolute;
+  font-size: 2.1rem;
+  line-height: 138%;
+  color: #dfd3c3;
+  text-align: center;
+  text-transform: lowercase;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.9s ease;
+}
+
+.offer__card:hover a::before {
+  background-color: transparent;
+}
+
+.offer__card:hover p {
+  position: absolute;
+  color: #251f1f;
+  top: 115%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=main.css.map */

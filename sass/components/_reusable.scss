@@ -1,12 +1,15 @@
 .container {
 	/* 1140px */
 	max-width: 120rem;
-	padding: 5rem;
+	padding: 5rem 5rem 0 5rem;
 	margin: 0 auto;
 }
 
 .padding--section {
-	padding: 15rem 5vw 5rem 5vw;
+	padding: 10rem 5vw 5rem 5vw;
+}
+.padding--footer {
+	padding: 0 5vw 5rem 5vw;
 }
 
 .heading-secondary {
@@ -17,6 +20,7 @@
 	line-height: 117%;
 	letter-spacing: 0.05em;
 }
+
 .description {
 	font-size: 2rem;
 	line-height: 148%;

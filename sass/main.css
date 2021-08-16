@@ -48,6 +48,13 @@ ion-icon {
   letter-spacing: 0.05em;
 }
 
+.heading-tertiary {
+  font-weight: 500;
+  font-size: 2.2rem;
+  color: inherit;
+  margin-bottom: 5rem;
+}
+
 .description {
   font-size: 2rem;
   line-height: 148%;
@@ -413,11 +420,24 @@ ion-icon {
   transform: translate(-50%, -50%);
 }
 
+.treatment-stairs span {
+  color: #381c18;
+}
+
 .treatment-stairs__img {
-  margin: 5rem 0;
   width: 100vw;
   max-width: 100%;
   height: 48rem;
   object-fit: cover;
+}
+
+.treatment-stairs__description {
+  background-color: #dfd3c3;
+  margin-top: -2px;
+}
+
+.treatment-stairs__description h3,
+.treatment-stairs__description p {
+  padding: 0 10vw;
 }
 /*# sourceMappingURL=main.css.map */

@@ -336,56 +336,59 @@ ion-icon {
   fill: #251f1f;
 }
 
-.offer__top {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10rem;
-}
-
-.offer__top h3 {
-  padding-left: 10rem;
-  border-left: 3px solid #67403d;
-}
-
-.offer__top span {
-  display: block;
-  color: #67403d;
-}
-
-.offer .gallery {
+.gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 4.5rem;
 }
 
-.offer .single__image {
+.single__image {
   height: 20vw;
   max-width: 26vw;
   position: relative;
+}
+
+.single__image.color {
   background-color: #381c18;
 }
 
-.offer .single__image:not(:last-of-type) {
+.single__image:hover p {
+  position: absolute;
+  color: #251f1f;
+  background-color: rgba(252, 251, 249, 0.8);
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.single__image:hover img {
+  opacity: 1;
+}
+
+.single__image:not(:last-of-type) {
   margin-bottom: 4.5rem;
 }
 
-.offer .single__image img {
+.single__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3;
   transition: opacity 0.3s ease-in-out;
 }
 
-.offer .single__image:nth-of-type(2) {
+.single__image img.color {
+  opacity: 0.3;
+}
+
+.single__image:nth-of-type(2) {
   flex: 2;
 }
 
-.offer .single__image a {
+.single__image a {
   background-color: #381c18;
 }
 
-.offer .single__image p {
+.single__image p {
   position: absolute;
   font-size: 2.1rem;
   line-height: 138%;
@@ -400,17 +403,20 @@ ion-icon {
   padding: 1rem 3rem;
 }
 
-.offer .single__image:hover p {
-  position: absolute;
-  color: #251f1f;
-  background-color: rgba(252, 251, 249, 0.8);
-  top: 92%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.offer__top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rem;
 }
 
-.offer .single__image:hover img {
-  opacity: 1;
+.offer__top h3 {
+  padding-left: 10rem;
+  border-left: 3px solid #67403d;
+}
+
+.offer__top span {
+  display: block;
+  color: #67403d;
 }
 
 .treatment-stairs span {
@@ -432,16 +438,5 @@ ion-icon {
 .treatment-stairs__description h3,
 .treatment-stairs__description p {
   padding: 0 10vw;
-}
-
-.single__image {
-  position: relative;
-  width: 500px;
-  height: 200px;
-}
-
-.single__image--card {
-  position: relative;
-  overflow: hidden;
 }
 /*# sourceMappingURL=main.css.map */

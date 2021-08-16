@@ -1,15 +1,7 @@
 .quality {
 	background-color: $main-color;
 	&__top {
-		display: flex;
-		align-items: center;
-		h3 {
-			padding-left: 10rem;
-			border-left: 3px solid $main-shade;
-		}
-		span {
-			color: $main-shade;
-		}
+		@include sectionHead($main-shade);
 	}
 	&__bottom {
 		margin: 10rem 0;
@@ -41,7 +33,7 @@
 	&__btn {
 		// display: flex;
 		text-align: right;
-		padding-bottom: 5rem;
+		// padding-bottom: 5rem;
 		border-radius: 5%;
 	}
 	.btn:link,

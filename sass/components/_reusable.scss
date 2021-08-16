@@ -1,15 +1,18 @@
 .container {
 	/* 1140px */
 	max-width: 120rem;
-	padding: 5rem 5rem 0 5rem;
+	// padding: 5rem 5rem 0 5rem;
 	margin: 0 auto;
 }
 
-.padding--section {
-	padding: 10rem 5vw 5rem 5vw;
+.padding--big {
+	padding: 10rem 5vw;
+}
+.padding--huge {
+	padding: 15rem 5vw;
 }
 .padding--footer {
-	padding: 0 5vw 5rem 5vw;
+	padding-bottom: 5rem;
 }
 
 .heading-secondary {
@@ -27,4 +30,19 @@
 	letter-spacing: 0.05em;
 	color: inherit;
 	font-weight: 400;
+}
+
+/* *************MIXIN************/
+
+@mixin sectionHead($color) {
+	display: flex;
+	align-items: center;
+	h3 {
+		padding-left: 10rem;
+		border-left: 3px solid $color;
+	}
+	span {
+		display: block;
+		color: $color;
+	}
 }

@@ -24,16 +24,19 @@ ion-icon {
 .container {
   /* 1140px */
   max-width: 120rem;
-  padding: 5rem 5rem 0 5rem;
   margin: 0 auto;
 }
 
-.padding--section {
-  padding: 10rem 5vw 5rem 5vw;
+.padding--big {
+  padding: 10rem 5vw;
+}
+
+.padding--huge {
+  padding: 15rem 5vw;
 }
 
 .padding--footer {
-  padding: 0 5vw 5rem 5vw;
+  padding-bottom: 5rem;
 }
 
 .heading-secondary {
@@ -53,11 +56,14 @@ ion-icon {
   font-weight: 400;
 }
 
+/* *************MIXIN************/
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 10rem;
+  max-width: 125rem;
+  margin: 0 auto;
 }
 
 .header img {
@@ -157,6 +163,7 @@ ion-icon {
 }
 
 .quality__top span {
+  display: block;
   color: #fcfbf9;
 }
 
@@ -193,7 +200,6 @@ ion-icon {
 
 .quality__btn {
   text-align: right;
-  padding-bottom: 5rem;
   border-radius: 5%;
 }
 
@@ -326,6 +332,7 @@ ion-icon {
 .offer__top {
   display: flex;
   align-items: center;
+  margin-bottom: 10rem;
 }
 
 .offer__top h3 {
@@ -338,10 +345,6 @@ ion-icon {
   color: #67403d;
 }
 
-.offer__bottom {
-  margin: 10rem 0;
-}
-
 .offer__cards {
   display: flex;
   flex-wrap: wrap;
@@ -350,7 +353,7 @@ ion-icon {
 
 .offer__card {
   height: 20vw;
-  max-width: 25vw;
+  max-width: 26vw;
   position: relative;
 }
 
@@ -404,8 +407,17 @@ ion-icon {
 .offer__card:hover p {
   position: absolute;
   color: #251f1f;
+  background-color: rgba(252, 251, 249, 0.8);
   top: 115%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.treatment-stairs__img {
+  margin: 5rem 0;
+  width: 100vw;
+  max-width: 100%;
+  height: 48rem;
+  object-fit: cover;
 }
 /*# sourceMappingURL=main.css.map */

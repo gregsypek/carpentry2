@@ -1,19 +1,11 @@
 .offer {
 	&__top {
-		display: flex;
-		align-items: center;
-		h3 {
-			padding-left: 10rem;
-			border-left: 3px solid $second-color;
-		}
-		span {
-			display: block;
-			color: $second-color;
-		}
+		@include sectionHead($second-color);
+		margin-bottom: 10rem;
 	}
-	&__bottom {
-		margin: 10rem 0;
-	}
+	// &__bottom {
+	// 	margin: 10rem 0;
+	// }
 	&__cards {
 		display: flex;
 		flex-wrap: wrap;
@@ -21,7 +13,7 @@
 	}
 	&__card {
 		height: 20vw;
-		max-width: 25vw;
+		max-width: 26vw;
 		position: relative;
 
 		&:not(:last-of-type) {
@@ -73,7 +65,12 @@
 .offer__card:hover p {
 	position: absolute;
 	color: $gray-color;
+	// VERSION 2//
+	// top: 80%;
+	// background-color: rgba($third-color, 0.8);
+	background-color: rgba($main-shade, 0.8);
 	top: 115%;
+
 	left: 50%;
 	transform: translate(-50%, -50%);
 }

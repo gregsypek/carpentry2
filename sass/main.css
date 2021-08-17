@@ -405,10 +405,6 @@ ion-icon {
   transform: translate(-50%, -50%);
 }
 
-.single__image:hover img {
-  opacity: 1;
-}
-
 .single__image:not(:last-of-type) {
   margin-bottom: 4.5rem;
 }
@@ -417,11 +413,15 @@ ion-icon {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .single__image img.color {
+  transition: opacity 0.9s ease-in-out;
   opacity: 0.3;
+}
+
+.single__image img.color:hover {
+  opacity: 1;
 }
 
 .single__image:nth-of-type(2) {
@@ -460,6 +460,13 @@ ion-icon {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0;
+}
+
+#map {
+  width: 60rem;
+  height: 50rem;
+  margin: 0 auto;
+  margin-bottom: 10rem;
 }
 
 .offer__top {
@@ -504,5 +511,64 @@ ion-icon {
   justify-content: center;
   align-items: center;
   margin-left: auto;
+}
+
+.contact__top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+
+.contact__top h3 {
+  padding-left: 10rem;
+  border-left: 3px solid #67403d;
+}
+
+.contact__top span {
+  display: block;
+  color: #67403d;
+}
+
+.contact__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.1rem;
+  margin-bottom: 5rem;
+}
+
+.contact__tab {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #67403d;
+  flex-basis: 30rem;
+  height: 15rem;
+  flex-grow: 0;
+}
+
+.contact__card {
+  width: 42rem;
+  height: 26rem;
+  border: 2px solid #dfd3c3;
+  padding: 2rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 148%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.contact__card p + p {
+  margin-top: 2rem;
+}
+
+.contact-icon {
+  fill: #fcfbf9;
+  font-size: 6rem;
+  padding: 2rem;
 }
 /*# sourceMappingURL=main.css.map */

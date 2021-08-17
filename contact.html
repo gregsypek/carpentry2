@@ -21,8 +21,13 @@
 			type="module"
 			src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
 		></script>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+		<link
+			href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+			rel="stylesheet"
+		/>
 
-		<title>Nasza oferta</title>
+		<title>Kontakt</title>
 	</head>
 
 	<body>
@@ -33,75 +38,48 @@
 			<nav class="main__nav">
 				<ul class="main__list">
 					<li><a href="index.html" class="main__link"> Strona główna</a></li>
-					<li><a href="offer.html" class="main__link"> Oferta</a></li>
+					<li><a href="contact.html" class="main__link"> Oferta</a></li>
 					<li><a href="#price" class="main__link"> Cennik</a></li>
-					<li><a href="contact.html" class="main__link"> Kontakt</a></li>
+					<li><a href="#contact" class="main__link"> Kontakt</a></li>
 				</ul>
 			</nav>
 		</header>
 		<main>
-			<section id="offer" class="offer padding--huge container">
-				<!-- <div class="container"> -->
-				<div class="offer__top">
-					<h2 class="heading-secondary">Nasza<span>oferta</span></h2>
-					<!-- <svg id="mySVG">
-							<path
-								fill="none"
-								stroke="#fcfbf9"
-								stroke-width="3"
-								id="triangle"
-								d="M1 0 L1 75"
-							/>
-						</svg> -->
-					<h3 class="offer__description description">
-						Wykonujemy schody wewnętrzne rożnego rodzaju, głównie dębowe ze
-						względu na funkcjonalość i trwałość. Realizujemy także zamówiena na
-						balustrady te tradycyjne jak i bardziej nowoczesne. Chętnie
-						doradzamy niezdecydowanym klientom i zaspakajamy oczekiwania
-						pozostałym.
+			<section id="contact" class="contact">
+				<div class="contact__top padding--big container">
+					<h2 class="heading-secondary">Nasze dane<span>kontaktowe</span></h2>
+					<h3 class="contact__description description">
+						Firma Usługi Stolarskie Stanisław Zaliński zlokalizowana jest w
+						miejscowości Trzciana koło Mielca. W razie jakichkolwiek pytań
+						proszę dzwonić na podany poniżej telefon.
 					</h3>
 				</div>
-				<div class="offer__bottom">
-					<div class="gallery">
-						<a class="single__image color" href="zabieg.html">
-							<img
-								class="color"
-								src="images/zabieg.png"
-								alt="Schody z zabiegiem"
-							/>
-							<p>Schody z zabiegiem</p>
-						</a>
-
-						<a class="single__image color" href="dywanowe.html"
-							><img
-								class="color"
-								src="images/dywanowe.png"
-								alt="Schody dywanowe"
-							/>
-							<p>Schody dywanowe</p>
-						</a>
-
-						<a class="single__image color" href="proste.html"
-							><img class="color" src="images/proste.png" alt="Schody proste" />
-							<p>Schody proste</p>
-						</a>
-
-						<a class="single__image color" href="balustrady.html"
-							><img
-								class="color"
-								src="images/balustrady.png"
-								alt="balustrady"
-							/>
-							<p>balustrady</p>
-						</a>
-
-						<a class="single__image color" href="parapety.html"
-							><img class="color" src="images/parapety.png" alt="parapety" />
-							<p>Parapety</p>
-						</a>
+				<div class="contact__bottom container--small">
+					<div class="contact__row">
+						<div class="contact__tab">
+							<ion-icon class="contact-icon" name="trophy"></ion-icon>
+						</div>
+						<div class="contact__card">
+							<p class="phone">+48 (17)12324344</p>
+							<p class="email">hello@gmail.com</p>
+						</div>
+					</div>
+					<div class="contact__row">
+						<div class="contact__card">
+							<p class="name">Firma Usługi Stolarskie</p>
+							<p class="address">Stanisław Z. Trzciana 188C 39-304 Czermin</p>
+						</div>
+						<div class="contact__tab">
+							<ion-icon class="contact-icon" name="trophy"></ion-icon>
+						</div>
+					</div>
+					<div class="contact__row">
+						<div class="contact__tab">
+							<ion-icon class="contact-icon" name="trophy"></ion-icon>
+						</div>
 					</div>
 				</div>
-				<!-- </div> -->
+				<div id="map"></div>
 			</section>
 		</main>
 		<footer class="footer padding--footer" id="footer">
@@ -151,10 +129,20 @@
 				<p class="footer__heading">Informacje</p>
 				<ul class="footer__links">
 					<li><a href="index.html" class="footer__link">O nas</a></li>
-					<li><a href="offer.html" class="footer__link">Oferta</a></li>
+					<li><a href="contact.html" class="footer__link">Oferta</a></li>
 					<li><a href="price.html" class="footer__link">Cennik</a></li>
 				</ul>
 			</div>
 		</footer>
+		<script>
+			mapboxgl.accessToken =
+				"pk.eyJ1IjoiZ3JlZ3N5cGVrIiwiYSI6ImNrZ2wwZTFldTAwejgyeWw4a29sdWVwNHkifQ.v-H4CYHdoVrDy9bdDCcnlg";
+			var map = new mapboxgl.Map({
+				container: "map",
+				style: "mapbox://styles/mapbox/navigation-day-v1",
+				center: [21.4289, 50.2901],
+				zoom: 10,
+			});
+		</script>
 	</body>
 </html>

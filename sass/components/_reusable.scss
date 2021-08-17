@@ -1,10 +1,23 @@
+/* *************CONTAINERS************/
+
 .container {
 	/* 1140px */
 	max-width: 120rem;
 	// padding: 5rem 5rem 0 5rem;
 	margin: 0 auto;
 }
+.container--big {
+	width: 98vw;
+	max-width: 1400px;
+	// height: 48rem;
+	margin: 0 auto;
+}
 
+/* *************PADDINGS************/
+
+.padding--small {
+	padding: 5rem 5vw;
+}
 .padding--big {
 	padding: 10rem 5vw;
 }
@@ -14,6 +27,8 @@
 .padding--footer {
 	padding-bottom: 5rem;
 }
+
+/* *************HEADERS************/
 
 .heading-secondary {
 	font-size: 4rem;
@@ -29,13 +44,42 @@
 	color: inherit;
 	margin-bottom: 5rem;
 }
-
 .description {
 	font-size: 2rem;
 	line-height: 148%;
 	letter-spacing: 0.05em;
 	color: inherit;
 	font-weight: 400;
+}
+.stairs__info {
+	background-color: $main-color;
+	// to hide white bar above
+	margin-top: -2px;
+	height: auto;
+	// padding: 0 10vw 0 10vw;
+	h3,
+	p {
+		padding: 0 10vw;
+	}
+}
+.stairs__description {
+	display: flex;
+	padding-bottom: 10rem;
+	gap: 10vw;
+	margin: 0 auto;
+
+	.description {
+		flex: 2;
+		// height: 10rem;
+		padding: 2rem 0;
+		// max-width: 40rem;
+		margin: auto 0;
+	}
+	.description__aside {
+		flex: 1;
+		background-color: $main-color;
+		min-width: 20rem;
+	}
 }
 
 /* *************MIXIN************/

@@ -21,10 +21,22 @@ ion-icon {
   font-size: 64px;
 }
 
+/* *************CONTAINERS************/
 .container {
   /* 1140px */
   max-width: 120rem;
   margin: 0 auto;
+}
+
+.container--big {
+  width: 98vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* *************PADDINGS************/
+.padding--small {
+  padding: 5rem 5vw;
 }
 
 .padding--big {
@@ -39,6 +51,7 @@ ion-icon {
   padding-bottom: 5rem;
 }
 
+/* *************HEADERS************/
 .heading-secondary {
   font-size: 4rem;
   color: inherit;
@@ -61,6 +74,36 @@ ion-icon {
   letter-spacing: 0.05em;
   color: inherit;
   font-weight: 400;
+}
+
+.stairs__info {
+  background-color: #dfd3c3;
+  margin-top: -2px;
+  height: auto;
+}
+
+.stairs__info h3,
+.stairs__info p {
+  padding: 0 10vw;
+}
+
+.stairs__description {
+  display: flex;
+  padding-bottom: 10rem;
+  gap: 10vw;
+  margin: 0 auto;
+}
+
+.stairs__description .description {
+  flex: 2;
+  padding: 2rem 0;
+  margin: auto 0;
+}
+
+.stairs__description .description__aside {
+  flex: 1;
+  background-color: #dfd3c3;
+  min-width: 20rem;
 }
 
 /* *************MIXIN************/
@@ -389,18 +432,33 @@ ion-icon {
 }
 
 .single__image p {
-  position: absolute;
-  font-size: 2.1rem;
-  line-height: 138%;
   color: #dfd3c3;
+  font-size: 2.1rem;
   text-align: center;
-  text-transform: lowercase;
   top: 50%;
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
   transition: all 0.7s ease-in-out;
   padding: 1rem 3rem;
+}
+
+.single__image p,
+.single__image p.title {
+  position: absolute;
+  line-height: 138%;
+  text-transform: lowercase;
+}
+
+.single__image p.title {
+  font-size: 1.4rem;
+  text-align: left;
+  color: #251f1f;
+  background-color: rgba(252, 251, 249, 0.8);
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
 }
 
 .offer__top {
@@ -424,19 +482,8 @@ ion-icon {
 }
 
 .treatment-stairs__img {
-  width: 100vw;
-  max-width: 100%;
   height: 48rem;
   object-fit: cover;
-}
-
-.treatment-stairs__description {
-  background-color: #dfd3c3;
-  margin-top: -2px;
-}
-
-.treatment-stairs__description h3,
-.treatment-stairs__description p {
-  padding: 0 10vw;
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

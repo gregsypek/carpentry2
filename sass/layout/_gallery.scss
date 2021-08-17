@@ -44,17 +44,31 @@
 		background-color: $third-color;
 	}
 	p {
-		position: absolute;
-		font-size: 2.1rem;
-		line-height: 138%;
 		color: $main-color;
+		font-size: 2.1rem;
 		text-align: center;
-		text-transform: lowercase;
 		top: 50%;
 		left: 50%;
 		width: 100%;
 		transform: translate(-50%, -50%);
 		transition: all 0.7s ease-in-out;
 		padding: 1rem 3rem;
+	}
+	p,
+	p.title {
+		position: absolute;
+		line-height: 138%;
+		text-transform: lowercase;
+	}
+
+	p.title {
+		font-size: 1.4rem;
+		text-align: left;
+		color: $gray-color;
+		background-color: rgba($main-shade, 0.8);
+		top: 110%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 0;
 	}
 }

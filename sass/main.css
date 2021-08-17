@@ -96,7 +96,8 @@ ion-icon {
 
 .stairs__description .description {
   flex: 2;
-  padding: 2rem 0;
+  padding: 2rem 10vw 2rem 0;
+  max-width: 350rem;
   margin: auto 0;
 }
 
@@ -477,13 +478,31 @@ ion-icon {
   color: #67403d;
 }
 
-.treatment-stairs span {
-  color: #381c18;
+.stairs span {
+  color: #67403d;
 }
 
-.treatment-stairs__img {
+.stairs__img {
   height: 48rem;
   object-fit: cover;
   display: block;
+}
+
+.stairs .btn {
+  background-color: #575555;
+  border: 2px solid #575555;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fff;
+  color: #575555;
+  margin-top: 5rem;
+  width: 15rem;
+  height: 2.5rem;
+  padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,34 @@
+.stairs {
+	span {
+		color: $second-color;
+	}
+	&__img {
+		// margin: 5rem 0;
+		// width: 100vw;
+		// max-width: 100%;
+		// height: 48rem;
+		// object-fit: cover;
+		// max-width: 1400px;
+		height: 48rem;
+		object-fit: cover;
+		display: block;
+	}
+	.btn {
+		background-color: $gray-shade;
+		border: 2px solid $gray-shade;
+		background-color: transparent;
+		text-decoration: none;
+		font-size: 1.5rem;
+		color: #fff;
+		color: $gray-shade;
+		margin-top: 5rem;
+		width: 15rem;
+		height: 2.5rem;
+		padding: 0.7rem 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto;
+		// margin-right: auto;
+	}
+}

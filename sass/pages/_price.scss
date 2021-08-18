@@ -110,3 +110,54 @@
 	// &__addition {
 	// }
 }
+
+//SECTION HOW
+
+.how {
+	margin-top: 10rem;
+	margin-bottom: 10rem;
+	position: relative;
+	span {
+		display: block;
+		color: $main-shade2;
+	}
+	.bg--center {
+		position: absolute;
+		z-index: -1;
+		top: 10rem;
+		bottom: 0;
+		left: 30vw;
+		right: 30vw;
+		background-color: $main-color;
+	}
+	&__cards {
+		display: flex;
+		justify-content: space-evenly;
+		gap: 3rem;
+		flex-wrap: wrap;
+	}
+	&__card {
+		font-size: 1.8rem;
+		border: 1px solid $second-color;
+		background-color: $main-shade;
+		display: flex;
+		gap: 6.5rem;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 3rem 2rem;
+		border-radius: 10px;
+		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+		.icon {
+			fill: $main-shade2;
+			font-weight: 600;
+		}
+		p {
+			text-align: center;
+			// max-width: 10rem;
+
+			inline-size: 10rem;
+			overflow-wrap: break-word;
+		}
+	}
+}

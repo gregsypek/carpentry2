@@ -692,4 +692,57 @@ ion-icon {
 .price__list:not(:last-of-type) {
   margin-bottom: 5rem;
 }
+
+.how {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  position: relative;
+}
+
+.how span {
+  display: block;
+  color: #b89d7e;
+}
+
+.how .bg--center {
+  position: absolute;
+  z-index: -1;
+  top: 10rem;
+  bottom: 0;
+  left: 30vw;
+  right: 30vw;
+  background-color: #dfd3c3;
+}
+
+.how__cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.how__card {
+  font-size: 1.8rem;
+  border: 1px solid #67403d;
+  background-color: #fcfbf9;
+  display: flex;
+  gap: 6.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.how__card .icon {
+  fill: #b89d7e;
+  font-weight: 600;
+}
+
+.how__card p {
+  text-align: center;
+  inline-size: 10rem;
+  overflow-wrap: break-word;
+}
 /*# sourceMappingURL=main.css.map */

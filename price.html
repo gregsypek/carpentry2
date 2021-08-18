@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="sass/main.css" />
+  <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+
+  <title>Cennik</title>
+</head>
+
+<body>
+  <header class="header container">
+    <a href="#main">
+      <img class="logo" src="images/logo.svg" alt="Usługi Stolarskie logo" /></a>
+    <nav class="main__nav">
+      <ul class="main__list">
+        <li><a href="index.html" class="main__link"> Strona główna</a></li>
+        <li><a href="offer.html" class="main__link"> Oferta</a></li>
+        <li><a href="price.html" class="main__link"> Cennik</a></li>
+        <li><a href="contact.html" class="main__link"> Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="price" class="price">
+      <div class="price__top padding--big container">
+        <h2 class="heading-secondary">Nasze oferta<span>cenowa</span></h2>
+        <h3 class="price__description description">
+          Na cenę schodów ma wpływ wiele czynników, dlatego każde schody są
+          wyceniane indywidualnie. Zanim ustalimy dokładną cenę musimy ustalić
+          gatunek drewna, rodzaj balustrady, rodzaj wykończenia oraz dodatki.
+          Poniżej przedstawiamy przykładowe ceny wyjściowe dla wykonanych
+          schodów.
+        </h3>
+      </div>
+      <div class="price__bottom container--big">
+
+        <div class="price__row row--1">
+          <div class="price__col col--1 bg--left">
+            <div class="price__box">
+              <img src="images/proste.png" alt="schody proste" class="price__photo" />
+              <p class="price__title">Schody proste na betonie</p>
+            </div>
+          </div>
+          <div class="price__col col--2">
+            <div class="price__card">
+              <p class="price__card-heading">Cena netto</p>
+              <div class="price__card-box">
+                <sup>od</sup>
+                <span class="price__card-value">
+                  8000
+                </span>
+                <sub>zł</sub>
+              </div>
+            </div>
+          </div>
+          <div class="price__col col--3">
+            <div class="price__lists">
+              <div class="price__list">
+                <header>Cena obejmuje</header>
+                <ul class="price__includes">
+                  <li>pomiar, montaż</li>
+                  <li>umowę, gwarancję</li>
+                  <li>montaż u klienta</li>
+                </ul>
+              </div>
+              <div class="price__list">
+                <header>Opcje dodatkowe</header>
+                <ul class=price__addition">
+                  <li>nowoczesna balustrada</li>
+                  <li>oświetlenie ledowe</li>
+                </ul>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="price__row row--2"> 
+          <div class="price__col col--1 bg--right">
+
+            <div class="price__lists">
+              <div class="price__list">
+                <header>Cena obejmuje</header>
+                <ul class="price__includes">
+                  <li>pomiar, montaż</li>
+                  <li>umowę, gwarancję</li>
+                  <li>montaż u klienta</li>
+                </ul>
+              </div>
+              <div class="price__list">
+                <header>Opcje dodatkowe</header>
+                <ul class=price__addition">
+                  <li>nowoczesna balustrada</li>
+                  <li>oświetlenie ledowe</li>
+                </ul>
+
+
+              </div>
+            </div>
+          </div>
+        
+
+          <div class="price__col col--2">
+            <div class="price__card">
+              <p class="price__card-heading">Cena netto</p>
+              <div class="price__card-box">
+                <sup>od</sup>
+                <span class="price__card-value">
+                  12000
+                </span>
+                <sub>zł</sub>
+              </div>
+            </div>
+          </div>
+          <div class="price__col col--3">
+            <div class="price__box">
+            <img src="images/zabieg.png" alt="schody proste" class="price__photo" />
+            <p class="price__title">Schody z zabiegiem</p>
+            </div>
+          </div>
+        </div>
+           <div class="price__row row--3">
+          <div class="price__col col--1 bg--left">
+            <div class="price__box">
+              <img src="images/balustrady.png" alt="schody proste" class="price__photo" />
+              <p class="price__title">balustrada wzór 3</p>
+            </div>
+          </div>
+          <div class="price__col col--2">
+            <div class="price__card">
+              <p class="price__card-heading">Cena netto</p>
+              <div class="price__card-box">
+                <sup>od</sup>
+                <span class="price__card-value">
+                  800
+                </span>
+                <sub>zł/mb</sub>
+              </div>
+            </div>
+          </div>
+          <div class="price__col col--3">
+            <div class="price__lists">
+              <div class="price__list">
+                <header>Cena obejmuje</header>
+                <ul class="price__includes">
+                  <li>pomiar, montaż</li>
+                  <li>umowę, gwarancję</li>
+                  <li>montaż u klienta</li>
+                </ul>
+              </div>             
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+  <footer class="footer padding--footer" id="footer">
+    <div class="footer__box">
+      <div class="footer__logo">
+        <a href="#hero"><img src="./images/logo2.svg" alt="logo firmy" /></a>
+      </div>
+      <ul class="footer__icons">
+        <li class="footer__icon">
+          <a href="#" class="footer__link">
+            <ion-icon class="icon footer--icon" name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+        <li class="footer__icon">
+          <a href="#" class="footer__link">
+            <ion-icon class="icon footer--icon" name="pin"></ion-icon>
+          </a>
+        </li>
+        <li class="footer__icon">
+          <a href="#" class="footer__link">
+            <ion-icon class="icon footer--icon" name="mail"></ion-icon>
+          </a>
+        </li>
+        <li class="footer__icon">
+          <a href="#" class="footer__link">
+            <ion-icon class="icon footer--icon" name="call"></ion-icon>
+          </a>
+        </li>
+      </ul>
+      <p class="footer__copyright">
+        Copyright© 2021 by gregsypek. All rights reserved.
+      </p>
+    </div>
+
+    <div class="footer__address">
+      <p class="footer__heading">Kontakt</p>
+      <address class="footer__address">
+        <p>Stanisław Zaliński</p>
+        <p>Trzciana 488C</p>
+        <p>39-304 Czermin</p>
+      </address>
+    </div>
+    <div class="footer__nav">
+      <p class="footer__heading">Informacje</p>
+      <ul class="footer__links">
+        <li><a href="index.html" class="footer__link">O nas</a></li>
+        <li><a href="price.html" class="footer__link">Oferta</a></li>
+        <li><a href="price.html" class="footer__link">Cennik</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoiZ3JlZ3N5cGVrIiwiYSI6ImNrZ2wwZTFldTAwejgyeWw4a29sdWVwNHkifQ.v-H4CYHdoVrDy9bdDCcnlg";
+    var map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/navigation-day-v1",
+      center: [21.4289, 50.2901],
+      zoom: 10,
+    });
+  </script>
+</body>
+
+</html>

@@ -3,7 +3,6 @@
 .container {
 	/* 1140px */
 	max-width: 120rem;
-	// padding: 5rem 5rem 0 5rem;
 	margin: 0 auto;
 }
 .container--big {
@@ -16,39 +15,44 @@
 /* *************PADDINGS************/
 
 .padding--small {
-	padding: 5rem 5vw;
+	padding: 4.8rem 4.8vw;
 }
 .padding--big {
-	padding: 10rem 5vw;
+	padding: 9.6rem 4.8vw;
 }
 .padding--huge {
-	padding: 15rem 5vw;
-}
-.padding--footer {
-	padding-bottom: 5rem;
+	padding: 12.8rem 4.8vw;
 }
 
 /* *************HEADERS************/
 
-.heading-secondary {
-	font-size: 4rem;
-	color: inherit;
-	margin-right: 10rem;
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
 	font-weight: 600;
-	line-height: 117%;
+	color: $gray-color;
 	letter-spacing: 0.05em;
+}
+.heading-primary {
+	font-size: 5.2rem;
+	line-height: 117%;
+}
+
+.heading-secondary {
+	font-size: 4.4rem;
+	margin-right: 9.6rem;
+	line-height: 112%;
 }
 .heading-tertiary {
 	font-weight: 500;
-	font-size: 2.2rem;
-	color: inherit;
-	margin-bottom: 5rem;
+	font-size: 2.4rem;
+	margin-bottom: 4.8rem;
+	line-height: 112%;
 }
 .description {
 	font-size: 2rem;
 	line-height: 148%;
 	letter-spacing: 0.05em;
-	color: inherit;
 	font-weight: 400;
 }
 .stairs__info {
@@ -59,12 +63,12 @@
 	// padding: 0 10vw 0 10vw;
 	h3,
 	p {
-		padding: 0 10vw;
+		padding: 0 9.6vw;
 	}
 }
 .stairs__description {
 	display: flex;
-	padding-bottom: 10rem;
+	padding-bottom: 9.6rem;
 	gap: 10vw;
 	margin: 0 auto;
 	// padding-left: 10vw;
@@ -73,7 +77,7 @@
 	.description {
 		flex: 2;
 		// height: 10rem;
-		padding: 2rem 10vw 2rem 0;
+		padding: 2.4rem 9.6vw 2.4rem 0;
 		max-width: 350rem;
 		margin: auto 0;
 	}
@@ -90,11 +94,24 @@
 	display: flex;
 	align-items: center;
 	h3 {
-		padding-left: 10rem;
+		padding-left: 9.6rem;
 		border-left: 3px solid $color;
 	}
 	span {
 		display: block;
 		color: $color;
+	}
+}
+.mb--md {
+	margin-bottom: 4.8rem;
+}
+.mb--bg {
+	margin-bottom: 9.6rem;
+}
+
+// 1344px
+@media (max-width: 84em) {
+	.header {
+		max-width: 120rem;
 	}
 }

@@ -1,16 +1,12 @@
 .contact {
 	&__top {
 		@include sectionHead($second-color);
-		margin-bottom: 10rem;
 	}
 	&__row {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		font-size: 2.1rem;
-		// &:not(:last-of-type) {
-		margin-bottom: 5rem;
-		// }
+		font-size: 2rem;
 	}
 
 	&__tab {
@@ -19,7 +15,7 @@
 		align-items: center;
 		background-color: $second-color;
 		flex-basis: 30rem;
-		height: 15rem;
+		height: 10vw;
 		flex-grow: 0;
 		&:nth-of-type(2) {
 			justify-content: flex-start;
@@ -31,7 +27,7 @@
 		border: 2px solid $main-color;
 		padding: 2rem;
 		margin: 0 auto;
-		border-radius: 5px;
+		border-radius: 10px;
 		text-align: center;
 		line-height: 148%;
 		display: flex;
@@ -46,6 +42,6 @@
 
 .contact-icon {
 	fill: $main-shade;
-	width: 40%;
+	width: 35%;
 	padding: 2rem;
 }

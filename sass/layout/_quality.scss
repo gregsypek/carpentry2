@@ -4,13 +4,13 @@
 		@include sectionHead($main-shade);
 	}
 	&__bottom {
-		margin: 15rem 0 10rem 0;
+		margin: 12.8rem 0 9.6rem 0;
 	}
 	&__cards {
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
-		gap: 5rem;
+		gap: 4.8rem;
 	}
 	&__card {
 		position: relative;
@@ -25,7 +25,7 @@
 		font-weight: 400;
 		padding: 1rem;
 		margin: 0 auto;
-		border-radius: 5%;
+		border-radius: 10px;
 		p {
 			text-align: center;
 		}

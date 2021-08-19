@@ -36,43 +36,48 @@ ion-icon {
 
 /* *************PADDINGS************/
 .padding--small {
-  padding: 5rem 5vw;
+  padding: 4.8rem 4.8vw;
 }
 
 .padding--big {
-  padding: 10rem 5vw;
+  padding: 9.6rem 4.8vw;
 }
 
 .padding--huge {
-  padding: 15rem 5vw;
-}
-
-.padding--footer {
-  padding-bottom: 5rem;
+  padding: 12.8rem 4.8vw;
 }
 
 /* *************HEADERS************/
-.heading-secondary {
-  font-size: 4rem;
-  color: inherit;
-  margin-right: 10rem;
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
   font-weight: 600;
-  line-height: 117%;
+  color: #251f1f;
   letter-spacing: 0.05em;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 117%;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  margin-right: 9.6rem;
+  line-height: 112%;
 }
 
 .heading-tertiary {
   font-weight: 500;
-  font-size: 2.2rem;
-  color: inherit;
-  margin-bottom: 5rem;
+  font-size: 2.4rem;
+  margin-bottom: 4.8rem;
+  line-height: 112%;
 }
 
 .description {
   font-size: 2rem;
   line-height: 148%;
   letter-spacing: 0.05em;
-  color: inherit;
   font-weight: 400;
 }
 
@@ -84,19 +89,19 @@ ion-icon {
 
 .stairs__info h3,
 .stairs__info p {
-  padding: 0 10vw;
+  padding: 0 9.6vw;
 }
 
 .stairs__description {
   display: flex;
-  padding-bottom: 10rem;
+  padding-bottom: 9.6rem;
   gap: 10vw;
   margin: 0 auto;
 }
 
 .stairs__description .description {
   flex: 2;
-  padding: 2rem 10vw 2rem 0;
+  padding: 2.4rem 9.6vw 2.4rem 0;
   max-width: 350rem;
   margin: auto 0;
 }
@@ -108,25 +113,39 @@ ion-icon {
 }
 
 /* *************MIXIN************/
+.mb--md {
+  margin-bottom: 4.8rem;
+}
+
+.mb--bg {
+  margin-bottom: 9.6rem;
+}
+
+@media (max-width: 84em) {
+  .header {
+    max-width: 120rem;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10rem;
+  min-height: 9.6rem;
+  padding: 0 4.8rem;
   max-width: 125rem;
   margin: 0 auto;
 }
 
-.header img {
-  width: 10rem;
-  height: auto;
+.header .logo {
+  height: 6.4rem;
 }
 
 .header .main__list {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 5rem;
+  gap: 4.8rem;
 }
 
 .header .main__link:link, .header .main__link:visited {
@@ -144,33 +163,28 @@ ion-icon {
   border-bottom: 3px solid #67403d;
 }
 
+@media (max-width: 84em) {
+  .header {
+    max-width: 120rem;
+  }
+}
+
 .section-hero {
-  padding: 10rem 0 10rem 0;
+  padding: 9.6rem 0;
 }
 
 .section-hero .hero {
-  padding: 0 5vw;
+  padding: 0 4.8vw;
   max-width: 120rem;
   display: grid;
-  gap: 5rem;
+  gap: 4.8rem;
   margin: 0 auto;
   grid-template-columns: 1fr 1fr;
 }
 
-.section-hero .hero__text-box {
-  margin-bottom: 5rem;
-}
-
-.section-hero .hero__text-box h1 {
-  font-size: 4.8rem;
-  font-weight: 600;
-  line-height: 114%;
-  letter-spacing: 0.05em;
-  margin-bottom: 10rem;
-}
-
 .section-hero .hero__text-box span {
   color: #575555;
+  color: #a98863;
 }
 
 .section-hero .hero__text-box .btn:link,
@@ -209,7 +223,7 @@ ion-icon {
 }
 
 .quality__top h3 {
-  padding-left: 10rem;
+  padding-left: 9.6rem;
   border-left: 3px solid #fcfbf9;
 }
 
@@ -219,14 +233,14 @@ ion-icon {
 }
 
 .quality__bottom {
-  margin: 15rem 0 10rem 0;
+  margin: 12.8rem 0 9.6rem 0;
 }
 
 .quality__cards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 4.8rem;
 }
 
 .quality__card {
@@ -242,7 +256,7 @@ ion-icon {
   font-weight: 400;
   padding: 1rem;
   margin: 0 auto;
-  border-radius: 5%;
+  border-radius: 10px;
 }
 
 .quality__card p {
@@ -286,10 +300,10 @@ ion-icon {
 }
 
 .about h2 {
-  padding-bottom: 3rem;
+  padding-bottom: 3.2rem;
   display: inline-block;
   border-bottom: 3px solid #67403d;
-  margin-bottom: 5rem;
+  margin-bottom: 4.8rem;
 }
 
 .about span {
@@ -298,11 +312,11 @@ ion-icon {
 
 .about__box {
   display: flex;
-  gap: 10rem;
+  gap: 9.6rem;
 }
 
 .about__description p:not(:last-of-type) {
-  margin-bottom: 5rem;
+  margin-bottom: 4.8rem;
 }
 
 .about__photo {
@@ -324,7 +338,7 @@ ion-icon {
   display: flex;
   gap: 2rem;
   list-style: none;
-  margin: 3rem 0 5rem 0;
+  margin: 3.2rem 0 4.8rem 0;
 }
 
 .footer__copyright {
@@ -341,7 +355,6 @@ ion-icon {
 
 .footer__heading {
   font-size: 2rem;
-  margin-bottom: 5rem;
 }
 
 .footer__nav {
@@ -383,7 +396,7 @@ ion-icon {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 4.5rem;
+  gap: 4.8rem;
 }
 
 .single__image {
@@ -406,7 +419,7 @@ ion-icon {
 }
 
 .single__image:not(:last-of-type) {
-  margin-bottom: 4.5rem;
+  margin-bottom: 4.8rem;
 }
 
 .single__image img {
@@ -434,14 +447,14 @@ ion-icon {
 
 .single__image p {
   color: #dfd3c3;
-  font-size: 2.1rem;
+  font-size: 2rem;
   text-align: center;
   top: 50%;
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
   transition: all 0.4s ease-in-out;
-  padding: 1rem 3rem;
+  padding: 2rem 3.2rem;
 }
 
 .single__image p,
@@ -467,6 +480,7 @@ ion-icon {
   height: 50rem;
   margin: 0 auto;
   margin-bottom: 10rem;
+  border: 2px solid #dfd3c3;
 }
 
 .offer__top {
@@ -476,7 +490,7 @@ ion-icon {
 }
 
 .offer__top h3 {
-  padding-left: 10rem;
+  padding-left: 9.6rem;
   border-left: 3px solid #67403d;
 }
 
@@ -516,11 +530,10 @@ ion-icon {
 .contact__top {
   display: flex;
   align-items: center;
-  margin-bottom: 10rem;
 }
 
 .contact__top h3 {
-  padding-left: 10rem;
+  padding-left: 9.6rem;
   border-left: 3px solid #67403d;
 }
 
@@ -533,8 +546,7 @@ ion-icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 2.1rem;
-  margin-bottom: 5rem;
+  font-size: 2rem;
 }
 
 .contact__tab {
@@ -543,7 +555,7 @@ ion-icon {
   align-items: center;
   background-color: #67403d;
   flex-basis: 30rem;
-  height: 15rem;
+  height: 10vw;
   flex-grow: 0;
 }
 
@@ -557,7 +569,7 @@ ion-icon {
   border: 2px solid #dfd3c3;
   padding: 2rem;
   margin: 0 auto;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   line-height: 148%;
   display: flex;
@@ -572,30 +584,29 @@ ion-icon {
 
 .contact-icon {
   fill: #fcfbf9;
-  width: 40%;
+  width: 35%;
   padding: 2rem;
 }
 
 .price__top {
   display: flex;
   align-items: center;
-  margin-bottom: 10rem;
 }
 
 .price__top h3 {
-  padding-left: 10rem;
-  border-left: 3px solid #b89d7e;
+  padding-left: 9.6rem;
+  border-left: 3px solid #a98863;
 }
 
 .price__top span {
   display: block;
-  color: #b89d7e;
+  color: #a98863;
 }
 
 .price__bottom {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 9.6rem;
 }
 
 .price__row {
@@ -644,12 +655,12 @@ ion-icon {
 
 .price__photo {
   width: calc(100% - 5rem);
-  margin: 2.5rem;
+  margin: 2rem;
 }
 
 .price__title {
   text-align: left;
-  padding: 0 0 1rem 2.5rem;
+  padding: 0 0 1rem 2rem;
   font-size: 1.6rem;
 }
 
@@ -665,12 +676,12 @@ ion-icon {
 }
 
 .price__card-heading {
-  font-size: 2.1rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .price__card-value {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
@@ -694,24 +705,24 @@ ion-icon {
 }
 
 .price__list:not(:last-of-type) {
-  margin-bottom: 5rem;
+  margin-bottom: 4.8rem;
 }
 
 .how {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+  margin-top: 9.6rem;
+  margin-bottom: 9.6rem;
   position: relative;
 }
 
 .how span {
   display: block;
-  color: #b89d7e;
+  color: #a98863;
 }
 
 .how .bg--center {
   position: absolute;
   z-index: -1;
-  top: 10rem;
+  top: 9.6rem;
   bottom: 0;
   left: 30vw;
   right: 30vw;
@@ -721,7 +732,7 @@ ion-icon {
 .how__cards {
   display: flex;
   justify-content: space-evenly;
-  gap: 3rem;
+  gap: 3.2rem;
   flex-wrap: wrap;
 }
 
@@ -730,23 +741,23 @@ ion-icon {
   border: 1px solid #67403d;
   background-color: #fcfbf9;
   display: flex;
-  gap: 6.5rem;
+  gap: 6.4rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 3rem 2rem;
+  padding: 3.2rem 2.4rem;
   border-radius: 10px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .how__card .icon {
-  fill: #b89d7e;
+  fill: #a98863;
   font-weight: 600;
 }
 
 .how__card p {
   text-align: center;
-  inline-size: 10rem;
+  inline-size: 100px;
   overflow-wrap: break-word;
 }
 /*# sourceMappingURL=main.css.map */

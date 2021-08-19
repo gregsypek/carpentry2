@@ -219,7 +219,7 @@ ion-icon {
 }
 
 .quality__bottom {
-  margin: 10rem 0;
+  margin: 15rem 0 10rem 0;
 }
 
 .quality__cards {
@@ -416,7 +416,7 @@ ion-icon {
 }
 
 .single__image img.color {
-  transition: opacity 0.9s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
   opacity: 0.3;
 }
 
@@ -440,7 +440,7 @@ ion-icon {
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
-  transition: all 0.7s ease-in-out;
+  transition: all 0.4s ease-in-out;
   padding: 1rem 3rem;
 }
 
@@ -547,6 +547,10 @@ ion-icon {
   flex-grow: 0;
 }
 
+.contact__tab:nth-of-type(2) {
+  justify-content: flex-start;
+}
+
 .contact__card {
   width: 42rem;
   height: 26rem;
@@ -568,7 +572,7 @@ ion-icon {
 
 .contact-icon {
   fill: #fcfbf9;
-  font-size: 6rem;
+  width: 40%;
   padding: 2rem;
 }
 

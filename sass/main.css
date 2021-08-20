@@ -312,7 +312,8 @@ ion-icon {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 4.8rem;
+  column-gap: 4.8rem;
+  row-gap: 8rem;
 }
 
 .quality__card {
@@ -375,7 +376,6 @@ ion-icon {
   padding-bottom: 3.2rem;
   display: inline-block;
   border-bottom: 3px solid #67403d;
-  margin-bottom: 4.8rem;
 }
 
 .about span {
@@ -387,12 +387,31 @@ ion-icon {
   gap: 9.6rem;
 }
 
+@media (max-width: 44em) {
+  .about__box {
+    flex-direction: column;
+  }
+}
+
 .about__description p:not(:last-of-type) {
   margin-bottom: 4.8rem;
 }
 
+@media (max-width: 44em) {
+  .about__description {
+    order: 1;
+  }
+}
+
 .about__photo {
   max-height: 45rem;
+  object-fit: cover;
+}
+
+@media (max-width: 44em) {
+  .about__photo {
+    order: 0;
+  }
 }
 
 .footer {

@@ -19,9 +19,15 @@
 }
 .padding--big {
 	padding: 9.6rem 4.8vw;
+	@media (max-width: 44em) {
+		padding: 9.6rem 6.4vw;
+	}
 }
 .padding--huge {
 	padding: 12.8rem 4.8vw;
+}
+.padding--special {
+	padding: 9.6rem 0;
 }
 
 /* *************HEADERS************/
@@ -88,30 +94,24 @@
 	}
 }
 
-/* *************MIXIN************/
-
-@mixin sectionHead($color) {
-	display: flex;
-	align-items: center;
-	h3 {
-		padding-left: 9.6rem;
-		border-left: 3px solid $color;
-	}
-	span {
-		display: block;
-		color: $color;
-	}
-}
-.mb--md {
-	margin-bottom: 4.8rem;
-}
-.mb--bg {
-	margin-bottom: 9.6rem;
-}
-
 // 1344px
 @media (max-width: 84em) {
 	.header {
 		max-width: 120rem;
+	}
+	.heading-primary {
+		font-size: 4.4rem;
+	}
+} //1200px
+@media (max-width: 75em) {
+	.heading-secondary {
+		font-size: 3.6rem;
+		margin-right: 8rem;
+	}
+	.heading-tertiary {
+		font-size: 2rem;
+	}
+	.description {
+		font-size: 1.8rem;
 	}
 }

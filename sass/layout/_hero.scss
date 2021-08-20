@@ -1,5 +1,4 @@
 .section-hero {
-	padding: 9.6rem 0;
 	.hero {
 		padding: 0 4.8vw;
 		max-width: 120rem;
@@ -8,20 +7,35 @@
 		margin: 0 auto;
 		grid-template-columns: 1fr 1fr;
 
+		@media (max-width: 44em) {
+			padding: 0 9.6vw;
+			grid-template-columns: 1fr;
+		}
+
 		&__text-box {
+			@media (max-width: 44em) {
+				// padding: 0 8vw;
+				// grid-template-columns: 1fr;
+				max-width: 60vw;
+			}
 			span {
 				color: $gray-shade;
 				color: $main-shade2;
+				color: #a17e75;
 			}
 			.btn:link,
 			.btn:visited {
 				@include btn;
-				// background-color: #b53526;
 				background-color: $second-color;
 			}
 			.btn:hover,
 			.btn:active {
 				background-color: darken(#b53526, 20%);
+			}
+		}
+		&__img-box {
+			@media (max-width: 44em) {
+				justify-self: center;
 			}
 		}
 

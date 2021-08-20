@@ -1,8 +1,6 @@
 .offer {
-	&__top {
-		@include sectionHead($second-color);
-		margin-bottom: 10rem;
-	}
+	@include sectionHead($second-color);
+	margin-bottom: 10rem;
 }
 
 //REST STYLING IS IN LAYOUT/GALLERY.SCSS

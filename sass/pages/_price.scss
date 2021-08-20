@@ -1,7 +1,6 @@
 .price {
-	&__top {
-		@include sectionHead($main-shade2);
-	}
+	@include sectionHead($main-shade3);
+
 	&__bottom {
 		display: flex;
 		flex-direction: column;
@@ -118,7 +117,7 @@
 	position: relative;
 	span {
 		display: block;
-		color: $main-shade2;
+		color: $main-shade3;
 	}
 	.bg--center {
 		position: absolute;
@@ -148,7 +147,7 @@
 		border-radius: 10px;
 		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 		.icon {
-			fill: $main-shade2;
+			fill: $main-shade3;
 			font-weight: 600;
 		}
 		p {

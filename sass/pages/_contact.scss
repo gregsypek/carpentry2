@@ -1,7 +1,6 @@
 .contact {
-	&__top {
-		@include sectionHead($second-color);
-	}
+	@include sectionHead($second-color);
+
 	&__row {
 		display: flex;
 		justify-content: space-between;

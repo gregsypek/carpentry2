@@ -34,14 +34,6 @@ ion-icon {
   font-size: 64px;
 }
 
-.mb--md {
-  margin-bottom: 4.8rem;
-}
-
-.mb--bg {
-  margin-bottom: 9.6rem;
-}
-
 /* *************CONTAINERS************/
 .container {
   /* 1140px */
@@ -76,6 +68,15 @@ ion-icon {
 
 .padding--special {
   padding: 9.6rem 0;
+}
+
+/* *************MARGINS************/
+.mb--md {
+  margin-bottom: 4.8rem;
+}
+
+.mb--bg {
+  margin-bottom: 9.6rem;
 }
 
 /* *************HEADERS************/
@@ -230,8 +231,6 @@ ion-icon {
 }
 
 .section-hero .hero__text-box span {
-  color: #575555;
-  color: #a98863;
   color: #a17e75;
 }
 
@@ -556,10 +555,6 @@ ion-icon {
   border: 2px solid #dfd3c3;
 }
 
-.offer {
-  margin-bottom: 10rem;
-}
-
 .offer .top {
   display: grid;
   gap: 4.8rem;
@@ -622,7 +617,7 @@ ion-icon {
   margin-left: auto;
 }
 
-.contact__top .top {
+.contact .top {
   display: grid;
   gap: 4.8rem;
   align-items: stretch;
@@ -630,28 +625,28 @@ ion-icon {
 }
 
 @media (max-width: 44em) {
-  .contact__top .top {
+  .contact .top {
     grid-template-columns: 1fr;
     justify-items: left;
   }
 }
 
-.contact__top .top h2 {
+.contact .top h2 {
   border-right: 3px solid #67403d;
   padding-right: 9.6rem;
 }
 
 @media (max-width: 44em) {
-  .contact__top .top h2 {
+  .contact .top h2 {
     padding-right: 4.8rem;
   }
 }
 
-.contact__top .top h3 {
+.contact .top h3 {
   max-width: 55rem;
 }
 
-.contact__top .top span {
+.contact .top span {
   display: block;
   color: #67403d;
 }
@@ -702,7 +697,7 @@ ion-icon {
   padding: 2rem;
 }
 
-.price__top .top {
+.price .top {
   display: grid;
   gap: 4.8rem;
   align-items: stretch;
@@ -710,30 +705,30 @@ ion-icon {
 }
 
 @media (max-width: 44em) {
-  .price__top .top {
+  .price .top {
     grid-template-columns: 1fr;
     justify-items: left;
   }
 }
 
-.price__top .top h2 {
-  border-right: 3px solid #a98863;
+.price .top h2 {
+  border-right: 3px solid #a17e75;
   padding-right: 9.6rem;
 }
 
 @media (max-width: 44em) {
-  .price__top .top h2 {
+  .price .top h2 {
     padding-right: 4.8rem;
   }
 }
 
-.price__top .top h3 {
+.price .top h3 {
   max-width: 55rem;
 }
 
-.price__top .top span {
+.price .top span {
   display: block;
-  color: #a98863;
+  color: #a17e75;
 }
 
 .price__bottom {
@@ -849,7 +844,7 @@ ion-icon {
 
 .how span {
   display: block;
-  color: #a98863;
+  color: #a17e75;
 }
 
 .how .bg--center {
@@ -884,7 +879,7 @@ ion-icon {
 }
 
 .how__card .icon {
-  fill: #a98863;
+  fill: #a17e75;
   font-weight: 600;
 }
 

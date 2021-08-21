@@ -49,7 +49,7 @@ ion-icon {
 
 @media (max-width: 44em) {
   .container--big {
-    width: 80vw;
+    width: 92vw;
   }
 }
 
@@ -72,8 +72,12 @@ ion-icon {
   padding: 12.8rem 4.8vw;
 }
 
-.padding--special {
+.padding--verticall {
   padding: 9.6rem 0;
+}
+
+.padding--horizontall {
+  padding: 0 6.4vw;
 }
 
 /* *************MARGINS************/
@@ -340,6 +344,7 @@ ion-icon {
 
 .quality__card p {
   text-align: center;
+  line-height: 135%;
 }
 
 .quality__btn {
@@ -530,12 +535,16 @@ ion-icon {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 4.8rem;
+  flex-grow: 1;
 }
 
 .single__image {
-  height: 20vw;
-  max-width: 26vw;
+  min-height: 15rem;
+  max-height: 35rem;
+  max-width: 50rem;
+  min-width: 25rem;
   position: relative;
 }
 
@@ -550,10 +559,6 @@ ion-icon {
   top: 92%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.single__image:not(:last-of-type) {
-  margin-bottom: 4.8rem;
 }
 
 .single__image img {
@@ -571,7 +576,7 @@ ion-icon {
   opacity: 1;
 }
 
-.single__image:nth-of-type(2) {
+.single__image:nth-of-type(3n + 1) {
   flex: 2;
 }
 

@@ -11,7 +11,7 @@
 	// height: 48rem;
 	margin: 0 auto;
 	@media (max-width: 44em) {
-		width: 80vw;
+		width: 92vw;
 	}
 }
 
@@ -29,8 +29,11 @@
 .padding--huge {
 	padding: 12.8rem 4.8vw;
 }
-.padding--special {
+.padding--verticall {
 	padding: 9.6rem 0;
+}
+.padding--horizontall {
+	padding: 0 6.4vw;
 }
 
 /* *************MARGINS************/

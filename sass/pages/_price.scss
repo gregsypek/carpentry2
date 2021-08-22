@@ -11,42 +11,85 @@
 		display: grid;
 	}
 
-	.row--1,
-	.row--3 {
+	&__row:nth-of-type(odd) {
 		grid-template-columns: 4fr 2fr 3fr;
+		@media (max-width: 44em) {
+			.col--2 {
+				justify-content: left;
+			}
+			.col--3 {
+				justify-content: flex-end;
+				padding-right: 4.8rem;
+				transform: translateY(-7rem);
+			}
+		}
+
+		.col--1::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 33%;
+			background-color: $main-color;
+			@media (max-width: 44em) {
+				top: 3rem;
+				right: 0;
+				left: 55%;
+			}
+		}
 	}
-	.row--2 {
+
+	&__row:nth-of-type(even) {
 		grid-template-columns: 3fr 2fr 4fr;
-	}
-	// this is only for background
-	.bg--left::before {
-		content: "";
-		position: absolute;
-		z-index: -1;
-		left: 0;
-		top: 0;
-		bottom: 0;
+		@media (max-width: 44em) {
+		}
+		.col--1 {
+			order: 3;
+			@media (max-width: 44em) {
+				order: 1;
+			}
+		}
+		.col--2 {
+			order: 2;
+			@media (max-width: 44em) {
+				justify-content: flex-end;
+			}
+		}
+		.col--3 {
+			order: 1;
+			@media (max-width: 44em) {
+				order: 3;
+				transform: translateY(-7rem);
+				justify-content: flex-start;
+				padding-left: 3.2rem;
+			}
+		}
+		.col--1::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			right: 0;
+			top: 0;
+			bottom: 0;
 
-		right: 33%;
-		background-color: $main-color;
+			left: 33%;
+			background-color: $main-color;
+			@media (max-width: 44em) {
+				top: 3rem;
+				left: 0;
+				right: 55%;
+			}
+		}
 	}
-	.bg--right::after {
-		content: "";
-		position: absolute;
-		z-index: -1;
-		right: 0;
-		top: 0;
-		bottom: 0;
-
-		left: 33%;
-		background-color: $main-color;
+	&__row:nth-of-type(odd),
+	&__row:nth-of-type(even) {
+		@media (max-width: 44em) {
+			grid-template-columns: 1fr;
+		}
 	}
 
-	// &__col:not(:last-of-type) {
-	// 	// margin-bottom: 5rem;
-	// 	// border: 1px solid black;
-	// 	// background-color: $main-color;
-	// }
 	.col--1,
 	.col--2,
 	.col--3 {
@@ -54,30 +97,54 @@
 		justify-content: center;
 		align-items: center;
 	}
+
 	&__photo {
 		width: calc(100% - 5rem);
-		margin: 2rem;
+		margin: 2rem 2rem 0 2rem;
 	}
 	&__title {
-		text-align: left;
-		padding: 0 0 1rem 2rem;
+		text-align: center;
+		padding: 1rem 0 1rem 2rem;
 		font-size: 1.6rem;
+		@media (max-width: 44em) {
+			text-align: left;
+		}
+
+		@media (max-width: 44em) {
+			padding: 1rem 2rem 0rem 2rem;
+		}
+	}
+	&__box {
+		@media (max-width: 44em) {
+			display: flex;
+			flex-direction: column;
+			p {
+				order: 1;
+			}
+			img {
+				order: 2;
+			}
+		}
 	}
 	&__card {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 50%;
-		height: 50%;
+		width: 55%;
+		height: 45%;
 		background-color: $main-shade;
 		border-radius: 10px;
+		padding: 1.6rem;
+		@media (max-width: 44em) {
+			margin-top: 4.8rem;
+		}
+
 		&-heading {
 			font-size: 2rem;
 			margin-bottom: 1rem;
 		}
-		// &-box {
-		// }
+
 		&-value {
 			font-size: 2.4rem;
 			font-weight: 600;
@@ -87,8 +154,6 @@
 			font-size: 1.2rem;
 		}
 	}
-	// &__lists {
-	// }
 	&__list {
 		font-size: 1.6rem;
 		line-height: 140%;
@@ -103,10 +168,6 @@
 	&__list:not(:last-of-type) {
 		margin-bottom: 4.8rem;
 	}
-	// &__includes {
-	// }
-	// &__addition {
-	// }
 }
 
 //SECTION HOW
@@ -152,8 +213,6 @@
 		}
 		p {
 			text-align: center;
-			// max-width: 10rem;
-
 			inline-size: 100px;
 			overflow-wrap: break-word;
 		}

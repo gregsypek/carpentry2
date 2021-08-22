@@ -6,6 +6,17 @@
 		justify-content: space-between;
 		align-items: center;
 		font-size: 2rem;
+
+		@media (max-width: 44em) {
+			&:last-of-type {
+				// flex: 1;
+
+				.contact__tab {
+					flex-grow: 1;
+					justify-content: center;
+				}
+			}
+		}
 	}
 
 	&__tab {
@@ -15,6 +26,7 @@
 		background-color: $second-color;
 		flex-basis: 30rem;
 		height: 10vw;
+		max-height: 10rem;
 		flex-grow: 0;
 		&:nth-of-type(2) {
 			justify-content: flex-start;
@@ -41,6 +53,7 @@
 
 .contact-icon {
 	fill: $main-shade;
-	width: 35%;
+	width: 9rem;
+	// min-width: 7rem;
 	padding: 2rem;
 }

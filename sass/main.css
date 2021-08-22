@@ -615,11 +615,20 @@ ion-icon {
 }
 
 #map {
-  width: 60rem;
-  height: 50rem;
-  margin: 0 auto;
+  width: 80vw;
+  height: 50vw;
+  max-width: 800px;
+  max-height: 600px;
+  margin: 12.8rem auto;
   margin-bottom: 10rem;
   border: 2px solid #dfd3c3;
+}
+
+@media (max-width: 44em) {
+  #map {
+    width: 90vw;
+    height: 70vw;
+  }
 }
 
 .offer .top {
@@ -725,6 +734,13 @@ ion-icon {
   font-size: 2rem;
 }
 
+@media (max-width: 44em) {
+  .contact__row:last-of-type .contact__tab {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
 .contact__tab {
   display: flex;
   justify-content: flex-end;
@@ -732,6 +748,7 @@ ion-icon {
   background-color: #67403d;
   flex-basis: 30rem;
   height: 10vw;
+  max-height: 10rem;
   flex-grow: 0;
 }
 
@@ -760,7 +777,7 @@ ion-icon {
 
 .contact-icon {
   fill: #fcfbf9;
-  width: 35%;
+  width: 9rem;
   padding: 2rem;
 }
 

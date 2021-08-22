@@ -7,8 +7,13 @@
 html {
 	/* 10px / 16px = 0.625 = 62.5% */
 	font-size: 62.5%;
+	overflow-x: hidden;
 }
 
+body {
+	// works only if there is no position absolutely in relation to body
+	overflow-x: hidden;
+}
 //1200px
 @media (max-width: 75em) {
 	html {

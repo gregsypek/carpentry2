@@ -7,6 +7,11 @@
 html {
   /* 10px / 16px = 0.625 = 62.5% */
   font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 @media (max-width: 75em) {
@@ -181,13 +186,41 @@ ion-icon {
   justify-content: space-between;
   align-items: center;
   min-height: 9.6rem;
-  padding: 0 4.8rem;
+  padding: 2.4rem;
+  position: relative;
   max-width: 125rem;
   margin: 0 auto;
 }
 
+@media (max-width: 84em) {
+  .header {
+    max-width: 120rem;
+    padding: 3.2rem;
+  }
+}
+
 .header .logo {
   height: 6.4rem;
+}
+
+@media (max-width: 59em) {
+  .header .main__nav {
+    background-color: rgba(252, 251, 249, 0.98);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
 }
 
 .header .main__list {
@@ -195,6 +228,12 @@ ion-icon {
   list-style: none;
   align-items: center;
   gap: 4.8rem;
+}
+
+@media (max-width: 59em) {
+  .header .main__list {
+    flex-direction: column;
+  }
 }
 
 .header .main__link:link, .header .main__link:visited {
@@ -208,14 +247,57 @@ ion-icon {
   border-bottom: 3px solid transparent;
 }
 
+@media (max-width: 59em) {
+  .header .main__link:link, .header .main__link:visited {
+    font-weight: 500;
+    font-size: 3.2rem;
+  }
+}
+
 .header .main__link:hover, .header .main__link:active {
   border-bottom: 3px solid #67403d;
 }
 
-@media (max-width: 84em) {
-  .header {
-    max-width: 120rem;
+.btn--mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 59em) {
+  .btn--mobile-nav {
+    display: block;
+    z-index: 9999;
   }
+}
+
+.icon--mobile-nav,
+.icon--mobile-close {
+  height: 3rem;
+  width: 3rem;
+  fill: #575555;
+  position: relative;
+  z-index: 2;
+}
+
+.icon--mobile-close {
+  display: none;
+}
+
+.nav-open .main__nav {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.nav-open .icon--mobile-close {
+  display: block;
+}
+
+.nav-open .icon--mobile-nav {
+  display: none;
 }
 
 .section-hero .hero {

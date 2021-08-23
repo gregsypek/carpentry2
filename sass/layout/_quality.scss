@@ -32,20 +32,7 @@
 		}
 	}
 	&__btn {
-		// display: flex;
 		text-align: right;
-		// padding-bottom: 5rem;
-		border-radius: 5%;
-	}
-	.btn:link,
-	.btn:visited {
-		@include btn;
-		// background-color: #b53526;
-		background-color: $gray-shade;
-	}
-	.btn:hover,
-	.btn:active {
-		background-color: darken(#575555, 20%);
 	}
 }
 

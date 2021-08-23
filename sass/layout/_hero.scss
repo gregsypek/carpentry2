@@ -21,15 +21,6 @@
 			span {
 				color: #a17e75;
 			}
-			.btn:link,
-			.btn:visited {
-				@include btn;
-				background-color: $second-color;
-			}
-			.btn:hover,
-			.btn:active {
-				background-color: darken(#b53526, 20%);
-			}
 		}
 		&__img-box {
 			@media (max-width: 44em) {

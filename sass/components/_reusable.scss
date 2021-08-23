@@ -99,13 +99,26 @@
 		flex: 2;
 		// height: 10rem;
 		padding: 2.4rem 9.6vw 2.4rem 0;
-		max-width: 350rem;
 		margin: auto 0;
+
+		p {
+			max-width: 350rem;
+			@media (max-width: 44em) {
+				max-width: 60vw;
+				margin: 0 auto;
+			}
+		}
+		@media (max-width: 44em) {
+			padding: 0 4.8rem;
+		}
 	}
 	.description__aside {
 		flex: 1;
 		background-color: $main-color;
 		min-width: 20rem;
+		@media (max-width: 44em) {
+			display: none;
+		}
 	}
 }
 
@@ -128,5 +141,6 @@
 	}
 	.description {
 		font-size: 1.8rem;
+		line-height: 170%;
 	}
 }

@@ -8,6 +8,7 @@
 		@media (max-width: 44em) {
 			grid-template-columns: 1fr;
 			justify-items: left;
+			gap: 6.4rem;
 		}
 		h2 {
 			border-right: 3px solid $color;

@@ -132,6 +132,9 @@
 	}
 } //1200px
 @media (max-width: 75em) {
+	.heading-primary {
+		font-size: 4rem;
+	}
 	.heading-secondary {
 		font-size: 3.6rem;
 		margin-right: 8rem;

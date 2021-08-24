@@ -21,12 +21,13 @@
 	}
 
 	&__logo {
+		width: 8rem;
+		// transform: translateX(-5px);
 		@media (max-width: 44em) {
 			order: 1;
 		}
 	}
 	&__icons {
-		// grid-area: logo;
 		display: flex;
 		gap: 2rem;
 		list-style: none;
@@ -38,7 +39,6 @@
 		}
 	}
 	&__copyright {
-		// grid-area: copy;
 		@media (max-width: 44em) {
 			order: 2;
 			flex-basis: 100%;

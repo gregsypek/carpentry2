@@ -9,6 +9,7 @@
 		grid-template-areas:
 			"address info"
 			"box box";
+		padding: 0 6.4vw;
 	}
 	&__box {
 		grid-area: box;

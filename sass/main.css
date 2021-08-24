@@ -675,6 +675,7 @@ ion-icon {
 @media (max-width: 44em) {
   .footer {
     grid-template-areas: "address info" "box box";
+    padding: 0 6.4vw;
   }
 }
 

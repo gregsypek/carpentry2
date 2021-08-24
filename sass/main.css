@@ -264,6 +264,97 @@ ion-icon {
   }
 }
 
+.no-flexbox-gap .quality.top {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 44em) {
+  .no-flexbox-gap .quality.top {
+    margin-bottom: 6.4rem;
+  }
+}
+
+.no-flexbox-gap .footer {
+  margin-right: 4rem;
+}
+
+@media (max-width: 44em) {
+  .no-flexbox-gap .footer {
+    margin-bottom: 4rem;
+  }
+}
+
+.no-flexbox-gap .footer__icons {
+  margin-right: 2rem;
+}
+
+.no-flexbox-gap .about__box {
+  margin-right: 9.6rem;
+}
+
+@media (max-width: 44em) {
+  .no-flexbox-gap .about__box {
+    margin-bottom: 9.6rem;
+  }
+}
+
+.no-flexbox-gap .stairs__description {
+  margin-right: 10vw;
+}
+
+.no-flexbox-gap .gallery {
+  margin-right: 4.8rem;
+  margin-bottom: 4.8rem;
+}
+
+.no-flexbox-gap .quality__cards {
+  margin-right: 4.8rem;
+  margin-bottom: 8rem;
+}
+
+.no-flexbox-gap .header .main-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .section-hero .hero {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 44em) {
+  .no-flexbox-gap .section-hero .hero {
+    margin-bottom: 4.8rem;
+  }
+}
+
+.no-flexbox-gap .price__bottom {
+  margin-bottom: 9.6rem;
+}
+
+.no-flexbox-gap .how__card {
+  margin-bottom: 3.2rem;
+  margin-right: 3.2rem;
+}
+
+.no-flexbox-gap .how__card .icon {
+  margin-bottom: 6.4rem;
+}
+
+.no-flexbox-gap .quality .top,
+.no-flexbox-gap .contact .top,
+.no-flexbox-gap .price .top,
+.no-flexbox-gap .offer .top {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 44em) {
+  .no-flexbox-gap .quality .top,
+  .no-flexbox-gap .contact .top,
+  .no-flexbox-gap .price .top,
+  .no-flexbox-gap .offer .top {
+    margin-bottom: 4.8rem;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -467,6 +558,16 @@ ion-icon {
   color: #fcfbf9;
 }
 
+.quality .no-flexbox-gap .top {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 44em) {
+  .quality .no-flexbox-gap .top {
+    margin-bottom: 6.4rem;
+  }
+}
+
 .quality__bottom {
   margin: 12.8rem 0 9.6rem 0;
 }
@@ -559,7 +660,7 @@ ion-icon {
   display: grid;
   grid-template-areas: "box address info";
   justify-content: space-around;
-  row-gap: 4rem;
+  gap: 4rem;
 }
 
 @media (max-width: 44em) {
@@ -796,6 +897,16 @@ ion-icon {
   color: #67403d;
 }
 
+.offer .no-flexbox-gap .top {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 44em) {
+  .offer .no-flexbox-gap .top {
+    margin-bottom: 6.4rem;
+  }
+}
+
 .stairs span {
   color: #67403d;
 }
@@ -844,6 +955,16 @@ ion-icon {
 .contact .top span {
   display: block;
   color: #67403d;
+}
+
+.contact .no-flexbox-gap .top {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 44em) {
+  .contact .no-flexbox-gap .top {
+    margin-bottom: 6.4rem;
+  }
 }
 
 .contact__row {
@@ -933,6 +1054,16 @@ ion-icon {
 .price .top span {
   display: block;
   color: #a17e75;
+}
+
+.price .no-flexbox-gap .top {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 44em) {
+  .price .no-flexbox-gap .top {
+    margin-bottom: 6.4rem;
+  }
 }
 
 .price__bottom {

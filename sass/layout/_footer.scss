@@ -3,7 +3,7 @@
 	grid-template-areas: "box address info";
 
 	justify-content: space-around;
-	row-gap: 4rem;
+	gap: 4rem;
 
 	@media (max-width: 44em) {
 		grid-template-areas:

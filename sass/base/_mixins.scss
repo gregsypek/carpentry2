@@ -26,4 +26,11 @@
 			color: $color;
 		}
 	}
+	.no-flexbox-gap .top {
+		margin-right: 4.8rem;
+
+		@media (max-width: 44em) {
+			margin-bottom: 6.4rem;
+		}
+	}
 }

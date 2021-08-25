@@ -27,7 +27,7 @@
 	<body>
 		<header class="header">
 			<a href="index.html">
-				<img class="logo" src="images/logo3.svg" alt="Usługi Stolarskie logo"
+				<img class="logo" src="images/logo4.svg" alt="Usługi Stolarskie logo"
 			/></a>
 			<nav class="main__nav">
 				<ul class="main__list">
@@ -135,13 +135,22 @@
 					</div>
 				</div>
 			</section>
-			<section id="map"></section>
+			<section id="map">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.7008243149853!2d21.333124415717005!3d50.31617497945707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473d69f5e7dbd781%3A0xc1b2b292b7d6ff28!2sUs%C5%82ugi%20Stolarskie%20Stanis%C5%82aw%20Zali%C5%84ski%20-%20Schody%20drewniane%20-%20Domki%20do%20apiterapii!5e0!3m2!1spl!2spl!4v1629911626622!5m2!1spl!2spl"
+					width="100%"
+					height="100%"
+					style="border: 0"
+					allowfullscreen=""
+					loading="lazy"
+				></iframe>
+			</section>
 		</main>
 
 		<footer class="footer container mb--md" id="footer">
 			<div class="footer__box">
 				<div class="footer__logo">
-					<a href="#"><img src="./images/logo3.svg" alt="logo firmy" /></a>
+					<a href="#"><img src="./images/logo4.svg" alt="logo firmy" /></a>
 				</div>
 				<ul class="footer__icons">
 					<li class="footer__icon">
@@ -232,15 +241,5 @@
 				</ul>
 			</div>
 		</footer>
-		<script>
-			mapboxgl.accessToken =
-				"pk.eyJ1IjoiZ3JlZ3N5cGVrIiwiYSI6ImNrZ2wwZTFldTAwejgyeWw4a29sdWVwNHkifQ.v-H4CYHdoVrDy9bdDCcnlg";
-			var map = new mapboxgl.Map({
-				container: "map",
-				style: "mapbox://styles/mapbox/navigation-day-v1",
-				center: [21.4289, 50.2901],
-				zoom: 10,
-			});
-		</script>
 	</body>
 </html>

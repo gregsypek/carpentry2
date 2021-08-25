@@ -31,9 +31,8 @@ allLinks.forEach(function (link) {
 		}
 
 		// Scroll to other links
-		if (href.startsWith("#")) {
+		if (href.startsWith("#") && href.length > 1) {
 			e.preventDefault();
-
 			const sectionEl = document.querySelector(href);
 			sectionEl.scrollIntoView({ behavior: "smooth" });
 		}

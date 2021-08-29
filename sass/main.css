@@ -173,7 +173,6 @@ ion-icon {
 
 .heading-secondary {
   font-size: 4.4rem;
-  margin-right: 9.6rem;
   line-height: 112%;
 }
 
@@ -703,7 +702,6 @@ ion-icon {
 
 .footer__icons {
   display: flex;
-  gap: 2rem;
   list-style: none;
   margin: 3.2rem 0 4.8rem 0;
 }
@@ -729,6 +727,7 @@ ion-icon {
   color: #575555;
   font-style: normal;
   line-height: 150%;
+  padding: 1rem;
 }
 
 .footer__heading {
@@ -755,26 +754,28 @@ ion-icon {
 }
 
 .footer__link {
-  transition: color 0.3 ease;
+  transition: all 0.3 ease;
+  padding: 1rem;
 }
 
 .footer__link:link, .footer__link:visited {
   text-decoration: none;
   color: inherit;
+  display: inline-block;
 }
 
 .footer__link:hover, .footer__link:active {
   color: #251f1f;
+  outline: 1px solid #575555;
 }
 
 .footer--icon {
-  transition: color 0.3 ease;
   fill: #575555;
   width: 2rem;
 }
 
 .footer--icon:hover {
-  fill: #251f1f;
+  fill: #575555;
 }
 
 .gallery {
@@ -1109,6 +1110,7 @@ ion-icon {
 @media (max-width: 34em) {
   .price__row:nth-of-type(odd) .col--3 {
     transform: translateY(2rem);
+    padding-right: 1.6rem;
   }
 }
 
@@ -1134,6 +1136,7 @@ ion-icon {
 @media (max-width: 34em) {
   .price__row:nth-of-type(odd) .col--1::before {
     bottom: -4rem;
+    left: 40%;
   }
 }
 
@@ -1177,6 +1180,7 @@ ion-icon {
 @media (max-width: 34em) {
   .price__row:nth-of-type(even) .col--3 {
     transform: translateY(2rem);
+    padding-left: 1.6rem;
   }
 }
 
@@ -1202,6 +1206,7 @@ ion-icon {
 @media (max-width: 34em) {
   .price__row:nth-of-type(even) .col--1::before {
     bottom: -4rem;
+    right: 40%;
   }
 }
 

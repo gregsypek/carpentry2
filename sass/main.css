@@ -547,7 +547,7 @@ ion-icon {
 }
 
 .quality .top h2 {
-  border-right: 3px solid #fcfbf9;
+  border-right: 3px solid #575555;
   padding-right: 9.6rem;
 }
 
@@ -563,7 +563,7 @@ ion-icon {
 
 .quality .top span {
   display: block;
-  color: #fcfbf9;
+  color: #575555;
 }
 
 .quality .no-flexbox-gap .top {

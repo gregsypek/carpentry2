@@ -1,6 +1,6 @@
 .quality {
 	background-color: $main-color;
-	@include sectionHead($main-shade);
+	@include sectionHead($gray-shade);
 
 	&__bottom {
 		margin: 12.8rem 0 9.6rem 0;

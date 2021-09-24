@@ -4,6 +4,8 @@
 
 	justify-content: space-around;
 	gap: 4rem;
+	border-top: 2px solid $main-color;
+	padding-top: 4.8rem;
 
 	@media (max-width: 44em) {
 		grid-template-areas:
@@ -87,7 +89,8 @@
 	&__link:hover,
 	&__link:active {
 		color: $gray-color;
-		outline: 1px solid $gray-shade;
+
+		outline: 1px solid $main-color;
 	}
 	&--icon {
 		// transition: fill 0.3 ease;

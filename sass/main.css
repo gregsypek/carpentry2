@@ -669,6 +669,8 @@ ion-icon {
   grid-template-areas: "box address info";
   justify-content: space-around;
   gap: 4rem;
+  border-top: 2px solid #dfd3c3;
+  padding-top: 4.8rem;
 }
 
 @media (max-width: 44em) {
@@ -766,7 +768,7 @@ ion-icon {
 
 .footer__link:hover, .footer__link:active {
   color: #251f1f;
-  outline: 1px solid #575555;
+  outline: 1px solid #dfd3c3;
 }
 
 .footer--icon {
@@ -815,7 +817,7 @@ ion-icon {
 
 .single__image img.color {
   transition: opacity 0.4s ease-in-out;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .single__image img.color:hover {
@@ -857,7 +859,7 @@ ion-icon {
   top: 110%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0;
+  padding: 0 0 2rem 0;
 }
 
 #map {

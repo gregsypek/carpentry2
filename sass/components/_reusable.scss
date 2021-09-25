@@ -104,12 +104,13 @@
 		p {
 			max-width: 350rem;
 			@media (max-width: 44em) {
-				max-width: 60vw;
+				max-width: 75vw;
 				margin: 0 auto;
 			}
 		}
 		@media (max-width: 44em) {
-			padding: 0 3.2rem;
+			padding: 4.8rem;
+			background-color: $main-color;
 		}
 	}
 	.description__aside {

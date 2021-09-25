@@ -7,8 +7,16 @@
 		object-fit: cover;
 		display: block;
 	}
-	.btn {
+	&__btn {
 		margin-top: 6.4rem;
-		margin-left: 75%;
+		display: flex;
+		justify-content: right;
 	}
+	// .btn {
+	// 	// margin-left: 75%;
+	// 	display: block;
+	// 	width: 13rem;
+	// 	margin-left: auto;
+	// 	margin-right: 2.4rem;
+	// }
 }

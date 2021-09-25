@@ -6,7 +6,9 @@
 	gap: 4rem;
 	border-top: 2px solid $main-color;
 	padding-top: 4.8rem;
-	margin: 0 3.2rem;
+	@media (max-width: 84em) {
+		margin: 0 3.2rem;
+	}
 
 	@media (max-width: 44em) {
 		grid-template-areas:

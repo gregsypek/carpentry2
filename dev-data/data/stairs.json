@@ -1,0 +1,10 @@
+[
+  {
+    "id": 0,
+    "name": "Schody proste",
+    "summary": "Schody proste idą w jednym kierunku, są zatem łatwiejsze w realizacji, a także tańsze w porównaniu do pozostałych.",
+    "description": "Zapraszamy do zapoznania się z realizacjami tego typu schodów w naszym wykonaniu jak i z samą balustradą, którą rownież montujemy. Na zdjęciach można obejrzeć zastosowanie takich konstrukcji oraz poznać więcej szczegółów.",
+    "imageCover": "proste-bg.jpg",
+    "images": ["proste1.jpg", "proste2.jpg"]
+  }
+]

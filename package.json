@@ -1,23 +1,43 @@
 {
-	"name": "carpentry",
-	"version": "2.0.0",
-	"description": "Website for client",
-	"main": "index.js",
-	"scripts": {
-		"compile:sass": "node-sass sass/main.scss css/style.css -w"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/gregsypek/carpentry2.git"
-	},
-	"author": "gregsypek",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/gregsypek/carpentry2/issues"
-	},
-	"homepage": "https://github.com/gregsypek/carpentry2#readme",
-	"devDependencies": {
-		"node": "^16.6.1",
-		"node-sass": "^6.0.1"
-	}
+  "name": "schody-zalinski",
+  "version": "2.0.0",
+  "description": "Website for client",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "start": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregsypek/carpentry2.git"
+  },
+  "author": "gregsypek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregsypek/carpentry2/issues"
+  },
+  "homepage": "https://github.com/gregsypek/carpentry2#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.0",
+    "node": "^16.6.1",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.9",
+    "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }

@@ -9,4 +9,10 @@ router
   .get(stairController.getAllStairs)
   .post(stairController.createStair);
 
+router
+  .route('/:id')
+  .get(stairController.getStair)
+  .patch(stairController.updateStair)
+  .delete(stairController.deleteStair);
+
 module.exports = router;

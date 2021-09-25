@@ -671,12 +671,13 @@ ion-icon {
   gap: 4rem;
   border-top: 2px solid #dfd3c3;
   padding-top: 4.8rem;
+  margin: 0 3.2rem;
 }
 
 @media (max-width: 44em) {
   .footer {
     grid-template-areas: "address info" "box box";
-    padding: 0 6.4vw;
+    padding: 4.8rem 6.4vw;
   }
 }
 

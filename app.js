@@ -14,6 +14,6 @@ app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
 
 // ROUTES
-app.use('api/v1/stairs', stairRouter);
+app.use('/api/v1/stairs', stairRouter);
 
 module.exports = app;

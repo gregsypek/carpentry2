@@ -1,10 +1,37 @@
 [
   {
-    "id": 0,
     "name": "Schody proste",
-    "summary": "Schody proste idą w jednym kierunku, są zatem łatwiejsze w realizacji, a także tańsze w porównaniu do pozostałych.",
-    "description": "Zapraszamy do zapoznania się z realizacjami tego typu schodów w naszym wykonaniu jak i z samą balustradą, którą rownież montujemy. Na zdjęciach można obejrzeć zastosowanie takich konstrukcji oraz poznać więcej szczegółów.",
     "imageCover": "proste-bg.jpg",
-    "images": ["proste1.jpg", "proste2.jpg"]
+    "description": "Zapraszamy do zapoznania się z realizacjami tego typu schodów w naszym wykonaniu jak i z samą balustradą, którą rownież montujemy. Na zdjęciach można obejrzeć zastosowanie takich konstrukcji oraz poznać więcej szczegółów.",
+    "images": ["proste-1.jpg", "proste-2.jpg"],
+    "summary": "Schody proste idą w jednym kierunku, są zatem łatwiejsze w realizacji, a także tańsze w porównaniu do pozostałych."
+  },
+  {
+    "name": "Schody z zabiegiem",
+    "imageCover": "zabieg-bg.jpg",
+    "description": "Zapraszamy do zapoznania się z realizacjami tego typu schodów w naszym wykonaniu jak i z samą balustradą, którą rownież montujemy. Na zdjęciach można obejrzeć zastosowanie takich konstrukcji oraz poznać więcej szczegółów.",
+    "images": ["zabieg-1.jpg", "zabieg-2.jpg"],
+    "summary": "Schody z zabiegiem wyróżnia spocznik czyli miejsce z dużym blatem, gdzie załamuje się kierunek schodów. Ten rodzaj schodów występuje na dużych klatkach schodowych ze względu na potrzebną większą przestrzeń.."
+  },
+  {
+    "name": "Schody dywanowe",
+    "imageCover": "dywanowe-bg.jpg",
+    "description": "Zapraszamy do zapoznania się z realizacjami tego typu schodów w naszym wykonaniu jak i z samą balustradą, którą rownież montujemy. Na zdjęciach można obejrzeć zastosowanie takich konstrukcji oraz poznać więcej szczegółów.",
+    "images": ["dywanowe-1.jpg", "dywanowe-2.jpg"],
+    "summary": "Schody dywanowe pasują do nowoczesnych stylizacji. Grubość trepa jest nieco większa od standardowch, dzięki temu całość sprawia wrażenie wiszącej w przestrzeni bryły."
+  },
+  {
+    "name": "Balustrady",
+    "imageCover": "balustrady-bg.jpg",
+    "description": "Zapraszamy do zapoznania się z realizacjami balustrad. Na zdjęciach można obejrzeć zastosowanie takich konstrukcji oraz poznać więcej szczegółów..",
+    "images": ["balustrada-1.jpg", "balustrada-2.jpg"],
+    "summary": "Balustrada jest niezbędnym elementem każdych schodów. Powinna być gwarantem bezpieczeństwa oraz elementem zwieńczającym schody nadając im nowoczesny lub klasyczny styl. Najbardziej popularne to balustrady szklane, ażurowe lub klasyczne z nierdzewnej stali."
+  },
+  {
+    "name": "Domki do apiterapii",
+    "imageCover": "domek-bg.jpg",
+    "description": "Zapraszamy do zapoznania się z realizacjami domków do apiterapii. Na zdjęciach można obejrzeć gotowe domki, które wykonujemy pod klienta po wcześniejszym uzgodnieniu szczegółów. Domek kryty gontem, środek wyłożony boazerią. Środek nie malowany ze względu na pszczółki. Wyposażony w cztery ule oraz leżaki wielkopolskie po 20 ramek. Trzykrotnie malowany z zewnątrz. Możliwy odbiór osobisty w miejscowości Trzciana koło Mielca. Możliwy dowóz do klienta po uzgodnieniu ceny transportu.",
+    "images": ["domek-1.jpg", "domek-2.jpg"],
+    "summary": "Standardowy wymiar domku to 2m x 3m. Domek ocieplony wełną mineralną. Cena domku zależy od wymiarów oraz dodatków. Więcej informacji pod numerem telefonu 881359571, gdy nie odbieram proszę o wiadomość SMS, oddzwonie."
   }
 ]

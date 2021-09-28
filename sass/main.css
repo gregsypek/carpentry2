@@ -817,6 +817,7 @@ ion-icon {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  aspect-ratio: 1/1;
 }
 
 .gallery figcaption {
@@ -1304,16 +1305,18 @@ ion-icon {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 60%;
-  height: 45%;
+  width: 55%;
+  min-width: 18rem;
+  aspect-ratio: 1/1;
   background-color: #fcfbf9;
   border-radius: 10px;
-  padding: 1.6rem;
+  padding: 2rem;
 }
 
 @media (max-width: 44em) {
   .price__card {
     margin-top: 4.8rem;
+    aspect-ratio: 2/1;
   }
 }
 

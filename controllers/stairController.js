@@ -1,91 +1,66 @@
 // const { router } = require('../app');
 const Stair = require('../models/stairModel');
+const AppError = require('../utils/appError');
+const catchAsync = require('../utils/catchAsync');
 
-exports.getAllStairs = async (req, res) => {
-  try {
-    const stairs = await Stair.find();
+exports.getAllStairs = catchAsync(async (req, res, next) => {
+  const stairs = await Stair.find();
+  res.status(200).json({
+    status: 'success',
+    results: stairs.length,
+    data: {
+      stairs,
+    },
+  });
+});
 
-    res.status(200).json({
-      status: 'success',
-      results: stairs.length,
-      data: {
-        stairs,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err,
-    });
+exports.getStair = catchAsync(async (req, res, next) => {
+  const stair = await Stair.findById(req.params.id);
+
+  if (!stair) {
+    return next(new AppError('Nie ma takiej usługi', 404));
   }
-};
+  res.status(200).json({
+    status: 'success',
+    data: {
+      stair,
+    },
+  });
+});
 
-exports.getStair = async (req, res) => {
-  try {
-    const stair = await Stair.findById(req.params.id);
+exports.createStair = catchAsync(async (req, res, next) => {
+  const newStair = await Stair.create(req.body);
+  res.status(201).json({
+    status: 'success',
+    data: {
+      stair: newStair,
+    },
+  });
+});
 
-    res.status(200).json({
-      status: 'success',
-      data: {
-        stair,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err,
-    });
+exports.updateStair = catchAsync(async (req, res, next) => {
+  const stair = await Stair.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  if (!stair) {
+    return next(new AppError('Nie ma takiej usługi', 404));
   }
-};
-
-exports.createStair = async (req, res) => {
-  try {
-    const newStair = await Stair.create(req.body);
-
-    res.status(201).json({
-      status: 'success',
-      data: {
-        stair: newStair,
-      },
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: err,
-    });
+  res.status(200).json({
+    status: 'success',
+    data: {
+      stair,
+    },
+  });
+});
+exports.deleteStair = catchAsync(async (req, res, next) => {
+  const stair = await Stair.findByIdAndDelete(req.params.id);
+  if (!stair) {
+    return next(new AppError('Nie ma takiej usługi', 404));
   }
-};
-
-exports.updateStair = async (req, res) => {
-  try {
-    const stair = await Stair.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
-    res.status(200).json({
-      status: 'success',
-      data: {
-        stair,
-      },
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: 'Niewłaściwe dane',
-    });
-  }
-};
-exports.deleteStair = async (req, res) => {
-  try {
-    await Stair.findByIdAndDelete(req.params.id);
-    res.status(204).json({
-      status: 'success',
-      data: null,
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err,
-    });
-  }
-};
+  res.status(204).json({
+    status: 'success',
+    data: null,
+  });
+});

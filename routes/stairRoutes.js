@@ -13,6 +13,10 @@ router
   .route('/:id')
   .get(stairController.getStair)
   .patch(stairController.updateStair)
-  .delete(stairController.deleteStair);
+  .delete(
+    authController.protect,
+    authController.restrictTo('admin'),
+    stairController.deleteStair
+  );
 
 module.exports = router;

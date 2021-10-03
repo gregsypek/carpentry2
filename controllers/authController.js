@@ -4,6 +4,7 @@ const User = require('../models/userModel');
 
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
+const sendEmail = require('../utils/email');
 
 const signToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -121,6 +122,36 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   //2) Generate the random reset token
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
-  //3)Send it to user's email
+  //3) Send it to user's email
+  //   here we actually gotta send
+  // the plain, original resetToken, and not the encrypted one.
+  // All right?
+  // We will then, in the next step,
+  // compare the original token with the encrypted one.
+  const resetURL = `${req.protocol}://${req.get(
+    'host'
+  )}/api/v1/users/resetPassword/${resetToken}`;
+
+  const message = `Zapomniałeś hasła? Wypełnij formularz z nowym hasłem oraz jego potwierdzeniem tutaj: ${resetURL}.\nJezeli nie zapomniałeś hasła, zignoruj tą wiadomość`;
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: 'Twój token do zresetowania hasła (wazny tylko 10 minut',
+      message,
+    });
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Token sent to email',
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+
+    await user.save({ validateBeforeSave: false });
+    return next(
+      new AppError('Wystąpił problem z wysłaniem emaila. Spróbuj ponownie', 500)
+    );
+  }
 });
 exports.resetPassword = catchAsync(async (req, res, next) => {});

@@ -19,6 +19,7 @@ router.patch('/resetPassword/:token', authController.resetPassword);
 // and since no one can change the ID in that json web token
 // without knowing the secret
 router.patch('/updateMe', authController.protect, userController.updateMe);
+router.delete('/deleteMe', authController.protect, userController.deleteMe);
 
 router.patch(
   '/updateMyPassword',

@@ -10,6 +10,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const stairRouter = require('./routes/stairRoutes');
 const userRouter = require('./routes/userRoutes');
+const priceRouter = require('./routes/priceRoutes');
 
 const app = express();
 
@@ -58,6 +59,7 @@ app.use((req, res, next) => {
 // ROUTES
 app.use('/api/v1/stairs', stairRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/price', priceRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Nie mozna odnaleźć ${req.originalUrl} na tym serwerze!`));

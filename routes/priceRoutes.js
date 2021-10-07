@@ -13,4 +13,9 @@ router
     priceController.createPrice
   );
 
+router
+  .route('/:id')
+  .patch(priceController.updatePrice)
+  .delete(priceController.deletePrice);
+
 module.exports = router;

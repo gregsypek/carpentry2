@@ -1,66 +1,15 @@
 // const { router } = require('../app');
 const Stair = require('../models/stairModel');
-const AppError = require('../utils/appError');
-const catchAsync = require('../utils/catchAsync');
+// const AppError = require('../utils/appError');
+// const catchAsync = require('../utils/catchAsync');
+const factory = require('./handlerFactory');
 
-exports.getAllStairs = catchAsync(async (req, res, next) => {
-  const stairs = await Stair.find();
-  res.status(200).json({
-    status: 'success',
-    results: stairs.length,
-    data: {
-      stairs,
-    },
-  });
-});
+exports.getAllStairs = factory.getAll(Stair);
 
-exports.getStair = catchAsync(async (req, res, next) => {
-  const stair = await Stair.findById(req.params.id);
+exports.getStair = factory.getOne(Stair);
 
-  if (!stair) {
-    return next(new AppError('Nie ma takiej usługi', 404));
-  }
-  res.status(200).json({
-    status: 'success',
-    data: {
-      stair,
-    },
-  });
-});
+exports.createStair = factory.createOne(Stair);
 
-exports.createStair = catchAsync(async (req, res, next) => {
-  const newStair = await Stair.create(req.body);
-  res.status(201).json({
-    status: 'success',
-    data: {
-      stair: newStair,
-    },
-  });
-});
+exports.updateStair = factory.updateOne(Stair);
 
-exports.updateStair = catchAsync(async (req, res, next) => {
-  const stair = await Stair.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-  });
-
-  if (!stair) {
-    return next(new AppError('Nie ma takiej usługi', 404));
-  }
-  res.status(200).json({
-    status: 'success',
-    data: {
-      stair,
-    },
-  });
-});
-exports.deleteStair = catchAsync(async (req, res, next) => {
-  const stair = await Stair.findByIdAndDelete(req.params.id);
-  if (!stair) {
-    return next(new AppError('Nie ma takiej usługi', 404));
-  }
-  res.status(204).json({
-    status: 'success',
-    data: null,
-  });
-});
+exports.deleteStair = factory.deleteOne(Stair);

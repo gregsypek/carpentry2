@@ -1,25 +1,10 @@
 const Price = require('../models/priceModel');
-const catchAsync = require('../utils/catchAsync');
+// const catchAsync = require('../utils/catchAsync');
+const factory = require('./handlerFactory');
 
-exports.getAllPrice = catchAsync(async (req, res, next) => {
-  const allPrice = await Price.find();
+exports.getAllPrice = factory.getAll(Price);
+exports.createPrice = factory.createOne(Price);
 
-  res.status(200).json({
-    status: 'success',
-    results: allPrice.lenght,
-    data: {
-      allPrice,
-    },
-  });
-});
-exports.createPrice = catchAsync(async (req, res, next) => {
-  const newPrice = await Price.create(req.body);
-
-  res.status(201).json({
-    status: 'success',
-
-    data: {
-      newPrice,
-    },
-  });
-});
+//Don't update passwords with this
+exports.updatePrice = factory.updateOne(Price);
+exports.deletePrice = factory.deleteOne(Price);

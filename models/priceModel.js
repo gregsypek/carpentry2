@@ -23,6 +23,14 @@ const priceSchema = new mongoose.Schema({
   },
 });
 
+// priceSchema.pre(/^find/, function (next) {
+//   this.populate({
+//     path: 'stairs',
+//     select: 'photo',
+//   });
+//   next();
+// });
+
 const Price = mongoose.model('Price', priceSchema);
 
 module.exports = Price;

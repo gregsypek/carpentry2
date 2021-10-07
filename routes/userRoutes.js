@@ -11,6 +11,9 @@ router.post('/login', authController.login);
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
 
+//Protect all routes after this middleware
+router.use(authController.protect);
+
 // And so all of this is of course really secure,
 // again because the ID of the user that is gonna be updated
 // come from request.user,
@@ -18,14 +21,13 @@ router.patch('/resetPassword/:token', authController.resetPassword);
 // which in turn got the idea from the json web token,
 // and since no one can change the ID in that json web token
 // without knowing the secret
-router.patch('/updateMe', authController.protect, userController.updateMe);
-router.delete('/deleteMe', authController.protect, userController.deleteMe);
+router.patch('/updateMe', userController.updateMe);
+router.delete('/deleteMe', userController.deleteMe);
+router.patch('/updateMyPassword', authController.updatePassword);
+router.get('/me', userController.getMe, userController.getUser);
 
-router.patch(
-  '/updateMyPassword',
-  authController.protect,
-  authController.updatePassword
-);
+router.use(authController.restrictTo('admin'));
+
 router
   .route('/')
   .get(userController.getAllUsers)
@@ -34,7 +36,7 @@ router
 router
   .route('/:id')
   .get(userController.getUser)
-  .patch(userController.updateUser);
-// .delete(userController.deleteUser);
+  .patch(userController.updateUser)
+  .delete(userController.deleteUser);
 
 module.exports = router;

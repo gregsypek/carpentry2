@@ -4,6 +4,8 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
+// router.use(authController.protect, authController.restrictTo('admin'));
+
 router
   .route('/')
   .get(priceController.getAllPrice)
@@ -12,6 +14,7 @@ router
     authController.restrictTo('admin'),
     priceController.createPrice
   );
+router.use(authController.protect, authController.restrictTo('admin'));
 
 router
   .route('/:id')

@@ -6,13 +6,21 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(authController.protect, stairController.getAllStairs)
-  .post(stairController.createStair);
+  .get(stairController.getAllStairs)
+  .post(
+    authController.protect,
+    authController.restrictTo('admin'),
+    stairController.createStair
+  );
 
 router
   .route('/:id')
   .get(stairController.getStair)
-  .patch(stairController.updateStair)
+  .patch(
+    authController.protect,
+    authController.restrictTo('admin'),
+    stairController.updateStair
+  )
   .delete(
     authController.protect,
     authController.restrictTo('admin'),

@@ -1,5 +1,6 @@
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
+const APIFeatures = require('../utils/apiFeatures');
 
 exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
@@ -74,7 +75,17 @@ exports.getOne = (Model) =>
 //   });
 exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
-    const doc = await Model.find();
+    // To allow for nested GET reviews on stair (hack)
+    // let filter = {};
+    // if (req.params.stairId) filter = { stair: req.params.stairId };
+
+    // const features = new APIFeatures(Model.find(filter), req.query).filter().sort();
+    const features = new APIFeatures(Model.find(), req.query).filter().sort();
+    // .limitFields();
+
+    // const doc = await features.query.explain();
+    const doc = await features.query;
+    // const doc = await Model.find();
     res.status(200).json({
       status: 'success',
       results: doc.length,

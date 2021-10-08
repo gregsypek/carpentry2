@@ -2,6 +2,8 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Stair = require('../models/stairModel');
+const Price = require('../models/priceModel');
+const User = require('../models/userModel');
 
 dotenv.config({ path: './config.env' });
 
@@ -23,11 +25,15 @@ mongoose
 //READ JSON FILE
 
 const stairs = JSON.parse(fs.readFileSync(`${__dirname}/stairs.json`, 'utf-8'));
+const price = JSON.parse(fs.readFileSync(`${__dirname}/price.json`, 'utf-8'));
+const user = JSON.parse(fs.readFileSync(`${__dirname}/user.json`, 'utf-8'));
 
 //IMPORT DATA INTO DB
 const importData = async () => {
   try {
     await Stair.create(stairs);
+    await Price.create(price);
+    await User.create(user, { validateBeforeSave: false });
     console.log('Dane załodowane!');
   } catch (err) {
     console.log(err);
@@ -40,6 +46,8 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await Stair.deleteMany();
+    await Price.deleteMany();
+    await User.deleteMany();
     console.log('Dane usunięte!');
   } catch (err) {
     console.log(err);

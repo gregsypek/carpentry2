@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 
 const priceSchema = new mongoose.Schema({
-  imageCover: {
-    type: String,
-    required: [true, 'Schody muszą mieć zdjęcie poglądowe'],
-  },
   title: {
     type: String,
     required: [true, 'Podaj nazwę wycenianej usługi'],
   },
+  imageCover: {
+    type: String,
+    required: [true, 'Schody muszą mieć zdjęcie poglądowe'],
+  },
+
   price: {
     type: Number,
     required: [true, 'Podaj cenę za usługę'],

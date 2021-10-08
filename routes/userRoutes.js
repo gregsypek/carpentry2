@@ -14,8 +14,8 @@ router.patch('/resetPassword/:token', authController.resetPassword);
 //Protect all routes after this middleware
 router.use(authController.protect);
 
-// And so all of this is of course really secure,
-// again because the ID of the user that is gonna be updated
+// all of this is of course really secure,
+// because the ID of the user that is gonna be updated
 // come from request.user,
 // which was set by this protect middleware here,
 // which in turn got the idea from the json web token,

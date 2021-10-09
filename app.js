@@ -12,6 +12,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const stairRouter = require('./routes/stairRoutes');
 const userRouter = require('./routes/userRoutes');
 const priceRouter = require('./routes/priceRoutes');
+const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
 
@@ -60,12 +61,8 @@ app.use((req, res, next) => {
 });
 
 // ROUTES
-app.get('/', (req, res) => {
-  res.status(200).render('base', {
-    tour: 'Schody',
-  });
-});
 
+app.use('/', viewRouter);
 app.use('/api/v1/stairs', stairRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/price', priceRouter);

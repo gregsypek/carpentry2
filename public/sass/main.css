@@ -29,7 +29,7 @@ body {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #251f1f;
@@ -409,7 +409,8 @@ ion-icon {
   }
 }
 
-.header .main__link:link, .header .main__link:visited {
+.header .main__link:link,
+.header .main__link:visited {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -422,13 +423,15 @@ ion-icon {
 }
 
 @media (max-width: 59em) {
-  .header .main__link:link, .header .main__link:visited {
+  .header .main__link:link,
+  .header .main__link:visited {
     font-weight: 500;
     font-size: 3.2rem;
   }
 }
 
-.header .main__link:hover, .header .main__link:active {
+.header .main__link:hover,
+.header .main__link:active {
   border-bottom: 3px solid #67403d;
 }
 
@@ -666,7 +669,7 @@ ion-icon {
 
 .footer {
   display: grid;
-  grid-template-areas: "box address info";
+  grid-template-areas: 'box address info';
   justify-content: space-around;
   gap: 4rem;
   border-top: 2px solid #dfd3c3;
@@ -681,7 +684,7 @@ ion-icon {
 
 @media (max-width: 44em) {
   .footer {
-    grid-template-areas: "address info" "box box";
+    grid-template-areas: 'address info' 'box box';
     padding: 4.8rem 6.4vw;
   }
 }
@@ -740,6 +743,7 @@ ion-icon {
 
 .footer__heading {
   font-size: 2rem;
+  color: #575555;
 }
 
 .footer__nav {
@@ -766,13 +770,15 @@ ion-icon {
   padding: 1rem;
 }
 
-.footer__link:link, .footer__link:visited {
+.footer__link:link,
+.footer__link:visited {
   text-decoration: none;
   color: inherit;
   display: inline-block;
 }
 
-.footer__link:hover, .footer__link:active {
+.footer__link:hover,
+.footer__link:active {
   color: #251f1f;
   outline: 1px solid #dfd3c3;
 }
@@ -1154,7 +1160,7 @@ ion-icon {
 }
 
 .price__row:nth-of-type(odd) .col--1::before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   left: 0;
@@ -1224,7 +1230,7 @@ ion-icon {
 }
 
 .price__row:nth-of-type(even) .col--1::before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   right: 0;
@@ -1250,7 +1256,8 @@ ion-icon {
 }
 
 @media (max-width: 44em) {
-  .price__row:nth-of-type(odd), .price__row:nth-of-type(even) {
+  .price__row:nth-of-type(odd),
+  .price__row:nth-of-type(even) {
     grid-template-columns: 1fr;
   }
 }

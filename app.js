@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
@@ -14,7 +15,11 @@ const priceRouter = require('./routes/priceRoutes');
 
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 //GLOBAL  MIDDLEWARES
+//Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
 // Set security HTTP headers
 app.use(
   helmet({
@@ -46,8 +51,6 @@ app.use(xss());
 //Prevent parameter pollution( two the same fields in query are
 // converted into array - split(',') doesnt work in sort function )
 app.use(hpp());
-//Serving static files
-app.use(express.static(`${__dirname}/public`));
 
 //Test middleware
 app.use((req, res, next) => {
@@ -57,6 +60,12 @@ app.use((req, res, next) => {
 });
 
 // ROUTES
+app.get('/', (req, res) => {
+  res.status(200).render('base', {
+    tour: 'Schody',
+  });
+});
+
 app.use('/api/v1/stairs', stairRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/price', priceRouter);

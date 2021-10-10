@@ -7,5 +7,6 @@ router.get('/', viewController.getHomePage);
 router.get('/overview', viewController.getOverview);
 router.get('/stairs/:slug', viewController.getStairs);
 router.get('/price', viewController.getPrice);
+router.get('/contact', viewController.getContact);
 
 module.exports = router;

@@ -36,3 +36,8 @@ exports.getPrice = catchAsync(async (req, res) => {
     price,
   });
 });
+exports.getContact = catchAsync(async (req, res) => {
+  res.status(200).render('contact', {
+    title: 'Kontakt',
+  });
+});

@@ -2,7 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4.8rem;
+  column-gap: 4.8rem;
+  //10px is for figcaption
+  row-gap: calc(4.8rem + 20px);
 
   figure {
     min-width: 50rem;
@@ -26,7 +28,9 @@
   }
   figcaption {
     font-size: 1.4rem;
-    padding: 0.8rem 0;
+    padding: 0.8rem 1rem;
+    background: $main-color;
+    margin-top: -2px;
   }
 }
 .single__image {

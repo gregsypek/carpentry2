@@ -1,27 +1,27 @@
 [
   {
     "title": "Schody proste na betonie",
-    "imageCover": "proste-bg.jpg",
+    "imageCover": "schody-proste.jpg",
     "price": 8000,
     "priceIncluded": ["pomiar, wycenę", "umowę, gwarancję", "montaż u klienta"],
     "additionals": ["nowoczesna balustrada", "oświetlenie ledowe"]
   },
   {
     "title": "Schody z zabiegiem",
-    "imageCover": "zabieg-bg.jpg",
+    "imageCover": "schody-z-zabiegiem.jpg",
     "price": 12000,
     "priceIncluded": ["pomiar, wycenę", "umowę, gwarancję", "montaż u klienta"],
     "additionals": ["nowoczesna balustrada", "oświetlenie ledowe"]
   },
   {
-    "title": "balustrada",
-    "imageCover": "balustrada-bg.jpg",
+    "title": "balustrady",
+    "imageCover": "balustrady.jpg",
     "price": 8000,
     "priceIncluded": ["pomiar, wycenę", "umowę, gwarancję", "montaż u klienta"]
   },
   {
     "title": "Domek do apiterapii",
-    "imageCover": "domek-bg.jpg",
+    "imageCover": "domek-do-apiterapii.jpg",
     "price": 8000,
     "priceIncluded": [
       "krycie gontem",

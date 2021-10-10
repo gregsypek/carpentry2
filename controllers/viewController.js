@@ -1,4 +1,5 @@
 const Stair = require('../models/stairModel');
+const Price = require('../models/priceModel');
 const catchAsync = require('../utils/catchAsync');
 
 exports.getHomePage = (req, res) => {
@@ -25,5 +26,13 @@ exports.getStairs = catchAsync(async (req, res) => {
   res.status(200).render('stairs', {
     title: 'Schody',
     stairs,
+  });
+});
+exports.getPrice = catchAsync(async (req, res) => {
+  const price = await Price.find();
+
+  res.status(200).render('price', {
+    title: 'Cennik',
+    price,
   });
 });

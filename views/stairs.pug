@@ -1,4 +1,25 @@
 extends base 
 
 block content 
-  h1 Tutaj wybrane schody
+  section#stairs.stairs 
+    h2.heading-secondary.container.padding--big= stairs.name
+    .stairs__top.top 
+      img(class="stairs__img container--big"
+						src=`/images/${stairs.slug}/${stairs.imageCover}`
+						alt=`${stairs.slug}`)
+      .stairs__info.padding--small.container--big 
+        h3.heading-tertiary Realizacje 
+        p.stairs__invocation.description= stairs.description
+    .stairs__bottom.container.padding--huge 
+      .gallery 
+        each img, index in stairs.images
+          figure 
+            img(src=`/images/${stairs.slug}/${img}` alt=`${stairs.name}`)
+            figcaption.title= `wzór nr ${index+1}`
+
+      .stairs__btn 
+        a(href="/overview" class="btn btn--empty") Wróć
+    .stairs__description.container--big 
+      .description__aside 
+      p.description= stairs.summary
+         

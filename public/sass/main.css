@@ -29,7 +29,7 @@ body {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #251f1f;
@@ -409,8 +409,7 @@ ion-icon {
   }
 }
 
-.header .main__link:link,
-.header .main__link:visited {
+.header .main__link:link, .header .main__link:visited {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -423,15 +422,13 @@ ion-icon {
 }
 
 @media (max-width: 59em) {
-  .header .main__link:link,
-  .header .main__link:visited {
+  .header .main__link:link, .header .main__link:visited {
     font-weight: 500;
     font-size: 3.2rem;
   }
 }
 
-.header .main__link:hover,
-.header .main__link:active {
+.header .main__link:hover, .header .main__link:active {
   border-bottom: 3px solid #67403d;
 }
 
@@ -770,15 +767,13 @@ ion-icon {
   padding: 1rem;
 }
 
-.footer__link:link,
-.footer__link:visited {
+.footer__link:link, .footer__link:visited {
   text-decoration: none;
   color: inherit;
   display: inline-block;
 }
 
-.footer__link:hover,
-.footer__link:active {
+.footer__link:hover, .footer__link:active {
   color: #251f1f;
   outline: 1px solid #dfd3c3;
 }
@@ -823,6 +818,7 @@ ion-icon {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  aspect-ratio: 1/1;
 }
 
 .gallery figcaption {
@@ -1160,7 +1156,7 @@ ion-icon {
 }
 
 .price__row:nth-of-type(odd) .col--1::before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   left: 0;
@@ -1230,7 +1226,7 @@ ion-icon {
 }
 
 .price__row:nth-of-type(even) .col--1::before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   right: 0;
@@ -1256,8 +1252,7 @@ ion-icon {
 }
 
 @media (max-width: 44em) {
-  .price__row:nth-of-type(odd),
-  .price__row:nth-of-type(even) {
+  .price__row:nth-of-type(odd), .price__row:nth-of-type(even) {
     grid-template-columns: 1fr;
   }
 }
@@ -1311,16 +1306,19 @@ ion-icon {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  width: 55%;
   height: 45%;
+  min-width: 18rem;
+  aspect-ratio: 1/1;
   background-color: #fcfbf9;
   border-radius: 10px;
-  padding: 1.6rem;
+  padding: 2rem;
 }
 
 @media (max-width: 44em) {
   .price__card {
     margin-top: 4.8rem;
+    aspect-ratio: 2/1;
   }
 }
 

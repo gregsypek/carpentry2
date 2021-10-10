@@ -149,13 +149,16 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 60%;
+		width: 55%;
 		height: 45%;
+		min-width: 18rem;
+		aspect-ratio: 1/1;
 		background-color: $main-shade;
 		border-radius: 10px;
-		padding: 1.6rem;
+		padding: 2rem;
 		@media (max-width: 44em) {
 			margin-top: 4.8rem;
+			aspect-ratio: 2/1;
 		}
 
 		&-heading {

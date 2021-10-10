@@ -19,8 +19,11 @@ exports.getOverview = catchAsync(async (req, res, next) => {
     stairs,
   });
 });
-exports.getStairs = (req, res) => {
+exports.getStairs = catchAsync(async (req, res) => {
+  const stairs = await Stair.findOne({ slug: req.params.slug });
+
   res.status(200).render('stairs', {
-    title: 'Schody proste',
+    title: 'Schody',
+    stairs,
   });
-};
+});

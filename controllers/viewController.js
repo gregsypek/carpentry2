@@ -24,11 +24,11 @@ exports.getStairs = catchAsync(async (req, res) => {
   const stairs = await Stair.findOne({ slug: req.params.slug });
 
   res.status(200).render('stairs', {
-    title: 'Schody',
+    title: `${stairs.name}`,
     stairs,
   });
 });
-exports.getPrice = catchAsync(async (req, res) => {
+exports.getPrice = catchAsync(async (req, res, next) => {
   const price = await Price.find();
 
   res.status(200).render('price', {
@@ -41,3 +41,9 @@ exports.getContact = catchAsync(async (req, res) => {
     title: 'Kontakt',
   });
 });
+
+exports.getLoginForm = (req, res) => {
+  res.status(200).render('login', {
+    title: 'Zaloguj się',
+  });
+};

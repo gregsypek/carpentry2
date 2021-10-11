@@ -2,24 +2,25 @@
 // @import "abstracts/mixins";
 // @import "abstracts/variables";
 
-@import "base/colors";
-@import "base/base";
-@import "base/typography";
-@import "base/mixins";
+@import 'base/colors';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/mixins';
 
-@import "components/button";
-@import "components/reusable";
-@import "components/noFlexboxGap";
+@import 'components/button';
+@import 'components/reusable';
+@import 'components/noFlexboxGap';
 
-@import "layout/header";
-@import "layout/hero";
-@import "layout/quality";
-@import "layout/about";
-@import "layout/footer";
-@import "layout/gallery";
-@import "layout/map";
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/quality';
+@import 'layout/about';
+@import 'layout/footer';
+@import 'layout/gallery';
+@import 'layout/map';
+@import 'layout/login';
 
-@import "pages/offer";
-@import "pages/stairs";
-@import "pages/contact";
-@import "pages/price";
+@import 'pages/offer';
+@import 'pages/stairs';
+@import 'pages/contact';
+@import 'pages/price';

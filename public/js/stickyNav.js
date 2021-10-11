@@ -1,8 +1,5 @@
 /*eslint-disable*/
 
-// Sticky navigation
-const sectionHeroEl = document.querySelector('.section-hero');
-
 const obs = new IntersectionObserver(
   function (entries) {
     const ent = entries[0];
@@ -24,4 +21,5 @@ const obs = new IntersectionObserver(
     rootMargin: '-80px',
   }
 );
-obs.observe(sectionHeroEl);
+
+export default obs;

@@ -285,11 +285,11 @@ ion-icon {
 }
 
 .alert--success {
-  background-color: #20bf6b;
+  background-color: #52a779;
 }
 
 .alert--error {
-  background-color: #eb4d4b;
+  background-color: #ec5e5b;
 }
 
 .no-flexbox-gap .quality.top {

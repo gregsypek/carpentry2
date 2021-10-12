@@ -1,12 +1,13 @@
 /*eslint-disable*/
 import '@babel/polyfill';
-import { login } from './login';
+import { login, logout } from './login';
 // import { smoothScrolling } from './smoothScrolling';
 import { checkFlexGap } from './flexGap';
 import obs from './stickyNav';
 
 //DOM ELEMENTS
 const loginForm = document.querySelector('.form');
+const logOutBtn = document.querySelector('.btn--admin-logout');
 
 const btnNav = document.querySelector('.btn--mobile-nav');
 const header = document.querySelector('.header');
@@ -66,3 +67,5 @@ if (sectionStairs) obs.observe(sectionStairs);
 
 //helper
 checkFlexGap();
+
+if (logOutBtn) logOutBtn.addEventListener('click', logout);

@@ -1,6 +1,7 @@
 const Stair = require('../models/stairModel');
 const Price = require('../models/priceModel');
 const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getHomePage = (req, res) => {
   res.status(200).render('home', {
@@ -20,8 +21,12 @@ exports.getOverview = catchAsync(async (req, res, next) => {
     stairs,
   });
 });
-exports.getStairs = catchAsync(async (req, res) => {
+exports.getStairs = catchAsync(async (req, res, next) => {
   const stairs = await Stair.findOne({ slug: req.params.slug });
+
+  if (!stairs) {
+    return next(new AppError('Nie ma takiej usługi', 404));
+  }
 
   res.status(200).render('stairs', {
     title: `${stairs.name}`,
@@ -42,7 +47,7 @@ exports.getContact = catchAsync(async (req, res) => {
   });
 });
 
-exports.getLoginForm = (req, res) => {
+exports.getLoginForm = (req, res, next) => {
   res.status(200).render('login', {
     title: 'Zaloguj się',
   });

@@ -78,9 +78,11 @@
   border: 1px solid black;
   text-transform: uppercase;
   border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 .btn--admin-logout {
-  cursor: pointer;
   background-color: $main-color;
 }
 

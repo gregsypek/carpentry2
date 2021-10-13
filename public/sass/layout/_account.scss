@@ -1,0 +1,107 @@
+.account {
+  @include sectionHead($second-color);
+  .top {
+    display: block;
+    span {
+      display: inline-block;
+    }
+    h2 {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10vw;
+    background-color: $main-color;
+
+    &--passwords {
+      justify-content: space-evenly;
+    }
+  }
+  // &__left {
+  //   min-width: 30vw;
+  // }
+  &__link {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 5rem;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      font-family: $font-family;
+    }
+    &:not(:last-of-type) {
+      margin-bottom: 5rem;
+    }
+  }
+  &__right {
+    margin-left: auto;
+  }
+  &__btn {
+    margin-top: 5rem;
+    // background-color: $second-sarah;
+    background-color: orangered;
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+.form {
+  &__group {
+    // margin-bottom: 2.5rem;
+
+    &:last-child {
+      text-align: right;
+      margin-top: auto;
+      // margin-bottom: auto;
+    }
+  }
+  label {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    // margin-bottom: 0.75rem;
+    font-family: $font-family;
+    color: $second-color;
+    margin: 1.2rem 0 0.8rem 0;
+    &:first-of-type {
+      margin-top: 4rem;
+    }
+  }
+
+  &__input {
+    width: 40vw;
+    max-width: 40rem;
+    outline: none;
+    background: $main-shade;
+    font-size: 1.8rem;
+    color: $second-color;
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    border-bottom: 3px solid transparent;
+    &--password {
+      width: auto;
+      margin-right: 7rem;
+    }
+  }
+
+  //FORM WITH PASSWORDS
+  &__password {
+    display: flex;
+    flex-wrap: wrap;
+    // .form__group {
+    //   max-width: 30rem;
+    // }
+  }
+}

@@ -125,6 +125,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   // then we can simply put some stuff on the request object,
   // and then that data will be available at a later point.
   req.user = currentUser;
+  res.locals.user = currentUser;
   next();
 });
 

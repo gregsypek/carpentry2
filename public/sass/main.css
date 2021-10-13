@@ -481,10 +481,12 @@ ion-icon {
   border: 1px solid black;
   text-transform: uppercase;
   border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .btn--admin-logout {
-  cursor: pointer;
   background-color: #dfd3c3;
 }
 
@@ -1000,7 +1002,6 @@ ion-icon {
   border: none;
   width: 100%;
   background-color: #fcfbf9;
-  border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   transition: all 0.3s;
   border-radius: 4px;
@@ -1069,6 +1070,150 @@ ion-icon {
   margin-top: 6.4rem;
   background-color: #575555;
   color: #fcfbf9;
+}
+
+.account .top {
+  display: grid;
+  gap: 4.8rem;
+  align-items: stretch;
+  grid-template-columns: 1fr 2fr;
+}
+
+@media (max-width: 44em) {
+  .account .top {
+    grid-template-columns: 1fr;
+    justify-items: left;
+    gap: 6.4rem;
+  }
+}
+
+.account .top h2 {
+  border-right: 3px solid #67403d;
+  padding-right: 9.6rem;
+}
+
+@media (max-width: 44em) {
+  .account .top h2 {
+    padding-right: 4.8rem;
+  }
+}
+
+.account .top h3 {
+  max-width: 55rem;
+}
+
+.account .top span {
+  display: block;
+  color: #67403d;
+}
+
+.account .no-flexbox-gap .top {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 44em) {
+  .account .no-flexbox-gap .top {
+    margin-bottom: 6.4rem;
+  }
+}
+
+.account .top {
+  display: block;
+}
+
+.account .top span {
+  display: inline-block;
+}
+
+.account .top h2 {
+  border-right: none;
+  padding-right: 0;
+}
+
+.account__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10vw;
+  background-color: #dfd3c3;
+}
+
+.account__links--passwords {
+  justify-content: space-evenly;
+}
+
+.account__link {
+  display: flex;
+  align-items: center;
+}
+
+.account__link svg {
+  margin-right: 5rem;
+}
+
+.account__link a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.account__link:not(:last-of-type) {
+  margin-bottom: 5rem;
+}
+
+.account__right {
+  margin-left: auto;
+}
+
+.account__btn {
+  margin-top: 5rem;
+  background-color: orangered;
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.form__group:last-child {
+  text-align: right;
+  margin-top: auto;
+}
+
+.form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #67403d;
+  margin: 1.2rem 0 0.8rem 0;
+}
+
+.form label:first-of-type {
+  margin-top: 4rem;
+}
+
+.form__input {
+  width: 40vw;
+  max-width: 40rem;
+  outline: none;
+  background: #fcfbf9;
+  font-size: 1.8rem;
+  color: #67403d;
+  border-radius: 5px;
+  border: none;
+  padding: 1rem;
+  border-bottom: 3px solid transparent;
+}
+
+.form__input--password {
+  width: auto;
+  margin-right: 7rem;
+}
+
+.form__password {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .offer .top {

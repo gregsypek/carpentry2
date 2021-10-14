@@ -18,7 +18,11 @@ router.use(authController.protect, authController.restrictTo('admin'));
 
 router
   .route('/:id')
-  .patch(priceController.updatePrice)
+  .patch(
+    priceController.uploadPriceImage,
+    priceController.resizePriceImage,
+    priceController.updatePrice
+  )
   .delete(priceController.deletePrice);
 
 module.exports = router;

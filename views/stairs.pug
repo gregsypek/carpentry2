@@ -11,7 +11,7 @@ block content
         h2.heading-secondary.container.padding--big <span>#{splitName[0]}</span>
       .stairs__top.top 
         img(class="stairs__img container--big"
-              src=`/images/${stairs.slug}/${stairs.imageCover}`
+              src=`/images/stairs/${stairs.imageCover}`
               alt=`${stairs.slug}`)
         .stairs__info.padding--small.container--big 
           h3.heading-tertiary Realizacje 
@@ -20,7 +20,7 @@ block content
         .gallery 
           each img, index in stairs.images
             figure 
-              img(src=`/images/${stairs.slug}/${img}` alt=`${stairs.name}`)
+              img(src=`/images/stairs/${img}` alt=`${stairs.name}`)
               figcaption.title= `wzór nr ${index+1}`
 
         .stairs__btn 

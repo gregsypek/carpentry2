@@ -74,10 +74,17 @@ if (logOutBtn) logOutBtn.addEventListener('click', logout);
 
 if (userDataForm)
   userDataForm.addEventListener('submit', (e) => {
+    //  e.preventDefault();
+    //  const email = document.getElementById('userEmail').value;
+    //  const name = document.getElementById('userName').value;
+    //  updateSettings({ name, email }, 'data');
     e.preventDefault();
-    const email = document.getElementById('userEmail').value;
-    const name = document.getElementById('userName').value;
-    updateSettings({ name, email }, 'data');
+    const form = new FormData();
+    form.append('name', document.getElementById('userName').value);
+    form.append('email', document.getElementById('userEmail').value);
+    // form.append('photo', document.getElementById('photo').files[0]);
+    console.log(form);
+    updateSettings(form, 'data');
   });
 if (userPasswordForm)
   userPasswordForm.addEventListener('submit', async (e) => {

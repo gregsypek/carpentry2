@@ -12,6 +12,8 @@ router
   .post(
     authController.protect,
     authController.restrictTo('admin'),
+    priceController.uploadPriceImage,
+    priceController.resizePriceImage,
     priceController.createPrice
   );
 router.use(authController.protect, authController.restrictTo('admin'));

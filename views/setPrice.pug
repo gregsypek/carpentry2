@@ -4,8 +4,8 @@ block form
   h2.form__title Stwórz nowy cennik
   form.form.form__price
     .form__group 
-      label.form__label(for='priceTitle') Tytuł
-      input.form__input(id='priceTitle' type='text' value='schody ...' required name='priceTitle')
+      label.form__label(for='title') Tytuł
+      input.form__input(id='title' type='text' value='schody ...' required name='title')
     .form__group 
       label.form__label(for='price') Cena
       input.form__input(type='number' id='price'  required name='price') 
@@ -13,12 +13,11 @@ block form
       label.form__label(for='priceIncluded') Cena obejmuje:
       input.form__input(type='text' id='priceIncluded'  required name='priceIncluded' value='pomiar wycenę, montaz' )
     .form__group 
-      label.form__label(for='priceAdditionals') Opcje dodatkowe
-      input.form__input(type='text' id='priceAdditionals'  required name='priceAdditionals' value='oświetlenie ledowe' )
-
+      label.form__label(for='additionals') Opcje dodatkowe
+      input.form__input(type='text' id='additionals'  required name='additionals' value='oświetlenie ledowe' )
     .form__group.form__price--imageCover      
-      input.form__upload(type='file', accept='image/*', id='pricePhoto', name='photo')
-      label(for='pricePhoto') Wybierz zdjęcie
+      input.form__upload(type='file', accept='image/*', id='imageCover', name='imageCover')
+      label(for='imageCover') Wybierz zdjęcie
     
     .form__group 
       button.btn.account__btn(type='submit') Zapisz ustawienia

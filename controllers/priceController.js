@@ -27,11 +27,16 @@ exports.uploadPriceImage = upload.single('imageCover');
 // upload.array('images',5) // if more than one
 
 exports.resizePriceImage = catchAsync(async (req, res, next) => {
-  console.log(req.file);
+  // console.log(req.file);
 
   if (!req.file) return next();
 
-  req.body.imageCover = `price-${req.params.id}-${Date.now()}.jpeg`;
+  // req.body.imageCover = `price-${req.params.id ? req.params.id : ''}${
+  //   req.params.id ? '-' : ''
+  // }${Date.now()}.jpeg`;
+  req.body.imageCover = `price-${
+    req.params.id ? req.params.id : req.file.originalname.split('.')[0]
+  }-${Date.now()}.jpeg`;
 
   await sharp(req.file.buffer)
     .resize(800, 600)

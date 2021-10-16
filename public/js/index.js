@@ -2,6 +2,7 @@
 import '@babel/polyfill';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
+import { createPrice } from './createPrice';
 import { checkFlexGap } from './flexGap';
 import obs from './stickyNav';
 
@@ -10,6 +11,7 @@ const loginForm = document.querySelector('.form');
 const logOutBtn = document.querySelector('.btn--admin-logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form__password ');
+const userPriceForm = document.querySelector('.form__price');
 
 const btnNav = document.querySelector('.btn--mobile-nav');
 const header = document.querySelector('.header');
@@ -86,6 +88,7 @@ if (userDataForm)
     console.log(form);
     updateSettings(form, 'data');
   });
+
 if (userPasswordForm)
   userPasswordForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -102,4 +105,27 @@ if (userPasswordForm)
     document.getElementById('password-current').value = '';
     document.getElementById('password').value = '';
     document.getElementById('password-confirm').value = '';
+  });
+
+if (userPriceForm)
+  userPriceForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = new FormData();
+    // const priceNumber = parseInt(document.getElementById('price').value);
+
+    form.append('title', document.getElementById('title').value);
+    // form.append('price', document.getElementById('price').value);
+    form.append('price', parseInt(document.getElementById('price').value));
+    form.append(
+      'priceIncluded',
+      document.getElementById('priceIncluded').value
+    );
+    form.append('additionals', document.getElementById('additionals').value);
+    form.append('imageCover', document.getElementById('imageCover').files[0]);
+    // form.append('photo', document.getElementById('photo').files[0]);
+    console.log(document.getElementById('imageCover').files);
+    console.log(document.getElementById('imageCover').files[0].name);
+
+    console.log(form);
+    await createPrice(form);
   });

@@ -453,11 +453,11 @@ ion-icon {
 
 .form__label {
   display: block;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   margin: 3rem 0 1rem 0;
   color: #67403d;
-  padding: 3px;
+  padding: 3px 0;
   transition: all 0.2s;
   cursor: pointer;
 }
@@ -466,6 +466,38 @@ ion-icon {
   margin-top: 6.4rem;
   background-color: #575555;
   color: #fcfbf9;
+}
+
+.form__upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.form__upload::focus + label {
+  outline: 3px solid #67403d;
+  outline-offset: 3px;
+}
+
+.form__upload + label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 3rem 0 1rem 0;
+  color: #67403d;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 3px solid #67403d;
+  padding: 1rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.form__upload + label:hover {
+  background-color: #fcfbf9;
+  color: #575555;
 }
 
 .form__password {
@@ -1169,8 +1201,7 @@ ion-icon {
 .account__link {
   display: flex;
   align-items: center;
-  margin-bottom: 5rem;
-  margin-right: 2rem;
+  padding: 2rem 4rem;
 }
 
 @media (max-width: 44em) {
@@ -1183,12 +1214,23 @@ ion-icon {
   margin-right: 5rem;
 }
 
-.account__link a {
+.account__link a:link,
+.account__link a:visited {
   text-decoration: none;
   color: inherit;
   text-transform: uppercase;
   font-size: 1.8rem;
   font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.account__link a:hover,
+.account__link a:active {
+  color: #67403d;
+}
+
+.account__link--active {
+  border-right: 3px solid #67403d;
 }
 
 .account__btn {

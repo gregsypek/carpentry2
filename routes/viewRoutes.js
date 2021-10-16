@@ -14,5 +14,12 @@ router.get('/price', viewController.getPrice);
 router.get('/contact', viewController.getContact);
 router.get('/login', viewController.getLoginForm);
 router.get('/me', authController.protect, viewController.getAccount);
+router.get('/setPrice', authController.protect, viewController.getPriceForm);
+
+// router.post(
+//   '/price',
+//   authController.restrictTo('admin'),
+//   viewController.getPriceForm
+// );
 
 module.exports = router;

@@ -58,3 +58,8 @@ exports.getAccount = (req, res) => {
     title: 'Twoje konto',
   });
 };
+exports.getPriceForm = (req, res, next) => {
+  res.status(200).render('setPrice', {
+    title: 'Twoje konto',
+  });
+};

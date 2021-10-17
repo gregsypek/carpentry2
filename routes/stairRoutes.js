@@ -10,6 +10,8 @@ router
   .post(
     authController.protect,
     authController.restrictTo('admin'),
+    stairController.uploadStairImages,
+    stairController.resizeStairImages,
     stairController.createStair
   );
 

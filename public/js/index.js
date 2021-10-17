@@ -3,15 +3,18 @@ import '@babel/polyfill';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
 import { createPrice } from './createPrice';
+import { createStairs } from './createStairs';
+
 import { checkFlexGap } from './flexGap';
 import obs from './stickyNav';
 
 //DOM ELEMENTS
-const loginForm = document.querySelector('.form');
+const loginForm = document.querySelector('.form__login');
 const logOutBtn = document.querySelector('.btn--admin-logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form__password ');
 const userPriceForm = document.querySelector('.form__price');
+const userStairsForm = document.querySelector('.form__stairs');
 
 const btnNav = document.querySelector('.btn--mobile-nav');
 const header = document.querySelector('.header');
@@ -76,17 +79,17 @@ if (logOutBtn) logOutBtn.addEventListener('click', logout);
 
 if (userDataForm)
   userDataForm.addEventListener('submit', (e) => {
-    //  e.preventDefault();
-    //  const email = document.getElementById('userEmail').value;
-    //  const name = document.getElementById('userName').value;
-    //  updateSettings({ name, email }, 'data');
     e.preventDefault();
-    const form = new FormData();
-    form.append('name', document.getElementById('userName').value);
-    form.append('email', document.getElementById('userEmail').value);
+    const email = document.getElementById('userEmail').value;
+    const name = document.getElementById('userName').value;
+    updateSettings({ name, email }, 'data');
+    // e.preventDefault();
+    // const form = new FormData();
+    // form.append('name', document.getElementById('userName').value);
+    // form.append('email', document.getElementById('userEmail').value);
     // form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
-    updateSettings(form, 'data');
+    // console.log(form);
+    // updateSettings(form, 'data');
   });
 
 if (userPasswordForm)
@@ -111,21 +114,58 @@ if (userPriceForm)
   userPriceForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = new FormData();
-    // const priceNumber = parseInt(document.getElementById('price').value);
+
+    const additionalsArray = document
+      .getElementById('additionals')
+      .value.split(',');
+    const priceIncludedArray = document
+      .getElementById('priceIncluded')
+      .value.split(',');
 
     form.append('title', document.getElementById('title').value);
     // form.append('price', document.getElementById('price').value);
     form.append('price', parseInt(document.getElementById('price').value));
-    form.append(
-      'priceIncluded',
-      document.getElementById('priceIncluded').value
-    );
-    form.append('additionals', document.getElementById('additionals').value);
+
+    priceIncludedArray.map((item) => {
+      form.append('priceIncluded', item);
+    });
+
+    // form.append(
+    //   'priceIncluded',
+    //   document.getElementById('priceIncluded').value
+    // );
+    // form.append(
+    //   'additionals',
+    //   document.getElementById('additionals').value.split(',')
+    // );
     form.append('imageCover', document.getElementById('imageCover').files[0]);
-    // form.append('photo', document.getElementById('photo').files[0]);
-    console.log(document.getElementById('imageCover').files);
-    console.log(document.getElementById('imageCover').files[0].name);
+
+    additionalsArray.map((item) => {
+      form.append('additionals', item);
+    });
 
     console.log(form);
     await createPrice(form);
+  });
+
+if (userStairsForm)
+  userStairsForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const form = new FormData();
+    // const priceNumber = parseInt(document.getElementById('price').value);
+
+    form.append('name', document.getElementById('stairsName').value);
+    // form.append('price', document.getElementById('price').value);
+    form.append('imageCover', document.getElementById('imageCover').files[0]);
+    form.append('description', document.getElementById('description').value);
+    // form.append('images', document.getElementById('stairsImages').files[1]);
+    form.append('images', document.getElementById('stairsImages').files[0]);
+    form.append('summary', document.getElementById('stairsSummary').value);
+    // form.append('photo', document.getElementById('photo').files[0]);
+
+    console.log(form);
+    // console.log(document.getElementById('images').files[1]);
+    // console.log(document.getElementById('imageCover').files[0]);
+    await createStairs(form);
   });

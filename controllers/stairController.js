@@ -7,6 +7,7 @@ const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 
 const multerStorage = multer.memoryStorage();
+// const multerStorage = multer.diskStorage();
 
 const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
@@ -29,12 +30,12 @@ exports.uploadStairImages = upload.fields([
 ]);
 
 exports.resizeStairImages = catchAsync(async (req, res, next) => {
-  // console.log(req.files);
+  // console.log('tutaj', req.files.images);
 
   if (!req.files.imageCover || !req.files.images) return next();
 
   // 1 Cover image
-  req.body.imageCover = `stairs-${req.params.id}-${Date.now()} - cover.jpeg`;
+  req.body.imageCover = `stairs-${Date.now()} - cover.jpeg`;
   await sharp(req.files.imageCover[0].buffer)
     .resize(2000, 1333)
     .toFormat('jpeg')
@@ -42,23 +43,20 @@ exports.resizeStairImages = catchAsync(async (req, res, next) => {
     .toFile(`public/images/stairs/${req.body.imageCover}`);
 
   //2 Images
-  req.body.images = [];
 
-  await Promise.all(
-    req.files.images.map(async (file, i) => {
-      const filename = `stairs-${req.params.id}-${Date.now()}-${i + 1}.jpeg`;
-      await sharp(file.buffer)
-        .resize(800, 800)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/images/stairs/${filename}`);
-      req.body.images.push(filename);
-    })
-  );
-  console.log(req.body);
+  req.body.images = `stairs-${Date.now()} - image.jpeg`;
+  await sharp(req.files.images[0].buffer)
+    .resize(800, 800)
+    .toFormat('jpeg')
+    .jpeg({ quality: 90 })
+    .toFile(`public/images/stairs/${req.body.images}`);
+
+  // console.log(req.body);
+  // console.log('req.body.images', req.body.images);
 
   next();
 });
+
 exports.getAllStairs = factory.getAll(Stair);
 
 exports.getStair = factory.getOne(Stair);

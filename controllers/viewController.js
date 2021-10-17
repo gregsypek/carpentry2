@@ -63,3 +63,8 @@ exports.getPriceForm = (req, res, next) => {
     title: 'Twoje konto',
   });
 };
+exports.getStairsForm = (req, res, next) => {
+  res.status(200).render('setStairs', {
+    title: 'Twoje konto',
+  });
+};

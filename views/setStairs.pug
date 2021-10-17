@@ -5,17 +5,21 @@ block form
   form.form.form__stairs
     .form__group 
       label.form__label(for='stairsName') Name
-      input.form__input(id='stairsName' type='text' value='schody ...' required name='stairsName')
+      input.form__input(id='stairsName' type='text' value='schody ...' required name='name')
+    .form__group.form__stairs--imageCover      
+      input.form__upload(type='file', accept='image/*', id='imageCover', name='imageCover')
+      label(for='imageCover') Wybierz duze zdjęcie
     .form__group 
-      label.form__label(for='stairsDescription') Opis
-      textarea.form__input(id='stairsDescription'  required name='description' rows="5" cols="33") Zapraszamy do zapoznania się z realizacjami tego typu schodów w naszym wykonaniu jak i z samą balustradą, którą...
+      label.form__label(for='description') Opis
+      textarea.form__input(id='description'  required name='description' rows="5" cols="33") Zapraszamy do zapoznania się z realizacjami tego typu schodów w naszym wykonaniu jak i z samą balustradą, którą...
+    .form__group.form__stairs--images      
+      input.form__upload(type='file', accept='image/*', id='stairsImages', name='images' )
+      label(for='stairsImages') Wybierz zdjęcie
     .form__group 
       label.form__label(for='stairsSummary') Podsumowanie
       textarea.form__input(id='stairsSummary'  required name='stairsSummary' rows="5" cols="33") Schody proste idą w jednym kierunku, są zatem łatwiejsze w realizacji, a także tańsze w porównaniu do pozostałych....
 
-    .form__group.form__imgCover-upload      
-      input.form__upload(type='file', accept='image/*', id='stairsPhoto', name='photo')
-      label(for='stairsPhoto') Wybierz zdjęcie
+    
     
     .form__group 
-      button.btn.account__btn(type='submit') Zapisz ustawienia
+      button.btn.account__btn(type='submit') Zapisz kategorię

@@ -17,10 +17,10 @@ block content
           h3.heading-tertiary Realizacje 
           p.stairs__invocation.description= stairs.description
       .stairs__bottom.container.padding--huge 
-        .gallery 
+        .gallery(class=`${stairs.slug}`) 
           each img, index in stairs.images
             figure 
-              img(src=`/images/stairs/${img}` alt=`${stairs.name}`)
+              img(src=`/images/stairs/${img}` alt=`${stairs.name}` class=`${img.split('.')[0]}`)
               figcaption.title= `wzór nr ${index+1}`
 
         .stairs__btn 

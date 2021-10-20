@@ -68,3 +68,10 @@ exports.getStairsForm = (req, res, next) => {
     title: 'Twoje konto',
   });
 };
+exports.getAddPhotoForm = catchAsync(async (req, res, next) => {
+  const stairs = await Stair.find();
+  res.status(200).render('addPhoto', {
+    title: 'Dodaj zdjęcie',
+    stairs,
+  });
+});

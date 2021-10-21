@@ -21,8 +21,8 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin'),
-    stairController.uploadStairImages,
-    stairController.resizeStairImages,
+    stairController.uploadNewPhotos,
+    stairController.resizeNewPhotos,
     stairController.updateStair
   )
   .delete(

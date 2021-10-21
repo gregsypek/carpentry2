@@ -28,6 +28,7 @@ exports.uploadStairImages = upload.fields([
   { name: 'imageCover', maxCount: 1 },
   { name: 'images', maxCount: 3 },
 ]);
+exports.uploadNewPhotos = upload.fields([{ name: 'images', maxCount: 3 }]);
 
 exports.resizeStairImages = catchAsync(async (req, res, next) => {
   // console.log('tutaj', req.files.images);
@@ -50,6 +51,35 @@ exports.resizeStairImages = catchAsync(async (req, res, next) => {
     .toFormat('jpeg')
     .jpeg({ quality: 90 })
     .toFile(`public/images/stairs/${req.body.images}`);
+
+  // console.log(req.body);
+  // console.log('req.body.images', req.body.images);
+
+  next();
+});
+exports.uploadStairImages = upload.fields([
+  { name: 'imageCover', maxCount: 1 },
+  { name: 'images', maxCount: 3 },
+]);
+
+exports.resizeNewPhotos = catchAsync(async (req, res, next) => {
+  // console.log('tutaj', req.files.images);
+
+  if (!req.files.images) return next();
+
+  //2 Images
+  req.body.images = [];
+  await Promise.all(
+    req.files.images.map(async (file, i) => {
+      const filename = `stairs-${Date.now()} - ${i + 1}.jpeg`;
+      await sharp(file.buffer)
+        .resize(800, 800)
+        .toFormat('jpeg')
+        .jpeg({ quality: 90 })
+        .toFile(`public/images/stairs/${filename}`);
+      req.body.images.push(filename);
+    })
+  );
 
   // console.log(req.body);
   // console.log('req.body.images', req.body.images);

@@ -19,6 +19,16 @@ router.get('/setStairs', authController.protect, viewController.getStairsForm);
 router.get('/addPhoto', authController.protect, viewController.getAddPhotoForm);
 
 // router.post(
+//   '/multiple-upload',
+//   uploadController.uploadImages,
+//   uploadController.resizeImages
+// );
+// router.post(
+//   '/addPhoto',
+//   uploadController.uploadImages,
+//   uploadController.resizeImages
+// );
+// router.post(
 //   '/price',
 //   authController.restrictTo('admin'),
 //   viewController.getPriceForm

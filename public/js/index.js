@@ -4,7 +4,7 @@ import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
 import { createPrice } from './createPrice';
 import { createStairs } from './createStairs';
-
+import { addPhoto } from './addPhoto';
 import { checkFlexGap } from './flexGap';
 import obs from './stickyNav';
 
@@ -15,6 +15,7 @@ const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form__password ');
 const userPriceForm = document.querySelector('.form__price');
 const userStairsForm = document.querySelector('.form__stairs');
+const userAddPhoto = document.querySelector('.form__addPhoto');
 
 const btnNav = document.querySelector('.btn--mobile-nav');
 const header = document.querySelector('.header');
@@ -168,4 +169,28 @@ if (userStairsForm)
     // console.log(document.getElementById('images').files[1]);
     // console.log(document.getElementById('imageCover').files[0]);
     await createStairs(form);
+  });
+
+if (userAddPhoto)
+  userAddPhoto.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // const selected = document.getElementById('categories').value;
+    const el = document.getElementById('categories');
+    const option = el.options[el.selectedIndex];
+    const dataId = option.getAttribute('data-id');
+    // console.log('dataId', dataId);
+    const form = new FormData();
+    const images = document.getElementById('stairImages').files;
+    const imagesArr = [];
+
+    let file;
+    for (let i = 0; i < images.length; i++) {
+      file = images[i];
+      imagesArr.push(file);
+    }
+    imagesArr.map((item) => {
+      form.append('images', item);
+    });
+    console.log('imagesArr2', imagesArr);
+    await addPhoto(form, dataId);
   });

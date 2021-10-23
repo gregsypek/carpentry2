@@ -1,6 +1,7 @@
 const express = require('express');
 const authController = require('../controllers/authController');
 const stairController = require('../controllers/stairController');
+const uploadController = require('../controllers/uploadController');
 
 const router = express.Router();
 
@@ -21,8 +22,10 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin'),
-    stairController.uploadNewPhotos,
-    stairController.resizeNewPhotos,
+    uploadController.uploadImages,
+    uploadController.resizeImages,
+    // stairController.uploadNewPhotos,
+    // stairController.resizeNewPhotos,
     stairController.updateStair
   )
   .delete(
@@ -30,5 +33,11 @@ router
     authController.restrictTo('admin'),
     stairController.deleteStair
   );
+
+// router.post(
+//   '/addPhoto',
+//   uploadController.uploadImages,
+//   uploadController.resizeImages
+// );
 
 module.exports = router;

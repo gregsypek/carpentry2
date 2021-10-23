@@ -22,7 +22,7 @@ import { showAlert } from './alerts';
 // console.log('test', test);
 
 //type is either 'password' or 'data'
-export const addPhoto = async (data, dataId) => {
+export const addPhoto = async (data, dataId, options) => {
   try {
     const url = `http://localhost:3000/api/v1/stairs/${dataId}`;
     console.log('dataAdd', data);

@@ -8,7 +8,7 @@ block form
       select.form__input(id='categories' name="categories" required)
         option(value="") Wybierz opcje
           each item in stairs
-            option(value=`${item.name}` data-id=`${item.id}`)= item.name
+            option(value=`${item.slug}` data-id=`${item.id}`)= item.name
     .form__group      
       input.form__upload(type='file', accept='image/*', id='stairImages', name='images' multiple)
       label(for='stairImages') Wybierz zdjęcia (max 5)

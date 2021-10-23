@@ -29,6 +29,7 @@ stairSchema.pre('save', function (next) {
   this.slug = slugify(this.name, { lower: true });
   next();
 });
+
 const Stair = mongoose.model('Stair', stairSchema);
 
 module.exports = Stair;

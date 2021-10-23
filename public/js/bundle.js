@@ -9068,6 +9068,19 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+// const request = new XMLHttpRequest();
+// const getOldPhotos = (name) => {
+//   const gallery = document.getElementById(name);
+//   console.log('gallery', gallery);
+//   const oldImages = [...gallery.querySelectorAll('img')];
+//   oldImages.map(async (item) => {
+//     item.getAttribute('class');
+//   });
+//   const oldImagesArr = oldImages.map((item) => item.className);
+//   return oldImagesArr;
+// };
+// const test = getOldPhotos('domki-do-apiterapii');
+// console.log('test', test);
 //type is either 'password' or 'data'
 var addPhoto = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(data, dataId) {
@@ -9078,34 +9091,47 @@ var addPhoto = /*#__PURE__*/function () {
           case 0:
             _context.prev = 0;
             url = "http://localhost:3000/api/v1/stairs/".concat(dataId);
-            _context.next = 4;
+            console.log('dataAdd', data);
+            console.log('dataAdd', options); // request.addEventListener(
+            //   'load',
+            //   function (evt) {
+            //     console.log(evt);
+            //   },
+            //   false
+            // );
+            // request.open('GET', `http://localhost:3000/api/v1/stairs/${options}`, true),
+            //   request.send();
+            // const oldImages = await getOldPhotos(options);
+            // console.log('oldImages', oldImages);
+
+            _context.next = 6;
             return (0, _axios.default)({
               method: 'PATCH',
               url: url,
               data: data
             });
 
-          case 4:
+          case 6:
             res = _context.sent;
 
             if (res.data.status === 'success') {
               (0, _alerts.showAlert)('success', 'Nowe zdjęcia dodane!');
             }
 
-            _context.next = 11;
+            _context.next = 13;
             break;
 
-          case 8:
-            _context.prev = 8;
+          case 10:
+            _context.prev = 10;
             _context.t0 = _context["catch"](0);
             (0, _alerts.showAlert)('error', _context.t0.response.data.message);
 
-          case 11:
+          case 13:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 8]]);
+    }, _callee, null, [[0, 10]]);
   }));
 
   return function addPhoto(_x, _x2) {
@@ -9465,7 +9491,33 @@ var year = document.querySelector('.year');
 var currentYear = new Date().getFullYear();
 var allLinks = document.querySelectorAll('a:link');
 var sectionHeroEl = document.querySelector('.section-hero');
-var sectionStairs = document.querySelector('.stairs__top'); // FUNCTIONS
+var sectionStairs = document.querySelector('.stairs__top'); //////////////
+// const getOldPhotos = (name) => {
+//   const gallery = document.getElementById(name);
+//   console.log('gallery', gallery);
+//   const oldImages = [...gallery.querySelectorAll('img')];
+//   oldImages.map(async (item) => {
+//     item.getAttribute('class');
+//   });
+//   const oldImagesArr = oldImages.map((item) => item.className);
+//   return oldImagesArr;
+// };
+// const test = getOldPhotos('domki-do-apiterapii');
+// console.log('test', test);
+//////////////////
+// const getOldPhotos = catchAsync(async (name) => {
+//   const gallery = document.getElementById(name);
+//   console.log('gallery', gallery);
+//   // const oldImages = [...gallery.querySelectorAll('img')];
+//   // Promise.all(
+//   //   oldImages.map(async (item) => {
+//   //     await item.getAttribute('class');
+//   //   })
+//   // );
+//   // const oldImagesArr = await oldImages.map((item) => item.className);
+//   // return oldImagesArr;
+// });
+// FUNCTIONS
 
 if (loginForm) loginForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -9653,10 +9705,13 @@ if (userAddPhoto) userAddPhoto.addEventListener('submit', /*#__PURE__*/function 
             el = document.getElementById('categories');
             option = el.options[el.selectedIndex];
             dataId = option.getAttribute('data-id'); // console.log('dataId', dataId);
+            // const options = option.getAttribute('value').toLowerCase();
+            // console.log('option', options, typeof options);
 
             form = new FormData();
             images = document.getElementById('stairImages').files;
-            imagesArr = [];
+            imagesArr = []; // const oldImages = getOldPhotos(options);
+            // console.log('oldImages', oldImages);
 
             for (i = 0; i < images.length; i++) {
               file = images[i];
@@ -9665,7 +9720,8 @@ if (userAddPhoto) userAddPhoto.addEventListener('submit', /*#__PURE__*/function 
 
             imagesArr.map(function (item) {
               form.append('images', item);
-            });
+            }); // form.append('option', option.getAttribute('value').toLowerCase());
+
             console.log('imagesArr2', imagesArr);
             _context4.next = 12;
             return (0, _addPhoto.addPhoto)(form, dataId);

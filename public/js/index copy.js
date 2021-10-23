@@ -213,9 +213,9 @@ if (userAddPhoto)
     const option = el.options[el.selectedIndex];
 
     const dataId = option.getAttribute('data-id');
-    // console.log('dataId', dataId);
-    // const options = option.getAttribute('value').toLowerCase();
-    // console.log('option', options, typeof options);
+    console.log('dataId', dataId);
+    const options = option.getAttribute('value').toLowerCase();
+    console.log('option', options, typeof options);
 
     const form = new FormData();
     const images = document.getElementById('stairImages').files;
@@ -231,7 +231,7 @@ if (userAddPhoto)
     imagesArr.map((item) => {
       form.append('images', item);
     });
-    // form.append('option', option.getAttribute('value').toLowerCase());
+    form.append('option', option.getAttribute('value').toLowerCase());
     console.log('imagesArr2', imagesArr);
-    await addPhoto(form, dataId);
+    await addPhoto(form, dataId, options);
   });

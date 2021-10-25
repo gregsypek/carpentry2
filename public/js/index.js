@@ -6,6 +6,7 @@ import { createPrice } from './createPrice';
 import { createStairs } from './createStairs';
 import { addPhoto } from './addPhoto';
 import { deletePrice } from './deletePrice';
+import { deleteStairs } from './deleteStairs';
 import { checkFlexGap } from './flexGap';
 // import catchAsync from '../../utils/catchAsync';
 import obs from './stickyNav';
@@ -19,6 +20,7 @@ const userPriceForm = document.querySelector('.form__price');
 const userStairsForm = document.querySelector('.form__stairs');
 const userAddPhoto = document.querySelector('.form__addPhoto');
 const userDeletePrice = document.querySelector('.form__deletePrice');
+const userDeleteStairs = document.querySelector('.form__deleteStairs');
 
 const btnNav = document.querySelector('.btn--mobile-nav');
 const header = document.querySelector('.header');
@@ -209,18 +211,18 @@ if (userDeletePrice)
     const dataId = option.getAttribute('data-id');
     console.log('dataId', dataId);
 
-    // const form = new FormData();
-    // const images = document.getElementById('stairImages').files;
-    // const imagesArr = [];
-
-    // let file;
-    // for (let i = 0; i < images.length; i++) {
-    //   file = images[i];
-    //   imagesArr.push(file);
-    // }
-    // imagesArr.map((item) => {
-    //   form.append('images', item);
-    // });
-    // console.log('imagesArr', imagesArr);
     await deletePrice(dataId);
+  });
+
+if (userDeleteStairs)
+  userDeleteStairs.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const el = document.getElementById('categorySelect');
+    const option = el.options[el.selectedIndex];
+
+    const dataId = option.getAttribute('data-id');
+    console.log('dataId', dataId);
+
+    await deleteStairs(dataId);
   });

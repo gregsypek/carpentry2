@@ -4,7 +4,7 @@ block form
   h2.form__title Stwórz nową kategorie
   form.form.form__stairs
     .form__group 
-      label.form__label(for='stairsName') Name
+      label.form__label(for='stairsName') Nazwa
       input.form__input(id='stairsName' type='text' value='schody ...' required name='name')
     .form__group.form__stairs--imageCover      
       input.form__upload(type='file', accept='image/*', id='imageCover', name='imageCover')
@@ -18,8 +18,17 @@ block form
     .form__group 
       label.form__label(for='stairsSummary') Podsumowanie
       textarea.form__input(id='stairsSummary'  required name='stairsSummary' rows="5" cols="33") Schody proste idą w jednym kierunku, są zatem łatwiejsze w realizacji, a także tańsze w porównaniu do pozostałych....
-
-    
-    
     .form__group 
       button.btn.account__btn(type='submit') Zapisz kategorię
+block form2 
+  .container--big.mt--bg   
+    h2.form__title Usuń kategorie
+    form.form.form__deleteStairs
+      .form__group 
+        label.form__label(for='categorySelect') Wybierz kategorię
+        select.form__input(id='categorySelect' name="categoryType" required)
+          option(value="") Wybierz opcje
+            each item in stairs
+              option(value=`${item.name}` data-id=`${item.id}`)= item.name
+      .form__group 
+        button.btn.account__btn(type='submit') Usuń kategorie

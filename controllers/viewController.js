@@ -65,11 +65,13 @@ exports.getPriceForm = catchAsync(async (req, res, next) => {
     price,
   });
 });
-exports.getStairsForm = (req, res, next) => {
+exports.getStairsForm = catchAsync(async (req, res, next) => {
+  const stairs = await Stair.find();
   res.status(200).render('setStairs', {
     title: 'Twoje konto',
+    stairs,
   });
-};
+});
 exports.getAddPhotoForm = catchAsync(async (req, res, next) => {
   const stairs = await Stair.find();
   res.status(200).render('addPhoto', {

@@ -25,6 +25,10 @@ router
     priceController.resizePriceImage,
     priceController.updatePrice
   )
-  .delete(priceController.deletePrice);
+  .delete(
+    authController.protect,
+    authController.restrictTo('admin'),
+    priceController.deletePrice
+  );
 
 module.exports = router;

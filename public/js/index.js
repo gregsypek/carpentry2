@@ -5,8 +5,9 @@ import { updateSettings } from './updateSettings';
 import { createPrice } from './createPrice';
 import { createStairs } from './createStairs';
 import { addPhoto } from './addPhoto';
-import { deletePrice } from './deletePrice';
-import { deleteStairs } from './deleteStairs';
+// import { deletePrice } from './deletePrice';
+// import { deleteStairs } from './deleteStairs';
+import { deleteCategory } from './deleteCategory';
 import { checkFlexGap } from './flexGap';
 // import catchAsync from '../../utils/catchAsync';
 import obs from './stickyNav';
@@ -211,7 +212,8 @@ if (userDeletePrice)
     const dataId = option.getAttribute('data-id');
     console.log('dataId', dataId);
 
-    await deletePrice(dataId);
+    // await deletePrice(dataId);
+    await deleteCategory(dataId, 'price');
   });
 
 if (userDeleteStairs)
@@ -224,5 +226,6 @@ if (userDeleteStairs)
     const dataId = option.getAttribute('data-id');
     console.log('dataId', dataId);
 
-    await deleteStairs(dataId);
+    // await deleteStairs(dataId);
+    await deleteCategory(dataId, 'stairs');
   });

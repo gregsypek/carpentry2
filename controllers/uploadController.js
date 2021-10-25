@@ -85,26 +85,6 @@ const updateImages = async (req, res, next) => {
     },
   });
 };
-// const updateImages = async (req, res, next) => {
-//   console.log('here');
-//   // if (req.files) console.log(req.body);
-
-//   const doc = await Stair.findByIdAndUpdate(req.params.id, req.body, {
-//     new: true,
-//     runValidators: true,
-//   });
-//   console.log('doc');
-
-//   if (!doc) {
-//     return next(new AppError('Nie ma takiego dokumentu', 404));
-//   }
-//   res.status(200).json({
-//     status: 'success',
-//     data: {
-//       data: doc,
-//     },
-//   });
-// };
 
 // const getResult = async (req, res) => {
 //   if (req.body.images.length <= 0) {

@@ -21,3 +21,15 @@ block form
     
     .form__group 
       button.btn.account__btn(type='submit') Zapisz ustawienia
+block form2 
+  .container--big.mt--bg   
+    h2.form__title Usuń cennik
+    form.form.form__deletePrice
+      .form__group 
+        label.form__label(for='priceSelect') Wybierz kategorię
+        select.form__input(id='type' name="type" required)
+          option(value="") Wybierz opcje
+            each item in price
+              option(value=`${item.title}` data-id=`${item.id}`)= item.title
+      .form__group 
+        button.btn.account__btn(type='submit') Usuń cennik

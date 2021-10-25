@@ -58,11 +58,13 @@ exports.getAccount = (req, res) => {
     title: 'Twoje konto',
   });
 };
-exports.getPriceForm = (req, res, next) => {
+exports.getPriceForm = catchAsync(async (req, res, next) => {
+  const price = await Price.find();
   res.status(200).render('setPrice', {
     title: 'Twoje konto',
+    price,
   });
-};
+});
 exports.getStairsForm = (req, res, next) => {
   res.status(200).render('setStairs', {
     title: 'Twoje konto',

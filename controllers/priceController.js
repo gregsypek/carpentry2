@@ -47,6 +47,20 @@ exports.resizePriceImage = catchAsync(async (req, res, next) => {
   next();
 });
 
+// exports.deletePrice = async (req, res, next) => {
+//   try {
+//     await Price.findByIdAndDelete(req.params.id);
+//     res.status(204).json({
+//       data: null,
+//     });
+//   } catch (err) {
+//     res.status(404).json({
+//       status: 'fail',
+//       message: err,
+//     });
+//   }
+// };
+
 exports.getAllPrice = factory.getAll(Price);
 exports.createPrice = factory.createOne(Price);
 

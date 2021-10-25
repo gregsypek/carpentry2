@@ -5,6 +5,7 @@ import { updateSettings } from './updateSettings';
 import { createPrice } from './createPrice';
 import { createStairs } from './createStairs';
 import { addPhoto } from './addPhoto';
+import { deletePrice } from './deletePrice';
 import { checkFlexGap } from './flexGap';
 // import catchAsync from '../../utils/catchAsync';
 import obs from './stickyNav';
@@ -17,6 +18,7 @@ const userPasswordForm = document.querySelector('.form__password ');
 const userPriceForm = document.querySelector('.form__price');
 const userStairsForm = document.querySelector('.form__stairs');
 const userAddPhoto = document.querySelector('.form__addPhoto');
+const userDeletePrice = document.querySelector('.form__deletePrice');
 
 const btnNav = document.querySelector('.btn--mobile-nav');
 const header = document.querySelector('.header');
@@ -176,24 +178,49 @@ if (userAddPhoto)
   userAddPhoto.addEventListener('submit', async (e) => {
     e.preventDefault();
     // const selected = document.getElementById('categories').value;
-    const el = document.getElementById('categories');
+    const el = document.getElementById('type');
     const option = el.options[el.selectedIndex];
 
     const dataId = option.getAttribute('data-id');
     console.log('dataId', dataId);
 
     const form = new FormData();
-    const images = document.getElementById('stairImages').files;
-    const imagesArr = [];
+    // const images = document.getElementById('stairImages').files;
+    // const imagesArr = [];
 
-    let file;
-    for (let i = 0; i < images.length; i++) {
-      file = images[i];
-      imagesArr.push(file);
-    }
-    imagesArr.map((item) => {
-      form.append('images', item);
-    });
-    console.log('imagesArr', imagesArr);
-    await addPhoto(form, dataId);
+    // let file;
+    // for (let i = 0; i < images.length; i++) {
+    //   file = images[i];
+    //   imagesArr.push(file);
+    // }
+    // imagesArr.map((item) => {
+    //   form.append('images', item);
+    // });
+    // console.log('imagesArr', imagesArr);
+    await deletePrice(dataId);
+  });
+if (userDeletePrice)
+  userDeletePrice.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const el = document.getElementById('type');
+    const option = el.options[el.selectedIndex];
+
+    const dataId = option.getAttribute('data-id');
+    console.log('dataId', dataId);
+
+    // const form = new FormData();
+    // const images = document.getElementById('stairImages').files;
+    // const imagesArr = [];
+
+    // let file;
+    // for (let i = 0; i < images.length; i++) {
+    //   file = images[i];
+    //   imagesArr.push(file);
+    // }
+    // imagesArr.map((item) => {
+    //   form.append('images', item);
+    // });
+    // console.log('imagesArr', imagesArr);
+    await deletePrice(dataId);
   });

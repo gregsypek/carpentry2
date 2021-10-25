@@ -1,6 +1,7 @@
 const multer = require('multer');
 const sharp = require('sharp');
 const AppError = require('../utils/appError');
+const Stair = require('../models/stairModel');
 
 const multerStorage = multer.memoryStorage();
 
@@ -59,6 +60,51 @@ const resizeImages = async (req, res, next) => {
 
   next();
 };
+const updateImages = async (req, res, next) => {
+  // if (req.files) console.log(req.body);
+  console.log('body', req.body);
+  console.log('req.params', req.params);
+  const doc = await Stair.findByIdAndUpdate(
+    {
+      _id: req.params.id,
+    },
+    { $push: { images: req.body.images } },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
+
+  if (!doc) {
+    return next(new AppError('Nie ma takiego dokumentu', 404));
+  }
+  res.status(200).json({
+    status: 'success',
+    data: {
+      data: doc,
+    },
+  });
+};
+// const updateImages = async (req, res, next) => {
+//   console.log('here');
+//   // if (req.files) console.log(req.body);
+
+//   const doc = await Stair.findByIdAndUpdate(req.params.id, req.body, {
+//     new: true,
+//     runValidators: true,
+//   });
+//   console.log('doc');
+
+//   if (!doc) {
+//     return next(new AppError('Nie ma takiego dokumentu', 404));
+//   }
+//   res.status(200).json({
+//     status: 'success',
+//     data: {
+//       data: doc,
+//     },
+//   });
+// };
 
 // const getResult = async (req, res) => {
 //   if (req.body.images.length <= 0) {
@@ -76,5 +122,6 @@ const resizeImages = async (req, res, next) => {
 module.exports = {
   uploadImages: uploadImages,
   resizeImages: resizeImages,
+  updateImages: updateImages,
   // getResult: getResult,
 };

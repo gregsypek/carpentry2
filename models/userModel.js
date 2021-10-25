@@ -46,7 +46,7 @@ const userSchema = new mongoose.Schema({
     select: false,
   },
 });
-
+//////////////
 userSchema.pre('save', async function (next) {
   //ONLY RUN THIS FUNCTION IF PASSWORD WAS MODIFIED
   if (!this.isModified('password')) return next();
@@ -63,7 +63,7 @@ userSchema.pre('save', function (next) {
   this.passwordChangedAt = Date.now() - 1000;
   next();
 });
-
+//////////////
 userSchema.pre(/^find/, function (next) {
   //this point to the current document
   this.find({ active: { $ne: false } });

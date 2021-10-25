@@ -28,39 +28,6 @@ const allLinks = document.querySelectorAll('a:link');
 
 const sectionHeroEl = document.querySelector('.section-hero');
 const sectionStairs = document.querySelector('.stairs__top');
-//////////////
-// const getOldPhotos = (name) => {
-//   const gallery = document.getElementById(name);
-//   console.log('gallery', gallery);
-//   const oldImages = [...gallery.querySelectorAll('img')];
-
-//   oldImages.map(async (item) => {
-//     item.getAttribute('class');
-//   });
-
-//   const oldImagesArr = oldImages.map((item) => item.className);
-
-//   return oldImagesArr;
-// };
-// const test = getOldPhotos('domki-do-apiterapii');
-
-// console.log('test', test);
-
-//////////////////
-// const getOldPhotos = catchAsync(async (name) => {
-//   const gallery = document.getElementById(name);
-//   console.log('gallery', gallery);
-//   // const oldImages = [...gallery.querySelectorAll('img')];
-//   // Promise.all(
-//   //   oldImages.map(async (item) => {
-//   //     await item.getAttribute('class');
-//   //   })
-//   // );
-
-//   // const oldImagesArr = await oldImages.map((item) => item.className);
-
-//   // return oldImagesArr;
-// });
 
 // FUNCTIONS
 if (loginForm)
@@ -200,7 +167,7 @@ if (userStairsForm)
     // form.append('photo', document.getElementById('photo').files[0]);
 
     console.log(form);
-    // console.log(document.getElementById('images').files[1]);
+    // console.log(document.getElementById('images').files[0]);
     // console.log(document.getElementById('imageCover').files[0]);
     await createStairs(form);
   });
@@ -213,15 +180,11 @@ if (userAddPhoto)
     const option = el.options[el.selectedIndex];
 
     const dataId = option.getAttribute('data-id');
-    // console.log('dataId', dataId);
-    // const options = option.getAttribute('value').toLowerCase();
-    // console.log('option', options, typeof options);
+    console.log('dataId', dataId);
 
     const form = new FormData();
     const images = document.getElementById('stairImages').files;
     const imagesArr = [];
-    // const oldImages = getOldPhotos(options);
-    // console.log('oldImages', oldImages);
 
     let file;
     for (let i = 0; i < images.length; i++) {
@@ -231,7 +194,6 @@ if (userAddPhoto)
     imagesArr.map((item) => {
       form.append('images', item);
     });
-    // form.append('option', option.getAttribute('value').toLowerCase());
-    console.log('imagesArr2', imagesArr);
+    console.log('imagesArr', imagesArr);
     await addPhoto(form, dataId);
   });

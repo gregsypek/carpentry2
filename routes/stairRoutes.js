@@ -24,9 +24,7 @@ router
     authController.restrictTo('admin'),
     uploadController.uploadImages,
     uploadController.resizeImages,
-    // stairController.uploadNewPhotos,
-    // stairController.resizeNewPhotos,
-    stairController.updateStair
+    uploadController.updateImages
   )
   .delete(
     authController.protect,

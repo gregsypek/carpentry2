@@ -38,4 +38,12 @@ router
 //   uploadController.resizeImages
 // );
 
+// router
+//   .route('/:id/:imageId')
+//   .delete(
+//     authController.protect,
+//     authController.restrictTo('admin'),
+//     stairController.deleteStair
+//   );
+
 module.exports = router;

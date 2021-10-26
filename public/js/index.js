@@ -8,6 +8,7 @@ import { addPhoto } from './addPhoto';
 // import { deletePrice } from './deletePrice';
 // import { deleteStairs } from './deleteStairs';
 import { deleteCategory } from './deleteCategory';
+import { deletePhotos } from './deletePhotos';
 import { checkFlexGap } from './flexGap';
 // import catchAsync from '../../utils/catchAsync';
 import obs from './stickyNav';
@@ -22,6 +23,7 @@ const userStairsForm = document.querySelector('.form__stairs');
 const userAddPhoto = document.querySelector('.form__addPhoto');
 const userDeletePrice = document.querySelector('.form__deletePrice');
 const userDeleteStairs = document.querySelector('.form__deleteStairs');
+const userDeletePhotos = document.querySelector('.form__deletePhotos');
 
 const btnNav = document.querySelector('.btn--mobile-nav');
 const header = document.querySelector('.header');
@@ -181,26 +183,26 @@ if (userAddPhoto)
   userAddPhoto.addEventListener('submit', async (e) => {
     e.preventDefault();
     // const selected = document.getElementById('categories').value;
-    const el = document.getElementById('type');
+    const el = document.getElementById('categories');
     const option = el.options[el.selectedIndex];
 
     const dataId = option.getAttribute('data-id');
     console.log('dataId', dataId);
 
     const form = new FormData();
-    // const images = document.getElementById('stairImages').files;
-    // const imagesArr = [];
+    const images = document.getElementById('stairImages').files;
+    const imagesArr = [];
 
-    // let file;
-    // for (let i = 0; i < images.length; i++) {
-    //   file = images[i];
-    //   imagesArr.push(file);
-    // }
-    // imagesArr.map((item) => {
-    //   form.append('images', item);
-    // });
-    // console.log('imagesArr', imagesArr);
-    await deletePrice(dataId);
+    let file;
+    for (let i = 0; i < images.length; i++) {
+      file = images[i];
+      imagesArr.push(file);
+    }
+    imagesArr.map((item) => {
+      form.append('images', item);
+    });
+    console.log('imagesArr', imagesArr);
+    await addPhoto(form, dataId);
   });
 if (userDeletePrice)
   userDeletePrice.addEventListener('submit', async (e) => {
@@ -228,4 +230,32 @@ if (userDeleteStairs)
 
     // await deleteStairs(dataId);
     await deleteCategory(dataId, 'stairs');
+  });
+
+if (userDeletePhotos)
+  userDeletePhotos.addEventListener('change', async (e) => {
+    e.preventDefault();
+    // console.log(e.target[e.target.selectedIndex].getAttribute('data-nr'));
+    // const selectedValue = e.target[e.target.selectedIndex].value;
+    const selectedIndex =
+      e.target[e.target.selectedIndex].getAttribute('data-nr');
+    const selectedCategory = e.target[e.target.selectedIndex].id;
+
+    // const selectedOption = document.getElementById(`${selectedCategory}`);
+    const selectedOption = document.querySelector(
+      `[id="${selectedCategory}"][data-nr="${selectedIndex}"]`
+    );
+    console.log('222', selectedOption);
+
+    const selectedOptgroup = selectedOption.closest('optgroup');
+    console.log('!', selectedOptgroup);
+    const id = selectedOptgroup.getAttribute('data-id');
+    console.log('dane', id, selectedIndex);
+    // const options = Array.from(
+    //   document.querySelectorAll('select[name="deletePhotos"] > optgroup')
+    // ).map((el) => el.getAttribute('data-id'));
+    // console.log('options', options);
+
+    // await deleteStairs(dataId);
+    await deletePhotos(id, selectedIndex);
   });

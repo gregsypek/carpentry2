@@ -22,12 +22,14 @@ block form2
     
     form.form.form__deletePhotos
       .form__group 
-        label.form__label(for='deletePhotos') Wybierz kategorię
-        select.form__input(id='deletePhotos' name="deletePhotos")
-          each item,i in stairs 
-            optgroup.form__input(label=`${item.name}` value=`${item.name}` data-id=`${item.id}` id='category')
-              each photo, i in item.images
-                option(data-nr=`${i+1}` id=`${item.slug}`)= `wzór nr ${i+1}`
-         
+        label.form__label(for='photoSelect') Wybierz kategorię
+        select.form__input(id='photoSelect' name="photoSelect" required)
+          option(value="") Wybierz opcje
+            each item in stairs
+              option(value=`${item.slug}` data-id=`${item.id}`)= item.name
+      each item, i in stairs 
+        .form__group 
+          label.form__label(for='photoSelect')= `wzór ${i+1}`
+          input.form__inputt(type="checkbox" id='photoSelect' name="photo" value=`${item.images[i]}`)
       .form__group 
         button.btn.account__btn(type='submit') Usuń wybrane

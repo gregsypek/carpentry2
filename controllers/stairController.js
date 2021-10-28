@@ -1,4 +1,7 @@
 // const { router } = require('../app');
+// const path = require('path');
+const fs = require('fs');
+// const { unlink } = require('fs/promises');
 const multer = require('multer');
 const sharp = require('sharp');
 const Stair = require('../models/stairModel');
@@ -104,12 +107,26 @@ exports.deleteImageFromStairs = catchAsync(async (req, res, next) => {
   if (!doc) {
     return next(new AppError('Nie ma takiego dokumentu', 404));
   }
+
+  // await fs.unlink(`public/images/stairs/${req.params.name}`, (err) => {
+  //   if (err) throw err;
+  //   console.log('Zdjecie usuniete');
+  // });
+
   res.status(200).json({
     status: 'success',
     data: {
       data: doc,
     },
   });
+  //  TODO CHECK IF THIS E IF STATEMENT IS RIGHT
+  if (res.statusCode === 200) {
+    await fs.unlink(`public/images/stairs/${req.params.name}`, (err) => {
+      if (err) throw err;
+      console.log('Zdjecie usuniete');
+    });
+  }
+  // console.log('res', res.statusCode);
 });
 
 exports.getAllStairs = factory.getAll(Stair);

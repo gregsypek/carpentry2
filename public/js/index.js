@@ -1,6 +1,5 @@
 /*eslint-disable*/
-// import * as fs from 'fs';
-// import { readFileSync } from 'fs';
+
 import '@babel/polyfill';
 
 import { login, logout } from './login';
@@ -242,59 +241,15 @@ if (userDeletePhotos)
     const selectedOption = document.querySelector(
       'select[name="deletePhotos"] option:checked'
     );
-    console.log(selectedOption);
+    // console.log(selectedOption);
     const selectedName = selectedOption.getAttribute('data-name');
-    console.log(selectedName);
+    // console.log(selectedName);
     const selectedId = selectedOption
       .closest('optgroup')
       .getAttribute('data-id');
-    console.log(selectedId);
+    // console.log(selectedId);
     const selectedIndex = selectedOption.getAttribute('data-nr') - 1;
-    console.log(selectedIndex);
-    // const file = fs.readFileSync(`../images/stairs/${selectedName}`, 'utf8');
-    // console.log(file);
+    // console.log(selectedIndex);
+
     await deletePhotos(selectedId, selectedName, selectedIndex);
   });
-
-// if (userDeletePhotos)
-//   userDeletePhotos.addEventListener('change', async (e) => {
-//     e.preventDefault();
-//     // console.log(e.target[e.target.selectedIndex].getAttribute('data-nr'));
-//     // const selectedValue = e.target[e.target.selectedIndex].value;
-
-//     const selectedIndex =
-//       e.target[e.target.selectedIndex].getAttribute('data-nr');
-//     const selectedCategory =
-//       e.target[e.target.selectedIndex].getAttribute('class');
-
-//     // const selectedOption = document.getElementById(`${selectedCategory}`);
-//     const selectedOption = document.querySelector(
-//       `[class="${selectedCategory}"][data-nr="${selectedIndex}"]`
-//     );
-//     console.log('222', selectedOption);
-
-//     const selectedOptgroup = selectedOption.closest('optgroup');
-//     console.log('value', selectedOptgroup);
-//     console.log('!', selectedOptgroup);
-//     const id = selectedOptgroup.getAttribute('data-id');
-//     console.log('dane', id, selectedIndex);
-//     const name = selectedOptgroup
-//       .getAttribute('value')
-//       .split(' ')
-//       .join('-')
-//       .toLowerCase();
-//     console.log(name);
-//     const photoName = selectedOption.getAttribute('data-name');
-//     console.log(photoName);
-//     // const form = new FormData();
-
-//     // const options = Array.from(
-//     //   document.querySelectorAll('select[name="deletePhotos"] > optgroup')
-//     // ).map((el) => el.getAttribute('data-id'));
-//     // console.log('options', options);
-
-//     // await deleteStairs(dataId);
-
-//     // const name = document.getElementById('');
-//     await deletePhotos(id, photoName, selectedIndex);
-//   });

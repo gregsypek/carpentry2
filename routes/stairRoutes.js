@@ -2,7 +2,6 @@ const express = require('express');
 const authController = require('../controllers/authController');
 const stairController = require('../controllers/stairController');
 const uploadController = require('../controllers/uploadController');
-const viewController = require('../controllers/viewController');
 
 const router = express.Router();
 
@@ -45,11 +44,13 @@ router
 //   // viewController.getDeleteParams,
 //   stairController.deleteImageFromStairs
 // );
-router.route('/:id/:name').get(stairController.getStair).delete(
-  authController.protect,
-  authController.restrictTo('admin'),
-  // viewController.getDeleteParams,
-  stairController.deleteImageFromStairs
-);
+router
+  .route('/:id/:name')
+  .get(stairController.getStair)
+  .delete(
+    authController.protect,
+    authController.restrictTo('admin'),
+    stairController.deleteImageFromStairs
+  );
 
 module.exports = router;

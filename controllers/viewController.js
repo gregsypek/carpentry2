@@ -79,3 +79,22 @@ exports.getAddPhotoForm = catchAsync(async (req, res, next) => {
     stairs,
   });
 });
+exports.getDeletePhotoForm = catchAsync(async (req, res, next) => {
+  const stairs = await Stair.find();
+  // const stairsSelected = await Stair.findOne({ __id: req.params.id });
+  res.status(200).render('deletePhoto', {
+    title: 'Usuń zdjęcie',
+    stairs,
+    // stairsSelected,
+  });
+});
+// exports.getDeleteParams = catchAsync(async (req, res, next) => {
+//   const photo = await Stair.findOne({
+//     id: req.params.id,
+//     index: req.params.index,
+//   });
+//   res.status(200).render('deletePhoto', {
+//     title: 'Usuń zdjęcie',
+//     photo,
+//   });
+// });

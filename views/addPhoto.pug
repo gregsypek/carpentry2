@@ -16,18 +16,3 @@ block form
     
     .form__group 
       button.btn.account__btn(type='submit') Dodaj zdjęcia
-block form2 
-  .container--big.mt--bg   
-    h2.form__title Usuń zdjęcia
-    
-    form.form.form__deletePhotos
-      .form__group 
-        label.form__label(for='deletePhotos') Wybierz kategorię
-        select.form__input(id='deletePhotos' name="deletePhotos")
-          each item,i in stairs 
-            optgroup.form__input(label=`${item.name}` value=`${item.name}` data-id=`${item.id}` id='category')
-              each photo, i in item.images
-                option(data-nr=`${i+1}` id=`${item.slug}`)= `wzór nr ${i+1}`
-         
-      .form__group 
-        button.btn.account__btn(type='submit') Usuń wybrane

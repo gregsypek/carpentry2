@@ -47,22 +47,22 @@ const userSchema = new mongoose.Schema({
   },
 });
 //////////////
-userSchema.pre('save', async function (next) {
-  //ONLY RUN THIS FUNCTION IF PASSWORD WAS MODIFIED
-  if (!this.isModified('password')) return next();
-  //HASH THE PASSWORD WITH COST OF 12
-  this.password = await bcrypt.hash(this.password, 12);
-  //DELETE PASSWORD CONFIRM
-  this.passwordConfirm = undefined;
-  next();
-});
+// userSchema.pre('save', async function (next) {
+//   //ONLY RUN THIS FUNCTION IF PASSWORD WAS MODIFIED
+//   if (!this.isModified('password')) return next();
+//   //HASH THE PASSWORD WITH COST OF 12
+//   this.password = await bcrypt.hash(this.password, 12);
+//   //DELETE PASSWORD CONFIRM
+//   this.passwordConfirm = undefined;
+//   next();
+// });
 
-userSchema.pre('save', function (next) {
-  if (!this.isModified('password') || this.isNew) return next();
+// userSchema.pre('save', function (next) {
+//   if (!this.isModified('password') || this.isNew) return next();
 
-  this.passwordChangedAt = Date.now() - 1000;
-  next();
-});
+//   this.passwordChangedAt = Date.now() - 1000;
+//   next();
+// });
 //////////////
 userSchema.pre(/^find/, function (next) {
   //this point to the current document

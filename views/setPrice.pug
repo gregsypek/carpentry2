@@ -1,11 +1,11 @@
 extends accountBase
 
 block form
-  h2.form__title Stwórz nowy cennik
+  h2.form__title Utwórz nowy cennik
   form.form.form__price
     .form__group 
       label.form__label(for='title') Tytuł
-      input.form__input(id='title' type='text' value='schody ...' required name='title')
+      input.form__input(id='title' type='text'  required name='title')
     .form__group 
       label.form__label(for='price') Cena
       input.form__input(type='number' id='price'  required name='price') 
@@ -20,7 +20,7 @@ block form
       label(for='imageCover') Wybierz zdjęcie
     
     .form__group 
-      button.btn.account__btn(type='submit') Zapisz ustawienia
+      button.btn.account__btn.btn--set-price(type='submit') Dodaj cennik
 block form2 
   .container--big.mt--bg   
     h2.form__title Usuń cennik
@@ -32,4 +32,4 @@ block form2
             each item in price
               option(value=`${item.title}` data-id=`${item.id}`)= item.title
       .form__group 
-        button.btn.account__btn(type='submit') Usuń cennik
+        button.btn.account__btn.btn--delete-price(type='submit') Usuń cennik

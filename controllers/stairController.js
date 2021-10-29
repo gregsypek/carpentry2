@@ -120,12 +120,20 @@ exports.deleteImageFromStairs = catchAsync(async (req, res, next) => {
     },
   });
   //  TODO CHECK IF THIS E IF STATEMENT IS RIGHT
+  // const newUrl = `${req.originalUrl}`.split('/').slice(0, 5).join('/');
   if (res.statusCode === 200) {
     await fs.unlink(`public/images/stairs/${req.params.name}`, (err) => {
       if (err) throw err;
       console.log('Zdjecie usuniete');
+      // window.location.reload(true);
+      // res.redirect('back');
     });
   }
+
+  // newUrl = [newUrl].join('/');
+  // console.log('new', newUrl);
+  // console.log('hello', req.originalUrl, typeof req.originalUrl);
+  // await res.redirect();
   // console.log('res', res.statusCode);
 });
 

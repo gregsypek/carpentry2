@@ -46,6 +46,10 @@
       gap: 4.8rem;
       @media (max-width: 59em) {
         flex-direction: column;
+
+        &:nth-last-child(2) {
+          margin-bottom: 2rem;
+        }
       }
     }
     &__link:link,
@@ -75,12 +79,19 @@
 .btn--admin-logout {
   font-size: 1.6rem;
   padding: 0 0.5rem;
-  border: 1px solid black;
+  border: 2px solid $gray-color;
   text-transform: uppercase;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  &:hover,
+  &:active {
+    border: 2px solid $second-color;
+  }
+  @media (max-width: 59em) {
+    padding: 1rem 3.5rem;
+  }
 }
 .btn--admin-logout {
   background-color: $main-color;

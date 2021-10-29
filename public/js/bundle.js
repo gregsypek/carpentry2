@@ -9717,6 +9717,7 @@ if (userPriceForm) userPriceForm.addEventListener('submit', /*#__PURE__*/functio
         switch (_context2.prev = _context2.next) {
           case 0:
             e.preventDefault();
+            document.querySelector('.btn--set-price').textContent = 'Aktualizuje...';
             form = new FormData();
             additionalsArray = document.getElementById('additionals').value.split(',');
             priceIncludedArray = document.getElementById('priceIncluded').value.split(',');
@@ -9737,12 +9738,15 @@ if (userPriceForm) userPriceForm.addEventListener('submit', /*#__PURE__*/functio
             form.append('imageCover', document.getElementById('imageCover').files[0]);
             additionalsArray.map(function (item) {
               form.append('additionals', item);
-            });
-            console.log(form);
+            }); // console.log(form);
+
             _context2.next = 12;
             return (0, _createPrice.createPrice)(form);
 
           case 12:
+            document.querySelector('.btn--set-price').textContent = 'Dodaj cennik';
+
+          case 13:
           case "end":
             return _context2.stop();
         }
@@ -9762,6 +9766,7 @@ if (userStairsForm) userStairsForm.addEventListener('submit', /*#__PURE__*/funct
         switch (_context3.prev = _context3.next) {
           case 0:
             e.preventDefault();
+            document.querySelector('.btn--set-category').textContent = 'Aktualizuje...';
             form = new FormData(); // const priceNumber = parseInt(document.getElementById('price').value);
 
             form.append('name', document.getElementById('stairsName').value); // form.append('price', document.getElementById('price').value);
@@ -9775,10 +9780,13 @@ if (userStairsForm) userStairsForm.addEventListener('submit', /*#__PURE__*/funct
             console.log(form); // console.log(document.getElementById('images').files[0]);
             // console.log(document.getElementById('imageCover').files[0]);
 
-            _context3.next = 10;
+            _context3.next = 11;
             return (0, _createStairs.createStairs)(form);
 
-          case 10:
+          case 11:
+            document.querySelector('.btn--set-category').textContent = 'Zapisz kategorię';
+
+          case 12:
           case "end":
             return _context3.stop();
         }
@@ -9797,7 +9805,8 @@ if (userAddPhoto) userAddPhoto.addEventListener('submit', /*#__PURE__*/function 
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
-            e.preventDefault(); // const selected = document.getElementById('categories').value;
+            e.preventDefault();
+            document.querySelector('.btn--set-photo').textContent = 'Aktualizuje...'; // const selected = document.getElementById('categories').value;
 
             el = document.getElementById('categories');
             option = el.options[el.selectedIndex];
@@ -9816,10 +9825,13 @@ if (userAddPhoto) userAddPhoto.addEventListener('submit', /*#__PURE__*/function 
               form.append('images', item);
             });
             console.log('imagesArr', imagesArr);
-            _context4.next = 13;
+            _context4.next = 14;
             return (0, _addPhoto.addPhoto)(form, dataId);
 
-          case 13:
+          case 14:
+            document.querySelector('.btn--set-photo').textContent = 'Dodaj zdjęcia';
+
+          case 15:
           case "end":
             return _context4.stop();
         }
@@ -9839,15 +9851,19 @@ if (userDeletePrice) userDeletePrice.addEventListener('submit', /*#__PURE__*/fun
         switch (_context5.prev = _context5.next) {
           case 0:
             e.preventDefault();
+            document.querySelector('.btn--delete-price').textContent = 'Aktualizuje...';
             el = document.getElementById('type');
             option = el.options[el.selectedIndex];
             dataId = option.getAttribute('data-id');
             console.log('dataId', dataId); // await deletePrice(dataId);
 
-            _context5.next = 7;
+            _context5.next = 8;
             return (0, _deleteCategory.deleteCategory)(dataId, 'price');
 
-          case 7:
+          case 8:
+            document.querySelector('.btn--delete-price').textContent = 'Usuń cennik';
+
+          case 9:
           case "end":
             return _context5.stop();
         }
@@ -9867,15 +9883,19 @@ if (userDeleteStairs) userDeleteStairs.addEventListener('submit', /*#__PURE__*/f
         switch (_context6.prev = _context6.next) {
           case 0:
             e.preventDefault();
+            document.querySelector('.btn--delete-category').textContent = 'Aktualizuje...';
             el = document.getElementById('categorySelect');
             option = el.options[el.selectedIndex];
             dataId = option.getAttribute('data-id');
             console.log('dataId', dataId); // await deleteStairs(dataId);
 
-            _context6.next = 7;
+            _context6.next = 8;
             return (0, _deleteCategory.deleteCategory)(dataId, 'stairs');
 
-          case 7:
+          case 8:
+            document.querySelector('.btn--delete-category').textContent = 'Usuń kategorie';
+
+          case 9:
           case "end":
             return _context6.stop();
         }
@@ -9895,6 +9915,7 @@ if (userDeletePhotos) userDeletePhotos.addEventListener('submit', /*#__PURE__*/f
         switch (_context7.prev = _context7.next) {
           case 0:
             e.preventDefault();
+            document.querySelector('.btn--delete-photo').textContent = 'Aktualizuje...';
             selectedOption = document.querySelector('select[name="deletePhotos"] option:checked'); // console.log(selectedOption);
 
             selectedName = selectedOption.getAttribute('data-name'); // console.log(selectedName);
@@ -9903,10 +9924,13 @@ if (userDeletePhotos) userDeletePhotos.addEventListener('submit', /*#__PURE__*/f
 
             selectedIndex = selectedOption.getAttribute('data-nr') - 1; // console.log(selectedIndex);
 
-            _context7.next = 7;
+            _context7.next = 8;
             return (0, _deletePhotos.deletePhotos)(selectedId, selectedName, selectedIndex);
 
-          case 7:
+          case 8:
+            document.querySelector('.btn--delete-photo').textContent = 'Usuń zdjęcie';
+
+          case 9:
           case "end":
             return _context7.stop();
         }
@@ -9946,7 +9970,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57252" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57642" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

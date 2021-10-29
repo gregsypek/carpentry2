@@ -143,6 +143,7 @@ if (userPasswordForm)
 if (userPriceForm)
   userPriceForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    document.querySelector('.btn--set-price').textContent = 'Aktualizuje...';
     const form = new FormData();
 
     const additionalsArray = document
@@ -174,14 +175,15 @@ if (userPriceForm)
       form.append('additionals', item);
     });
 
-    console.log(form);
+    // console.log(form);
     await createPrice(form);
+    document.querySelector('.btn--set-price').textContent = 'Dodaj cennik';
   });
 
 if (userStairsForm)
   userStairsForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    document.querySelector('.btn--set-category').textContent = 'Aktualizuje...';
     const form = new FormData();
     // const priceNumber = parseInt(document.getElementById('price').value);
 
@@ -198,11 +200,14 @@ if (userStairsForm)
     // console.log(document.getElementById('images').files[0]);
     // console.log(document.getElementById('imageCover').files[0]);
     await createStairs(form);
+    document.querySelector('.btn--set-category').textContent =
+      'Zapisz kategorię';
   });
 
 if (userAddPhoto)
   userAddPhoto.addEventListener('submit', async (e) => {
     e.preventDefault();
+    document.querySelector('.btn--set-photo').textContent = 'Aktualizuje...';
     // const selected = document.getElementById('categories').value;
     const el = document.getElementById('categories');
     const option = el.options[el.selectedIndex];
@@ -224,11 +229,12 @@ if (userAddPhoto)
     });
     console.log('imagesArr', imagesArr);
     await addPhoto(form, dataId);
+    document.querySelector('.btn--set-photo').textContent = 'Dodaj zdjęcia';
   });
 if (userDeletePrice)
   userDeletePrice.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    document.querySelector('.btn--delete-price').textContent = 'Aktualizuje...';
     const el = document.getElementById('type');
     const option = el.options[el.selectedIndex];
 
@@ -237,12 +243,14 @@ if (userDeletePrice)
 
     // await deletePrice(dataId);
     await deleteCategory(dataId, 'price');
+    document.querySelector('.btn--delete-price').textContent = 'Usuń cennik';
   });
 
 if (userDeleteStairs)
   userDeleteStairs.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    document.querySelector('.btn--delete-category').textContent =
+      'Aktualizuje...';
     const el = document.getElementById('categorySelect');
     const option = el.options[el.selectedIndex];
 
@@ -251,11 +259,14 @@ if (userDeleteStairs)
 
     // await deleteStairs(dataId);
     await deleteCategory(dataId, 'stairs');
+    document.querySelector('.btn--delete-category').textContent =
+      'Usuń kategorie';
   });
 
 if (userDeletePhotos)
   userDeletePhotos.addEventListener('submit', async (e) => {
     e.preventDefault();
+    document.querySelector('.btn--delete-photo').textContent = 'Aktualizuje...';
 
     const selectedOption = document.querySelector(
       'select[name="deletePhotos"] option:checked'
@@ -271,4 +282,5 @@ if (userDeletePhotos)
     // console.log(selectedIndex);
 
     await deletePhotos(selectedId, selectedName, selectedIndex);
+    document.querySelector('.btn--delete-photo').textContent = 'Usuń zdjęcie';
   });

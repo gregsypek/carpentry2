@@ -9580,6 +9580,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //DOM ELEMENTS
 var loginForm = document.querySelector('.form__login');
 var logOutBtn = document.querySelector('.btn--admin-logout');
+var images = document.querySelectorAll('.lazyload');
 var userDataForm = document.querySelector('.form-user-data');
 var userPasswordForm = document.querySelector('.form__password ');
 var userPriceForm = document.querySelector('.form__price');
@@ -9633,7 +9634,26 @@ if (allLinks) allLinks.forEach(function (link) {
 }); // Sticky navigation
 
 if (sectionHeroEl) _stickyNav.default.observe(sectionHeroEl);
-if (sectionStairs) _stickyNav.default.observe(sectionStairs); //helper
+if (sectionStairs) _stickyNav.default.observe(sectionStairs); // Lazy loading images
+
+if (images) {
+  var handleIntersection = function handleIntersection(entries) {
+    // console.log('jestem');
+    entries.map(function (entry) {
+      if (entry.isIntersecting) {
+        // entry.target.src = entry.target.dataset.src;
+        entry.target.classList.add('loaded');
+        observer.unobserve(entry.target);
+      } else return;
+    });
+  };
+
+  var observer = new IntersectionObserver(handleIntersection);
+  images.forEach(function (image) {
+    return observer.observe(image);
+  });
+} //helper
+
 
 (0, _flexGap.checkFlexGap)();
 if (logOutBtn) logOutBtn.addEventListener('click', _login.logout);
@@ -9926,7 +9946,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61748" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57252" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

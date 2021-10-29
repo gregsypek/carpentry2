@@ -521,6 +521,15 @@ ion-icon {
   font-weight: 700;
 }
 
+img.lazyload {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+img.lazyload.loaded {
+  opacity: 1;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

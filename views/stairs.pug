@@ -20,7 +20,7 @@ block content
         .gallery(id=`${stairs.slug}`.toLowerCase())
           each img, index in stairs.images
             figure 
-              img(src=`/images/stairs/${img}` alt=`${stairs.name}` class=`${img.split('.')[0]}`)
+              img(src=`/images/stairs/${img}` alt=`${stairs.name}` class=`${img.split('.')[0]} lazyload`)
               figcaption.title= `wzór nr ${index+1}`
 
         .stairs__btn 

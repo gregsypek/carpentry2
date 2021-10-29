@@ -18,6 +18,9 @@ import obs from './stickyNav';
 //DOM ELEMENTS
 const loginForm = document.querySelector('.form__login');
 const logOutBtn = document.querySelector('.btn--admin-logout');
+
+const images = document.querySelectorAll('.lazyload');
+
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form__password ');
 const userPriceForm = document.querySelector('.form__price');
@@ -83,6 +86,22 @@ if (allLinks)
 if (sectionHeroEl) obs.observe(sectionHeroEl);
 if (sectionStairs) obs.observe(sectionStairs);
 
+// Lazy loading images
+if (images) {
+  const handleIntersection = (entries) => {
+    // console.log('jestem');
+    entries.map((entry) => {
+      if (entry.isIntersecting) {
+        // entry.target.src = entry.target.dataset.src;
+        entry.target.classList.add('loaded');
+        observer.unobserve(entry.target);
+      } else return;
+    });
+  };
+  const observer = new IntersectionObserver(handleIntersection);
+
+  images.forEach((image) => observer.observe(image));
+}
 //helper
 checkFlexGap();
 

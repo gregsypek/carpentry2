@@ -6,7 +6,7 @@ import { showAlert } from './alerts';
 //type is either 'password' or 'data'
 export const createPrice = async (data) => {
   try {
-    const url = 'http://localhost:3000/api/v1/price';
+    const url = '/api/v1/price';
 
     const res = await axios({
       method: 'POST',

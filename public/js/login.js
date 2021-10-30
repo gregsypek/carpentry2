@@ -7,7 +7,7 @@ export const login = async (email, password) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://localhost:3000/api/v1/users/login',
+      url: '/api/v1/users/login',
       data: {
         email,
         password,
@@ -28,7 +28,7 @@ export const login = async (email, password) => {
 export const logout = async () => {
   const res = await axios({
     method: 'GET',
-    url: 'http://localhost:3000/api/v1/users/logout',
+    url: '/api/v1/users/logout',
   });
   //we actually need to set it to true here, and that will then force a reload from the server and not from browser cache
   if (res.data.status === 'success') location.reload(true);

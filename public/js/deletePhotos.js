@@ -6,7 +6,7 @@ import { showAlert } from './alerts';
 // type is either 'password' or 'data'
 export const deletePhotos = async (id, name, index) => {
   try {
-    const url = `http://localhost:3000/api/v1/stairs/${id}/${name}`;
+    const url = `/api/v1/stairs/${id}/${name}`;
 
     const res = await axios({
       method: 'DELETE',

@@ -62,8 +62,8 @@ const resizeImages = async (req, res, next) => {
 };
 const updateImages = async (req, res, next) => {
   // if (req.files) console.log(req.body);
-  console.log('body', req.body);
-  console.log('req.params', req.params);
+  // console.log('body', req.body);
+  // console.log('req.params', req.params);
   const doc = await Stair.findByIdAndUpdate(
     {
       _id: req.params.id,

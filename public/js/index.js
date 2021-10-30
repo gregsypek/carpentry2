@@ -196,7 +196,7 @@ if (userStairsForm)
     form.append('summary', document.getElementById('stairsSummary').value);
     // form.append('photo', document.getElementById('photo').files[0]);
 
-    console.log(form);
+    // console.log(form);
     // console.log(document.getElementById('images').files[0]);
     // console.log(document.getElementById('imageCover').files[0]);
     await createStairs(form);
@@ -213,7 +213,7 @@ if (userAddPhoto)
     const option = el.options[el.selectedIndex];
 
     const dataId = option.getAttribute('data-id');
-    console.log('dataId', dataId);
+    // console.log('dataId', dataId);
 
     const form = new FormData();
     const images = document.getElementById('stairImages').files;
@@ -239,7 +239,7 @@ if (userDeletePrice)
     const option = el.options[el.selectedIndex];
 
     const dataId = option.getAttribute('data-id');
-    console.log('dataId', dataId);
+    // console.log('dataId', dataId);
 
     // await deletePrice(dataId);
     await deleteCategory(dataId, 'price');

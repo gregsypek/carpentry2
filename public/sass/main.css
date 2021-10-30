@@ -157,6 +157,10 @@ ion-icon {
   margin-bottom: 9.6rem;
 }
 
+.mt--bg {
+  margin-top: 9.6rem;
+}
+
 /* *************HEADERS************/
 .heading-primary,
 .heading-secondary,
@@ -267,6 +271,29 @@ ion-icon {
   }
 }
 
+/* *************ALERTS************/
+.alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 1.6rem 15rem;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.25);
+}
+
+.alert--success {
+  background-color: #52a779;
+}
+
+.alert--error {
+  background-color: #ec5e5b;
+}
+
 .no-flexbox-gap .quality.top {
   margin-right: 4.8rem;
 }
@@ -358,6 +385,151 @@ ion-icon {
   }
 }
 
+.error {
+  text-align: center;
+}
+
+.error__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10rem 0;
+}
+
+.error__msg {
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 50rem;
+  margin: 10rem auto;
+}
+
+.form__title {
+  font-size: 3rem;
+  font-weight: 6900;
+  letter-spacing: 0.05em;
+  margin-bottom: 4.8rem;
+}
+
+.form__input {
+  display: block;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 1.75rem;
+  border: none;
+  width: 100%;
+  background-color: #fcfbf9;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Pseudo element (a visible thing that isn't really in the DOM).
+        Also needs -ms- */
+}
+
+.form__input:focus {
+  outline: none;
+  border-bottom: 3px solid #55c57a;
+}
+
+.form__input:focus:invalid {
+  border-bottom: 3px solid orangered;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #bbb;
+}
+
+.form__group:not(:last-child) {
+  margin-right: 5rem;
+}
+
+@media (max-width: 44em) {
+  .form__group:not(:last-child) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.form__label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 3rem 0 1rem 0;
+  color: #67403d;
+  padding: 3px 0;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.form button.btn {
+  margin-top: 6.4rem;
+  background-color: #575555;
+  color: #fcfbf9;
+}
+
+.form__upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.form__upload::focus + label {
+  outline: 3px solid #67403d;
+  outline-offset: 3px;
+}
+
+.form__upload + label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 3rem 0 1rem 0;
+  color: #67403d;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 3px solid #67403d;
+  padding: 1rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.form__upload + label:hover {
+  background-color: #fcfbf9;
+  color: #575555;
+}
+
+.form__password {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.login-form {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: #dfd3c3;
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+}
+
+.login-form h3 {
+  padding: 4rem 0;
+  color: #575555;
+  font-weight: 700;
+}
+
+img.lazyload {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+img.lazyload.loaded {
+  opacity: 1;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -408,6 +580,9 @@ ion-icon {
   .header .main__list {
     flex-direction: column;
   }
+  .header .main__list:nth-last-child(2) {
+    margin-bottom: 2rem;
+  }
 }
 
 .header .main__link:link, .header .main__link:visited {
@@ -431,6 +606,35 @@ ion-icon {
 
 .header .main__link:hover, .header .main__link:active {
   border-bottom: 3px solid #67403d;
+}
+
+.btn--admin-hello,
+.btn--admin-logout {
+  font-size: 1.6rem;
+  padding: 0 0.5rem;
+  border: 2px solid #251f1f;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn--admin-hello:hover, .btn--admin-hello:active,
+.btn--admin-logout:hover,
+.btn--admin-logout:active {
+  border: 2px solid #67403d;
+}
+
+@media (max-width: 59em) {
+  .btn--admin-hello,
+  .btn--admin-logout {
+    padding: 1rem 3.5rem;
+  }
+}
+
+.btn--admin-logout {
+  background-color: #dfd3c3;
 }
 
 .btn--mobile-nav {
@@ -479,7 +683,7 @@ ion-icon {
   position: fixed;
   top: 0;
   bottom: 0;
-  height: 8rem;
+  height: 6rem;
   width: 100%;
   padding-top: 0;
   padding-bottom: 0;
@@ -825,7 +1029,7 @@ ion-icon {
 
 .gallery figcaption {
   font-size: 1.4rem;
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 1rem;
   background: #dfd3c3;
   margin-top: -2px;
 }
@@ -922,100 +1126,144 @@ ion-icon {
   }
 }
 
-.login-form {
-  margin: 5rem auto;
+.account .top {
+  display: grid;
+  gap: 4.8rem;
+  align-items: stretch;
+  grid-template-columns: 1fr 2fr;
+}
+
+@media (max-width: 44em) {
+  .account .top {
+    grid-template-columns: 1fr;
+    justify-items: left;
+    gap: 6.4rem;
+  }
+}
+
+.account .top h2 {
+  border-right: 3px solid #67403d;
+  padding-right: 9.6rem;
+}
+
+@media (max-width: 44em) {
+  .account .top h2 {
+    padding-right: 4.8rem;
+  }
+}
+
+.account .top h3 {
   max-width: 55rem;
-  background-color: #fff;
-  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
-  padding: 5rem 7rem;
-  border-radius: 5px;
 }
 
-.form__input {
+.account .top span {
   display: block;
-  font-family: inherit;
-  font-size: 1.5rem;
-  color: inherit;
-  padding: 1.25rem 1.75rem;
-  border: none;
-  width: 100%;
-  background-color: #fff;
-  background-color: #f2f2f2;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s;
-  border-radius: 4px;
-  box-sizing: border-box;
-  /* Pseudo element (a visible thing that isn't really in the DOM).
-        Also needs -ms- */
+  color: #67403d;
 }
 
-.form__input:focus {
-  outline: none;
-  border-bottom: 3px solid #55c57a;
+.account .no-flexbox-gap .top {
+  margin-right: 4.8rem;
 }
 
-.form__input:focus:invalid {
-  border-bottom: 3px solid #ff7730;
+@media (max-width: 44em) {
+  .account .no-flexbox-gap .top {
+    margin-bottom: 6.4rem;
+  }
 }
 
-.form__input::-webkit-input-placeholder {
-  color: #bbb;
-}
-
-.form__group:not(:last-child) {
-  margin-bottom: 2.5rem;
-}
-
-.form__label {
+.account .top {
   display: block;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
 }
 
-.form__photo-upload {
+.account .top span {
+  display: inline-block;
+}
+
+.account .top h2 {
+  border-right: none;
+  padding-right: 0;
+}
+
+.account__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10vw;
+  background-color: #dfd3c3;
+}
+
+.account__links--passwords {
+  justify-content: space-evenly;
+}
+
+.account__left {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 44em) {
+  .account__left {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+}
+
+.account__right {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 8rem;
+}
+
+@media (max-width: 44em) {
+  .account__right {
+    margin-left: 0;
+  }
+}
+
+.account__link {
   display: flex;
   align-items: center;
-  font-size: 1.6rem;
+  padding: 2rem 4rem;
 }
 
-.form__user-photo {
-  height: 7.5rem;
-  width: 7.5rem;
-  border-radius: 50%;
-  margin-right: 2rem;
+@media (max-width: 44em) {
+  .account__link {
+    margin-bottom: 2rem;
+  }
 }
 
-.form__upload {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+.account__link svg {
+  margin-right: 5rem;
 }
 
-.form__upload::focus + label {
-  outline: 3px solid #55c57a;
-  outline-offset: 3px;
-}
-
-.form__upload + label {
-  color: #55c57a;
-  display: inline-block;
+.account__link a:link,
+.account__link a:visited {
   text-decoration: none;
-  border-bottom: 1px solid #55c57a;
-  padding: 3px;
-  transition: all 0.2s;
-  cursor: pointer;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
-.form__upload + label:hover {
-  background-color: #55c57a;
-  color: #fff;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+.account__link a:hover,
+.account__link a:active {
+  color: #67403d;
+}
+
+.account__link--active {
+  border-right: 3px solid #67403d;
+}
+
+.account__btn {
+  margin-top: 5rem;
+  background-color: #575555;
+  color: white;
+  font-weight: 300;
+  font-size: 1.6rem;
 }
 
 .offer .top {
@@ -1408,10 +1656,7 @@ ion-icon {
   align-items: center;
   justify-content: center;
   width: 55%;
-<<<<<<< HEAD
-=======
   height: 45%;
->>>>>>> backend
   min-width: 18rem;
   aspect-ratio: 1/1;
   background-color: #fcfbf9;

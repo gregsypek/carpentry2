@@ -1001,7 +1001,7 @@ img.lazyload.loaded {
 }
 
 .gallery figure {
-  min-width: 50rem;
+  min-width: 40rem;
   height: 40rem;
   transition: flex 0.5s ease-out;
 }
@@ -1039,6 +1039,7 @@ img.lazyload.loaded {
   max-height: 35rem;
   max-width: 50rem;
   min-width: 25rem;
+  flex: 1;
   position: relative;
 }
 
@@ -1071,8 +1072,14 @@ img.lazyload.loaded {
   opacity: 1;
 }
 
-.single__image:nth-of-type(3n + 1) {
-  flex: 1;
+.single__image:nth-of-type(2n + 1) {
+  flex: 1.5;
+}
+
+@media (max-width: 59em) {
+  .single__image:nth-of-type(4n + 1) {
+    flex: 1;
+  }
 }
 
 .single__image a {

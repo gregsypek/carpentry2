@@ -16,7 +16,7 @@ block content
         .stairs__info.padding--small.container--big 
           h3.heading-tertiary Realizacje 
           p.stairs__invocation.description= stairs.description
-      .stairs__bottom.container.padding--huge 
+      .stairs__bottom.container--big.mt--bg 
         .gallery(id=`${stairs.slug}`.toLowerCase())
           each img, index in stairs.images
             figure 

@@ -1,6 +1,10 @@
 # Schody Zalinski
 
+<<<<<<< HEAD
 "A web application which I've made for a client. Simple, fully responsive website with a fast, scalable, and powerful Node.js RESTful APIs. It includes modern authentication with JWT and authorization. Allows for all CRUD operations with MongoDB database."
+=======
+"A project which I've made for a client. Simple, fully responsive website with a fast time loading page. It has no frameworks and it's fully designed by me, including logo",
+>>>>>>> parent of 13d0d1e... update README
 
 ## Features
 
@@ -8,21 +12,15 @@
 - fully responsive,
 - browser support,
 - image optimizations,
-- lazy loading images
-- using MVC architecture,
-- advanced error handling workflows
+- sticky navigation bar
 
 ## Under the hood
 
 Technologies being used under the hood:
 
-- Node
-- Express
-- MongoDB
-- Mongoose
-- RESTful API
-- Pug
-- Scss
+- Vanillia JS
+- Sass
+- HTML
 
 ## Screenshots
 
@@ -30,32 +28,6 @@ Technologies being used under the hood:
 ![App Screenshot2](./screenshots/schody2.png)
 ![App Screenshot3](./screenshots/schody3.png)
 ![App Screenshot4](./screenshots/schody4.png)
-![App Screenshot5](./screenshots/schody5.png)
-![App Screenshot6](./screenshots/schody6.png)
-
-### Install dependencies
-
-```
-npm install
-```
-
-## Run
-
-```
-npm run start
-```
-
-### Build for production
-
-```
-npm run start:prod
-```
-
-### Get into login panel
-
-```
-http://localhost:3000/login
-```
 
 ### License
 

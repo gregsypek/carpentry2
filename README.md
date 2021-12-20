@@ -1,10 +1,6 @@
 # Schody Zalinski
 
-<<<<<<< HEAD
 "A web application which I've made for a client. Simple, fully responsive website with a fast, scalable, and powerful Node.js RESTful APIs. It includes modern authentication with JWT and authorization. Allows for all CRUD operations with MongoDB database."
-=======
-"A project which I've made for a client. Simple, fully responsive website with a fast time loading page. It has no frameworks and it's fully designed by me, including logo",
->>>>>>> parent of 13d0d1e... update README
 
 ## Features
 
@@ -12,15 +8,35 @@
 - fully responsive,
 - browser support,
 - image optimizations,
-- sticky navigation bar
+- lazy loading images
+- using MVC architecture,
+- advanced error handling workflows
 
 ## Under the hood
 
 Technologies being used under the hood:
 
-- Vanillia JS
-- Sass
-- HTML
+- Node
+- Express
+- MongoDB
+- Mongoose
+- RESTful API
+- Pug
+- Scss
+
+## The only way to check this application is at this link: [https://schodyzalinski.herokuapp.com/login](https://schodyzalinski.herokuapp.com/login)
+
+I will not include config.env file with access for database ( only for special request)
+
+## To Log in please follow instructions:
+
+- login: 'stas@gmail.com'
+- password: 'pass1234'
+- then click button: 'WITAJ STAS'
+
+### You can also visit Client's Website link
+
+[https://schodyzalinski.pl](https://schodyzalinski.pl)
 
 ## Screenshots
 
@@ -28,6 +44,8 @@ Technologies being used under the hood:
 ![App Screenshot2](./screenshots/schody2.png)
 ![App Screenshot3](./screenshots/schody3.png)
 ![App Screenshot4](./screenshots/schody4.png)
+![App Screenshot5](./screenshots/schody5.png)
+![App Screenshot6](./screenshots/schody6.png)
 
 ### License
 

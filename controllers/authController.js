@@ -20,7 +20,7 @@ const createSendToken = (user, statusCode, req, res) => {
     ),
     // secure: true,
     httpOnly: true,
-    secure: req.secure || req.headers('x-forwarded-proto') === 'https',
+    // secure: req.secure || req.headers('x-forwarded-proto') === 'https',//cause bug!!!
   });
 
   // if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;

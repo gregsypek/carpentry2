@@ -24,19 +24,6 @@ Technologies being used under the hood:
 - Pug
 - Scss
 
-## The only way to check this application is at this link: [https://schodyzalinski.herokuapp.com/login](https://schodyzalinski.herokuapp.com/login)
-
-I will not include config.env file with access for database ( only for special request)
-
-## To Log in please follow instructions:
-
-- login: 'stas@gmail.com'
-- password: 'pass1234'
-- then click button: 'WITAJ STAS'
-
-### You can also visit Client's Website link
-
-[https://schodyzalinski.pl](https://schodyzalinski.pl)
 
 ## Screenshots
 
